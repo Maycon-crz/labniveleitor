@@ -1,0 +1,218 @@
+html{
+	overflow-x: hidden;
+}
+*{
+    margin:0 auto;
+	padding:0 auto;    	
+}
+body{
+	margin:0 auto;
+    padding:0 auto;	   	
+    overflow-x: hidden;    
+    font-family: Segoe Print !important;
+}
+.container{
+	margin:0 auto;
+    padding:0 auto;    
+}
+#linhaDeCadFunc{
+	display: none;
+}
+#linhaMostraAvisos{
+	display: none;
+	position: fixed;	
+	top:67%;
+	z-index: 10;
+	height: 200px;
+}
+
+#linhaMostraAvisos img{
+	width: 68px;
+	height: 80px;
+	border-radius: 50%;
+}
+#conteudoLinhaMostraAvisos{
+	display: none;
+	height: 200px;	
+	overflow: scroll !important;	
+	overflow-x: hidden !important;
+	--scrollbarBG: brown;
+  	--thumbBG: green;  
+}
+#conteudoLinhaMostraAvisos::-webkit-scrollbar {
+  width: 15px;
+}
+#conteudoLinhaMostraAvisos{
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+#conteudoLinhaMostraAvisos::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+#conteudoLinhaMostraAvisos::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+.lixeiraum{
+	width: 40px !important;
+	height: 40px !important;
+	padding-bottom: 4px !important;
+}
+.lixeiraum:hover{
+	padding-right: 5px;	
+}
+#quadroDeAvisos{
+	background-image: url("../img/quadro.jpg");
+	background-repeat: no-repeat;
+}
+
+.corhorarios{
+	color: #8B4513;	
+	font-weight: bold;
+}
+.objetoPastaAzulum, .objetoPastaAzuldois, .objetoPastaAzultres, .objetoPastaAzulquatro, .objetoPastaAzulcinco{
+	position: fixed;	
+	background-color: blue;
+	left:1%;
+	width: 100px;
+	height: 100px;	
+	opacity: 0.7;
+	transform: rotate(15deg);
+	border: double black;
+	border-width: 4px 4px 4px 1px;
+	display: none;
+}
+.objetoPastaAzulum{
+	top:32%;
+}.objetoPastaAzuldois{
+	top:36%;
+}.objetoPastaAzultres{
+	top:40%;
+}.objetoPastaAzulquatro{
+	top:44%;
+}.objetoPastaAzulcinco{
+	top:48%;
+}
+#menuFixo{
+	background-color: hsla(120, 80%, 35%, 0.6);
+	position: fixed;		
+	left:87%;
+	top:8%;
+	text-align: center;	
+	z-index: 5;
+	font-weight: bold;
+	border-radius: 15px;
+}
+@media only screen and (max-device-width: 600px) { 
+	#menuFixo{
+		left:60% !important;
+		top:10%;
+	}
+}
+#menuFixo img{
+	width: 65px !important;
+	height: 52px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+#gifseta{
+	display: none;
+}
+#conteudoMenuFixo{
+	display: none;
+	height: 230px;
+	overflow: scroll !important;	
+	overflow-x: hidden !important;
+	--scrollbarBG: brown;
+  	--thumbBG: green;  	  	
+}
+#conteudoMenuFixo::-webkit-scrollbar {
+  width: 15px;
+}
+#conteudoMenuFixo{
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+#conteudoMenuFixo::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+#conteudoMenuFixo::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
+.btsMenuFixo{
+	background-color: hsla(120, 80%, 35%, 0.9);
+	color: #8B4513;		
+	font-weight: bold;
+	border-radius: 10px;
+	width: 100%;	
+}
+/*verde*/
+#nvPressaoVerde{
+	opacity: 0.3;
+}
+#nvPressaoVerde span{
+	font-size: 19px;
+}
+.tbHoraVerde{
+	background: #00FF7F;
+	border: 2px solid #00FF7F;
+	border-radius: 5px;
+	text-align: center;
+	font-weight: bold;
+}
+/*-----*/
+
+/*Amarelo*/
+#nvPressaoAmarelo{
+	opacity: 0.3;
+}
+#nvPressaoAmarelo span{
+	font-size: 19px;
+}
+.tbHoraAmarelo{
+	background-color: yellow;
+	border: 2px solid yellow;
+	border-radius: 5px; 
+	text-align: center;
+	font-weight: bold;
+}
+/*-----*/
+/*Vermelho*/
+#nvPressaoVermelho{
+	opacity: 0.3;
+}
+#nvPressaoVermelho span{
+	font-size: 19px;
+}
+.tbHoraVermelho{
+	background-color: red;
+	border: 2px solid red;
+	border-radius: 5px; 
+	text-align: center;
+	font-weight: bold;
+}
+.tbHoraTotal{
+	background-color: brown;
+	border: 2px solid brown;
+	border-radius: 2px;
+	text-align: center;
+}
+ul, li{	
+	list-style-type: none;
+}
+input, textarea, select{
+	background: #00FF7F;
+	/*border: 2px solid black;*/
+	border-radius: 5px; 
+}
+footer{
+	padding:55px 0px 30px 0px;
+}
+footer h6{
+	font-family: verdana;
+	margin: 2px !important;
+}
