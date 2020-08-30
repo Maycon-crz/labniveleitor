@@ -11,14 +11,7 @@
 			<li><input type='text' name='nome' class='form-control text-center bg-white border border-success' placeholder='Nome de Usuário' id=''></li>
 			<li><input type='password' name='senha' class='form-control text-center bg-white border border-success' placeholder='Senha' id=''></li>
 			<li><button type='submit' class='form-control text-center bg-success border border-success'>ENTRAR</button></li>
-			<!-- <?php
-				$options = [
-					'cost' => 10,
-				];
-				$senhausu = "ARTESANImaycon@321";
-				$senhausu = password_hash($senhausu, PASSWORD_DEFAULT, $options);
-				echo $senhausu;
-			?> -->
+
 		</form>
 	</ul>
 
