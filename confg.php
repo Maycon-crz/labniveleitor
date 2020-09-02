@@ -2,7 +2,8 @@
 <?php
     $_SESSION['logado'] = "nao";
 	class avisos{
-		function excluiAviso($con, $idlixeira){
+		function excluiAviso($con, $ferramentas, $idlixeira){
+			$idlixeira = $ferramentas->filtrando($idlixeira);
 			$sqlDeleteAviso = "DELETE FROM avisos WHERE id=:idlixeira";
 			$deleteAviso = $con->prepare($sqlDeleteAviso);			
 			$deleteAviso->bindParam(":idlixeira", $idlixeira);
@@ -41,7 +42,19 @@
 		}
 	}
 	class editadados{
-		function editaValorPastaAzul($con, $valorPastaAzul){
+		function editaPreProntos($con, $ferramentas, $idbtsPreProntos){
+			// $idbtsPreProntos = $ferramentas->filtrando($idbtsPreProntos);
+			// $sqlPastaAzul = "UPDATE pressaopedidos SET pastaazul=:valorPastaAzul WHERE 1=1";
+			// $pastaAzul = $con->prepare($sqlPastaAzul);
+			// $pastaAzul->bindParam(':valorPastaAzul', $valorPastaAzul);
+			// if($pastaAzul->execute()){
+			// 	echo json_encode("QTD pasta Azul editada!");
+			// }else{
+			// 	echo json_encode("Erro na edicao de pasta Azul!");
+			// }
+		}
+		function editaValorPastaAzul($con, $ferramentas, $valorPastaAzul){
+			$valorPastaAzul = $ferramentas->filtrando($valorPastaAzul);
 			$sqlPastaAzul = "UPDATE pressaopedidos SET pastaazul=:valorPastaAzul WHERE 1=1";
 			$pastaAzul = $con->prepare($sqlPastaAzul);
 			$pastaAzul->bindParam(':valorPastaAzul', $valorPastaAzul);
@@ -51,7 +64,9 @@
 				echo json_encode("Erro na edicao de pasta Azul!");
 			}
 		}
-		function editapedidos($con, $editapedidosnomefilial, $editapedidosqtdpedidos){
+		function editapedidos($con, $ferramentas, $editapedidosnomefilial, $editapedidosqtdpedidos){
+			$editapedidosnomefilial = $ferramentas->filtrando($editapedidosnomefilial);
+			$editapedidosqtdpedidos = $ferramentas->filtrando($editapedidosqtdpedidos);
 			switch($editapedidosnomefilial){
 				case 'pomerode':
 					$sqlUpdatePedidos = "UPDATE pressaopedidos SET pomerode=:editapedidosqtdpedidos WHERE 1=1";
@@ -68,7 +83,9 @@
 				echo json_encode("Erro ao atualizar o pedido!");
 			}
 		}
-		function editaQTDformulasSolidos($con, $valor, $nomehorariodb, $tipoTbHora, $cor){
+		function editaQTDformulasSolidos($con, $ferramentas, $valor, $nomehorariodb, $tipoTbHora, $cor){
+			$valor = $ferramentas->filtrando($valor); $nomehorariodb = $ferramentas->filtrando($nomehorariodb);
+			$tipoTbHora = $ferramentas->filtrando($tipoTbHora); $cor = $ferramentas->filtrando($cor);
 			switch($tipoTbHora){
 				case 'solidos':
 					switch($cor){
@@ -106,7 +123,8 @@
 				echo json_encode("Erro ao atualizar o valor");
 			}
 		}
-		function editaNivelDePressao($con, $parametronivel){				
+		function editaNivelDePressao($con, $ferramentas, $parametronivel){	
+			$parametronivel = $ferramentas->filtrando($parametronivel);
 			$sqlUpdateNivel = "UPDATE pressaopedidos SET nivel=:nivel WHERE 1=1";
 			$updateNivel = $con->prepare($sqlUpdateNivel);
 			$updateNivel->bindParam(':nivel', $parametronivel);
@@ -337,7 +355,6 @@
 					}else{
 						echo json_encode("Esse Nome não está cadastrado!");
 					}
-
 				}else{
 					echo json_encode("Erro de nome!");
 				}
@@ -371,23 +388,26 @@
 			$login = new login;
 			$ferramentas = new ferramentas;
 
+			if(isset($_POST['idbtsPreProntos'])){
+				$editadados->editaPreProntos($con, $ferramentas, $_POST['idbtsPreProntos']);		
+			}
 			if(isset($_POST['idlixeira'])){
-				$avisos->excluiAviso($con, $_POST['idlixeira']);
+				$avisos->excluiAviso($con, $ferramentas, $_POST['idlixeira']);
 			}
 			if(isset($_POST['inputnomemensageiro']) || isset($_POST['inputaviso'])){
 				$avisos->validaAviso($con, $_POST['inputnomemensageiro'], $_POST['inputaviso'], $ferramentas);				
 			}
 			if(isset($_POST['valorPastaAzul'])){				
-				$editadados->editaValorPastaAzul($con, $_POST['valorPastaAzul']);
+				$editadados->editaValorPastaAzul($con, $ferramentas, $_POST['valorPastaAzul']);
 			}
 			if(isset($_POST['editapedidosnomefilial'])){				
-				$editadados->editapedidos($con, $_POST['editapedidosnomefilial'], $_POST['editapedidosqtdpedidos']);
+				$editadados->editapedidos($con, $ferramentas, $_POST['editapedidosnomefilial'], $_POST['editapedidosqtdpedidos']);
 			}
 			if(isset($_POST['valor'])){				
-				$editadados->editaQTDformulasSolidos($con, $_POST['valor'], $_POST['nomehorariodb'], $_POST['tipoTbHora'], $_POST['cor']);
+				$editadados->editaQTDformulasSolidos($con, $ferramentas, $_POST['valor'], $_POST['nomehorariodb'], $_POST['tipoTbHora'], $_POST['cor']);
 			}
 			if(isset($_POST['nvPressao'])){
-				$editadados->editaNivelDePressao($con, $_POST['nvPressao']);								
+				$editadados->editaNivelDePressao($con, $ferramentas, $_POST['nvPressao']);								
 			}
 			if(isset($_POST['atualiza'])){
 				$listadados->solidos($con);

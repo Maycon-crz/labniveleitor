@@ -1,4 +1,5 @@
-$(document).ready(function(){	
+$(document).ready(function(){
+	exipientes();
 	avisos();
 	pastaAzul();
 	menufixo();
@@ -13,6 +14,20 @@ $(document).ready(function(){
 	cadastroDeFuncionarios();
 	login();	
 });
+function exipientes(){
+	$(document).on('click', '.btsPreProntos', function(){
+		var idbtsPreProntos = $(this).attr('id');
+		$.ajax({
+			url: 'confg.php',
+			type: 'post',
+			data: {'idbtsPreProntos': idbtsPreProntos},
+			dataType: 'json',
+			success: function(retorno){
+				alert(retorno);				
+			}
+		});
+	});
+}
 function avisos(){
 	$(document).on('click', '.lixeiraum', function(){
 		var idlixeira = $(this).attr('id');

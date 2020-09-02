@@ -143,7 +143,7 @@ body{
   border: 3px solid var(--scrollbarBG);
 }
 
-.btsMenuFixo{
+.btsMenuFixo, .btsPreProntos{
 	background-color: hsla(120, 80%, 35%, 0.9);
 	color: #8B4513;		
 	font-weight: bold;
