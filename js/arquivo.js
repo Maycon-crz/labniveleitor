@@ -17,8 +17,28 @@ $(document).ready(function(){
 });
 function almoco(){
 	$(document).on('click', '.almocando', function(){
-		var idalmocando = $(this).attr('id');		
-		alert("Bora almoçar! "+idalmocando);
+		var idalmocando = $(this).attr('id');
+		var parametroalmocando=0;
+		switch(idalmocando){
+			case 'galeraSolidos':
+				parametroalmocando=1;
+			break;
+			case 'galeraSemiSolidos':
+				parametroalmocando=2
+			break;
+			case 'zero':			
+				parametroalmocando=0;
+			break;
+		}
+		$.ajax({
+			url: 'confg.php',
+			type: 'post',
+			data: {'parametroalmocando': parametroalmocando},
+			dataType: 'json',
+			success: function(retornado){
+				alert(retornado);
+			}
+		});		
 	});
 }
 var idbtsPreProntos = "";

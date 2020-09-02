@@ -42,6 +42,10 @@
 		}
 	}
 	class editadados{
+		function almocando($con, $ferramentas, $parametroalmocando){
+			$parametroalmocando = $ferramentas->filtrando($parametroalmocando);
+			echo json_encode("Funcao chamada operação: ".$parametroalmocando);
+		}
 		function editaPreProntos($con, $ferramentas, $idbtsPreProntos, $parametroexipientes){			
 			$idbtsPreProntos = $ferramentas->filtrando($idbtsPreProntos);
 			$parametroexipientes = $ferramentas->filtrando($parametroexipientes);
@@ -420,6 +424,9 @@
 			$login = new login;
 			$ferramentas = new ferramentas;
 
+			if(isset($_POST['parametroalmocando'])){
+				$editadados->almocando($con, $ferramentas, $_POST['parametroalmocando']);				
+			}
 			if(isset($_POST['idbtsPreProntos']) || isset($_POST['parametroexipientes'])){
 				$editadados->editaPreProntos($con, $ferramentas, $_POST['idbtsPreProntos'], $_POST['parametroexipientes']);
 			}
