@@ -1,8 +1,8 @@
  <!-- <?php 
-    session_start();
-	if(!empty(@$_SESSION['logado'])){
-		header("location:labniveleitor/painel.php");
-	}
+    // session_start();
+	//if(!empty(@$_SESSION['logado'])){
+		//header("location:labniveleitor/painel.php");
+	//}
 ?> -->
 <?php include("include/cabecalho.php");?>
 	<ul class='text-center border border-success mb-5 p-5'>

@@ -776,33 +776,44 @@
 		<ul class='m-0 p-0' id='conteudoMenuFixo'>
 			<li>
 				<a href="#tbHorariosLinhaUm"><button type='button' class='btsMenuFixo mt-2'>08:00-10:00</button></a>
-			</li>
-			<li>
+			</li><li>
 				<a href="#tbHorariosLinhaDois"><button type='button' class='btsMenuFixo mt-2'>10:01-12:00</button></a>
-			</li>
-			<li>
+			</li><li>
 				<a href="#tbHorariosLinhaTres"><button type='button' class='btsMenuFixo mt-2'>12:01-14:00</button></a>
-			</li>
-			<li>
+			</li><li>
 				<a href="#tbHorariosLinhaQuatro"><button type='button' class='btsMenuFixo mt-2'>14:01-16:00</button></a>
-			</li>
-			<li>
+			</li><li>
 				<a href="#tbHorariosLinhaCinco"><button type='button' class='btsMenuFixo mt-2'>16:01-18:00</button></a>
-			</li>
-			<li>
+			</li><li>
 				<a href="#tbHorariosLinhaSeis"><button type='button' class='btsMenuFixo mt-2'>18:01-19:00</button></a>
-			</li>
-			<li>
+			</li><li>
 				<a href="#pedidos"><button type='button' class='btsMenuFixo mt-2'>Pedidos</button></a>
-			</li>
-			<li>
+			</li><li>
 				<a href="#quadroDeAvisos"><button type='button' class='btsMenuFixo mt-2'>Quadro</button></a>
-			</li>
-			<li>
+			</li><li>
 				<a href="#btmostraCadFunc"><button type='button' class='btsMenuFixo mt-2'>Cadastro</button></a>
-			</li>	
-			<li>
+			</li>	<li>
 				<a href="#manual"><button type='button' class='btsMenuFixo mt-2'>Manual</button></a>
+			</li><li>
+				<button type='button' class='btsMenuFixo btsPreProntos mt-2' id='Excipiente'>Excipiente</button>
+			</li><li>
+				<button type='button' class='btsMenuFixo btsPreProntos mt-2' id='CremeNaoIonico'>Creme Não Iônico</button>
+			</li><li>
+				<button type='button' class='btsMenuFixo btsPreProntos mt-2' id='BaseGelAnastrozol'>Base Gel Anastrozol</button>
+			</li><li>
+				<button type='button' class='btsMenuFixo btsPreProntos mt-2' id='Tacrolimus'>Tacrolimus</button>
+			</li><li>
+				<button type='button' class='btsMenuFixo btsPreProntos mt-2' id='BaseSabonete'>Base<br/>Sabonete</button>
+			</li><li>
+				<button type='button' class='btsMenuFixo btsPreProntos mt-2' id='BaseShampooPerolado'>Base<br/>Shampoo<br/>Perolado</button>
+			</li><li>
+				<button type='button' class='btsMenuFixo btsPreProntos mt-2' id='CremePsoriaseAguda'>Creme<br/>Psoriase<br/>Aguda</button>
+			</li><li>
+				<button type='button' class='btsMenuFixo btsPreProntos mt-2' id='FluoretoDeSodio'>Fluoreto<br/>de<br/>sódio</button>
+			</li><li>
+				<button type='button' class='btsMenuFixo btsPreProntos mt-2' id='DescongestionanteNasal'>Descongestionante<br/>Nasal</button>
+			</li><li>
+				<button type='button' class='btsMenuFixo btsPreProntos mt-2' id='LocaoCapilarMinoxidil'>Loção<br/>capilar<br/>Minoxidil</button>
 			</li>
 		</ul>	
 	</div>

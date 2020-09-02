@@ -97,7 +97,7 @@ body{
 #menuFixo{
 	background-color: hsla(120, 80%, 35%, 0.6);
 	position: fixed;		
-	left:87%;
+	left:85%;
 	top:8%;
 	text-align: center;	
 	z-index: 5;
@@ -106,7 +106,7 @@ body{
 }
 @media only screen and (max-device-width: 600px) { 
 	#menuFixo{
-		left:60% !important;
+		left:50% !important;
 		top:10%;
 	}
 }
