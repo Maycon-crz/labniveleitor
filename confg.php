@@ -42,42 +42,43 @@
 		}
 	}
 	class editadados{
-		function editaPreProntos($con, $ferramentas, $idbtsPreProntos){			
+		function editaPreProntos($con, $ferramentas, $idbtsPreProntos, $parametroexipientes){			
 			$idbtsPreProntos = $ferramentas->filtrando($idbtsPreProntos);
+			$parametroexipientes = $ferramentas->filtrando($parametroexipientes);
 			switch($idbtsPreProntos){
 				case "Excipiente":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET excipiente=1 WHERE 1=1";
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET excipiente=:parametroexipientes WHERE 1=1";
 				break;
 				case "CremeNaoIonico":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremenaoionico=1 WHERE 1=1";
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremenaoionico=:parametroexipientes WHERE 1=1";
 				break;
 				case "BaseGelAnastrozol":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET basegelanastrozol=1 WHERE 1=1";
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET basegelanastrozol=:parametroexipientes WHERE 1=1";
 				break;
 				case "Tacrolimus":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET tacrolimus=1 WHERE 1=1";
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET tacrolimus=:parametroexipientes WHERE 1=1";
 				break;
 				case "BaseSabonete":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET basesabonete=1 WHERE 1=1";
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET basesabonete=:parametroexipientes WHERE 1=1";
 				break;
 				case "BaseShampooPerolado":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseshampooperolado=1 WHERE 1=1";
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseshampooperolado=:parametroexipientes WHERE 1=1";
 				break;
 				case "CremePsoriaseAguda":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremepsoriaseaguda=1 WHERE 1=1";
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremepsoriaseaguda=:parametroexipientes WHERE 1=1";
 				break;
 				case "FluoretoDeSodio":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET fluoretodesodio=1 WHERE 1=1";
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET fluoretodesodio=:parametroexipientes WHERE 1=1";
 				break;
 				case "DescongestionanteNasal":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET descongestionantenasal=1 WHERE 1=1";
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET descongestionantenasal=:parametroexipientes WHERE 1=1";
 				break;
 				case "LocaoCapilarMinoxidil":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET locaocapilarminoxidil=1 WHERE 1=1";
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET locaocapilarminoxidil=:parametroexipientes WHERE 1=1";
 				break;
 			}			
 			$editaPreProntos = $con->prepare($sqlEditaPreProntos);
-			// $editaPreProntos->bindParam(':idbtsPreProntos', $idbtsPreProntos);
+			$editaPreProntos->bindParam(':parametroexipientes', $parametroexipientes);
 			if($editaPreProntos->execute()){
 				echo json_encode("Alerta inserido com sucesso!");
 			}else{
@@ -419,8 +420,8 @@
 			$login = new login;
 			$ferramentas = new ferramentas;
 
-			if(isset($_POST['idbtsPreProntos'])){
-				$editadados->editaPreProntos($con, $ferramentas, $_POST['idbtsPreProntos']);		
+			if(isset($_POST['idbtsPreProntos']) || isset($_POST['parametroexipientes'])){
+				$editadados->editaPreProntos($con, $ferramentas, $_POST['idbtsPreProntos'], $_POST['parametroexipientes']);
 			}
 			if(isset($_POST['idlixeira'])){
 				$avisos->excluiAviso($con, $ferramentas, $_POST['idlixeira']);

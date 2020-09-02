@@ -14,19 +14,35 @@ $(document).ready(function(){
 	cadastroDeFuncionarios();
 	login();	
 });
-function exipientes(){
+var idbtsPreProntos = "";
+function exipientes(){	
 	$(document).on('click', '.btsPreProntos', function(){
-		var idbtsPreProntos = $(this).attr('id');		
-		$("#linha"+idbtsPreProntos).toggle();		
-		// $.ajax({
-		// 	url: 'confg.php',
-		// 	type: 'post',
-		// 	data: {'idbtsPreProntos': idbtsPreProntos},
-		// 	dataType: 'json',
-		// 	success: function(retorno){
-		// 		alert(retorno);				
-		// 	}
-		// });
+		idbtsPreProntos = $(this).attr('id');		
+		$("#linha"+idbtsPreProntos).toggle();				
+	});
+	$(document).on('click', '.btsFaltaProducao', function(){
+		var idbtsFaltaProducao = $(this).attr('id');
+		var parametroexipientes = 0;
+		switch(idbtsFaltaProducao){
+			case 'acabou':
+				parametroexipientes=1;
+			break;
+			case 'producao':
+				parametroexipientes=2;
+			break;			
+		}		
+		$.ajax({
+			url: 'confg.php',
+			type: 'post',
+			data: {
+				'idbtsPreProntos': idbtsPreProntos,
+				'parametroexipientes': parametroexipientes
+			},
+			dataType: 'json',
+			success: function(retorno){
+				alert(retorno);				
+			}
+		});
 	});
 }
 function avisos(){
