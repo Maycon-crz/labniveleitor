@@ -42,16 +42,47 @@
 		}
 	}
 	class editadados{
-		function editaPreProntos($con, $ferramentas, $idbtsPreProntos){
-			// $idbtsPreProntos = $ferramentas->filtrando($idbtsPreProntos);
-			// $sqlPastaAzul = "UPDATE pressaopedidos SET pastaazul=:valorPastaAzul WHERE 1=1";
-			// $pastaAzul = $con->prepare($sqlPastaAzul);
-			// $pastaAzul->bindParam(':valorPastaAzul', $valorPastaAzul);
-			// if($pastaAzul->execute()){
-			// 	echo json_encode("QTD pasta Azul editada!");
-			// }else{
-			// 	echo json_encode("Erro na edicao de pasta Azul!");
-			// }
+		function editaPreProntos($con, $ferramentas, $idbtsPreProntos){			
+			$idbtsPreProntos = $ferramentas->filtrando($idbtsPreProntos);
+			switch($idbtsPreProntos){
+				case "Excipiente":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET excipiente=1 WHERE 1=1";
+				break;
+				case "CremeNaoIonico":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremenaoionico=1 WHERE 1=1";
+				break;
+				case "BaseGelAnastrozol":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET basegelanastrozol=1 WHERE 1=1";
+				break;
+				case "Tacrolimus":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET tacrolimus=1 WHERE 1=1";
+				break;
+				case "BaseSabonete":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET basesabonete=1 WHERE 1=1";
+				break;
+				case "BaseShampooPerolado":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseshampooperolado=1 WHERE 1=1";
+				break;
+				case "CremePsoriaseAguda":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremepsoriaseaguda=1 WHERE 1=1";
+				break;
+				case "FluoretoDeSodio":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET fluoretodesodio=1 WHERE 1=1";
+				break;
+				case "DescongestionanteNasal":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET descongestionantenasal=1 WHERE 1=1";
+				break;
+				case "LocaoCapilarMinoxidil":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET locaocapilarminoxidil=1 WHERE 1=1";
+				break;
+			}			
+			$editaPreProntos = $con->prepare($sqlEditaPreProntos);
+			// $editaPreProntos->bindParam(':idbtsPreProntos', $idbtsPreProntos);
+			if($editaPreProntos->execute()){
+				echo json_encode("Alerta inserido com sucesso!");
+			}else{
+				echo json_encode("Erro em inserir alerta!");
+			}
 		}
 		function editaValorPastaAzul($con, $ferramentas, $valorPastaAzul){
 			$valorPastaAzul = $ferramentas->filtrando($valorPastaAzul);
