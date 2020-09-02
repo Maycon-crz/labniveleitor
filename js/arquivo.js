@@ -16,16 +16,17 @@ $(document).ready(function(){
 });
 function exipientes(){
 	$(document).on('click', '.btsPreProntos', function(){
-		var idbtsPreProntos = $(this).attr('id');
-		$.ajax({
-			url: 'confg.php',
-			type: 'post',
-			data: {'idbtsPreProntos': idbtsPreProntos},
-			dataType: 'json',
-			success: function(retorno){
-				alert(retorno);				
-			}
-		});
+		var idbtsPreProntos = $(this).attr('id');		
+		$("#linha"+idbtsPreProntos).toggle();		
+		// $.ajax({
+		// 	url: 'confg.php',
+		// 	type: 'post',
+		// 	data: {'idbtsPreProntos': idbtsPreProntos},
+		// 	dataType: 'json',
+		// 	success: function(retorno){
+		// 		alert(retorno);				
+		// 	}
+		// });
 	});
 }
 function avisos(){

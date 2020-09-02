@@ -15,7 +15,7 @@ body{
 	margin:0 auto;
     padding:0 auto;    
 }
-#linhaDeCadFunc{
+#linhaDeCadFunc, .linhaPreProntos{
 	display: none;
 }
 #linhaMostraAvisos{
@@ -143,7 +143,7 @@ body{
   border: 3px solid var(--scrollbarBG);
 }
 
-.btsMenuFixo, .btsPreProntos{
+.btsMenuFixo, .btsPreProntos, .linhaPreProntos, .btsPreProntos{
 	background-color: hsla(120, 80%, 35%, 0.9);
 	color: #8B4513;		
 	font-weight: bold;
