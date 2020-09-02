@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	almoco();
 	exipientes();
 	avisos();
 	pastaAzul();
@@ -14,6 +15,12 @@ $(document).ready(function(){
 	cadastroDeFuncionarios();
 	login();	
 });
+function almoco(){
+	$(document).on('click', '.almocando', function(){
+		var idalmocando = $(this).attr('id');		
+		alert("Bora almoçar! "+idalmocando);
+	});
+}
 var idbtsPreProntos = "";
 function exipientes(){	
 	$(document).on('click', '.btsPreProntos', function(){
