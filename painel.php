@@ -797,23 +797,43 @@
 			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='Excipiente'>Excipiente</button>
 			</li><li>
+				<div class='btsPreProntos' id='linhaExcipiente'>Linha |Falta|Produção|</div>
+			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='CremeNaoIonico'>Creme Não Iônico</button>
+			</li><li>
+				<div class='btsPreProntos' id='linhaCremeNaoIonico'>Linha |Falta|Produção|</div>
 			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='BaseGelAnastrozol'>Base Gel Anastrozol</button>
 			</li><li>
+				<div class='btsPreProntos' id='linhaBaseGelAnastrozol'>Linha |Falta|Produção|</div>
+			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='Tacrolimus'>Tacrolimus</button>
+			</li><li>
+				<div class='btsPreProntos' id='linhaTacrolimus'>Linha |Falta|Produção|</div>
 			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='BaseSabonete'>Base<br/>Sabonete</button>
 			</li><li>
+				<div class='btsPreProntos' id='linhaBaseSabonete'>Linha |Falta|Produção|</div>
+			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='BaseShampooPerolado'>Base<br/>Shampoo<br/>Perolado</button>
+			</li><li>
+				<div class='btsPreProntos' id='linhaBaseShampooPerolado'>Linha |Falta|Produção|</div>
 			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='CremePsoriaseAguda'>Creme<br/>Psoriase<br/>Aguda</button>
 			</li><li>
+				<div class='btsPreProntos' id='linhaCremePsoriaseAguda'>Linha |Falta|Produção|</div>
+			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='FluoretoDeSodio'>Fluoreto<br/>de<br/>sódio</button>
+			</li><li>
+				<div class='btsPreProntos' id='linhaFluoretoDeSodio'>Linha |Falta|Produção|</div>
 			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='DescongestionanteNasal'>Descongestionante<br/>Nasal</button>
 			</li><li>
+				<div class='btsPreProntos' id='linhaDescongestionanteNasal'>Linha |Falta|Produção|</div>
+			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='LocaoCapilarMinoxidil'>Loção<br/>capilar<br/>Minoxidil</button>
+			</li><li>
+				<div class='btsPreProntos' id='linhaLocaoCapilarMinoxidil'>Linha |Falta|Produção|</div>
 			</li>
 		</ul>	
 	</div>
