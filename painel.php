@@ -864,6 +864,13 @@
 					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabou</button>
 					<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 				</div>
+			</li><li>
+				<button type='button' class='btsPreProntos mt-2' id='Almoco'>Almoço</button>
+			</li><li>
+				<div class='linhaPreProntos' id='linhaAlmoco'>
+					<button type='button' class='form-control btn btn-secondary' id=''>Sólidos</button>
+					<button type='button' class='form-control btn btn-primary' id=''>Semi-sólidos</button>
+				</div>
 			</li>
 		</ul>	
 	</div>
