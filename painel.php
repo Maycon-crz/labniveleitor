@@ -1,29 +1,9 @@
 <?php include("include/cabecalho.php")?>
-<?php 
-	session_start();
-	if(empty($_SESSION['logado'])){
-		header("location:index.php");
-	}
-?>
-
-<!-- colunas banco
-oitonove
-novedez
-dezonze
-onzedoze
-dozetreze
-trezequa
-quaqui
-quidseis
-dseisdsete
-dsetedoito
-doitodnove 
----
--->
 	<div class='container'>
 		<div class='row bg-info border rounded-pill'>
 			<button type='button' class='btn btn-info border rounded-pill btPastaAzul' id=0>Pasta Azul</button>
-			<h1 class='text-center'>Controle Diário de Fórmulas</h1>			
+			<h1 class='text-center'>Controle Diário de Fórmulas</h1>
+		    <input type='hidden' class='vfLogin' value="<?php echo $_SESSION['logado'];?>"/>
 			<button type='button' class='btn btn-danger border rounded-pill' id='sair'>Finalizar</button>
 		</div>
 		<div class='row mt-5'>

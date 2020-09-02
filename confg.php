@@ -1,5 +1,6 @@
 <?php include('include/conn.php');?>
 <?php
+    $_SESSION['logado'] = "nao";
 	class avisos{
 		function excluiAviso($con, $idlixeira){
 			$sqlDeleteAviso = "DELETE FROM avisos WHERE id=:idlixeira";
@@ -41,7 +42,6 @@
 	}
 	class editadados{
 		function editaValorPastaAzul($con, $valorPastaAzul){
-			// echo json_encode("Funcao de edicao chamada! - ". $valorPastaAzul);
 			$sqlPastaAzul = "UPDATE pressaopedidos SET pastaazul=:valorPastaAzul WHERE 1=1";
 			$pastaAzul = $con->prepare($sqlPastaAzul);
 			$pastaAzul->bindParam(':valorPastaAzul', $valorPastaAzul);
@@ -52,7 +52,6 @@
 			}
 		}
 		function editapedidos($con, $editapedidosnomefilial, $editapedidosqtdpedidos){
-			// echo json_encode("Funcao chamada - ".$editapedidosnomefilial." - ".$editapedidosqtdpedidos);
 			switch($editapedidosnomefilial){
 				case 'pomerode':
 					$sqlUpdatePedidos = "UPDATE pressaopedidos SET pomerode=:editapedidosqtdpedidos WHERE 1=1";
@@ -70,7 +69,6 @@
 			}
 		}
 		function editaQTDformulasSolidos($con, $valor, $nomehorariodb, $tipoTbHora, $cor){
-			// echo json_encode("Funcao de verificacao chamada ".$valor." - ".$nomehorariodb." - ".$tipoTbHora." - ".$cor);
 			switch($tipoTbHora){
 				case 'solidos':
 					switch($cor){
@@ -108,8 +106,7 @@
 				echo json_encode("Erro ao atualizar o valor");
 			}
 		}
-		function editaNivelDePressao($con, $parametronivel){						
-			// echo json_encode("Funcao de edicao chamada! parametro:".$nivel);
+		function editaNivelDePressao($con, $parametronivel){				
 			$sqlUpdateNivel = "UPDATE pressaopedidos SET nivel=:nivel WHERE 1=1";
 			$updateNivel = $con->prepare($sqlUpdateNivel);
 			$updateNivel->bindParam(':nivel', $parametronivel);
@@ -126,8 +123,7 @@
 			$buscasolidos = $con->prepare($sqlBuscasolidos);
 			if($buscasolidos->execute()){
 				$resultadosSolidos = $buscasolidos->fetchAll(PDO::FETCH_ASSOC);
-				$listadedados = array("");
-				// var_dump($resultadosSolidos);				
+				$listadedados = array("");		
 				$listadedados['oitonoveVerde'] 	= $resultadosSolidos[0]["verde"];
 				$listadedados['oitonoveAmarela'] 	= $resultadosSolidos[0]["amarela"];
 				$listadedados['oitonoveVermelha'] 	= $resultadosSolidos[0]["vermelha"];
@@ -181,7 +177,6 @@
 			$buscaSemiSolidos = $con->prepare($sqlBuscaSemiSolidos);
 			if($buscaSemiSolidos->execute()){
 				$resultadosSemiSolidos = $buscaSemiSolidos->fetchAll(PDO::FETCH_ASSOC);
-				// var_dump($resultadosSemiSolidos);				
 				$listadedados['semisolidos_oitonoveVerde'] 	= $resultadosSemiSolidos[0]["verde"];
 				$listadedados['semisolidos_oitonoveAmarela'] 	= $resultadosSemiSolidos[0]["amarela"];
 				$listadedados['semisolidos_oitonoveVermelha'] 	= $resultadosSemiSolidos[0]["vermelha"];
@@ -330,9 +325,9 @@
 					if(!empty($retornado['nome']) AND $retornado['nome'] == $nome){
 						if(!empty($senha)){							
 							if(password_verify($senha, $retornado['senha'])){	
-								echo json_encode("Senha Correta");
 								session_start();
 								$_SESSION['logado'] = "sim";
+								echo json_encode("Senha Correta");
 							}else{
 								echo json_encode("Senha incorreta");
 							}
@@ -354,8 +349,7 @@
 	class ferramentas{
 		function sair(){
 			session_start();
-			session_unset();
-			session_destroy();	
+			$_SESSION['logado'] = "nao";
 			echo json_encode("saiu");
 		}
 		function filtrando($dados){
@@ -401,7 +395,6 @@
 			if(isset($_POST['sair'])){
 				$ferramentas->sair();
 			}
-			// $cadastroDeFuncionarios->validaCadastroDeFuncionario($con, "maycon", "123", $ferramentas);
 			if(isset($_POST['cadnome']) || isset($_POST['cadsenha'])){
 				$cadastroDeFuncionarios->validaCadastroDeFuncionario($con, $_POST['cadnome'], $_POST['cadsenha'], $ferramentas);
 			}

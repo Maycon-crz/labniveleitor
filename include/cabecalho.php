@@ -1,8 +1,9 @@
 <!-- Sistema online foi modificado criei input hidden que tem valor de sessão para 
 verificar por javascript se eestá logado para nao acesar painel nao logado -->
+<?php session_start(); ?>
 <html>
 	<head>
-		<meta charset="utf-8">		
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>LabNiveleitor</title>
 		<link rel="stylesheet" type="text/css" href="css/estilos.css">		
@@ -15,4 +16,4 @@ verificar por javascript se eestá logado para nao acesar painel nao logado -->
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light pt-3 pb-3" id='cabecalho'>
 			<a class="navbar-brand m-3 logo" href="index.php">LabNíveLeitor</a>
-		</nav>			
+		</nav>	

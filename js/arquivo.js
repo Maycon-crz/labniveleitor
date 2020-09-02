@@ -200,6 +200,10 @@ function nivelDePressao(){
 // };
 function atualizatudo(){
 	// alert("Vamos atualizar!");
+	var vfLogin = $(".vfLogin").val();
+    if(vfLogin == "nao"){
+    	window.location.href = "index.php";   
+    }
 	var atualiza = "atualiza";
 	$.ajax({
 		url: "confg.php",
@@ -417,7 +421,7 @@ function sair(){
 			dataType: 'json',
 			success: function(retorno){
 				if(retorno == "saiu"){
-					carregar();
+					window.location.href = "index.php";
 				}						
 			}
 		});
@@ -455,9 +459,9 @@ function login(){
 			type: 'post',
 			data: formLoginDados,
 			dataType: 'json',
-			success: function(retorno){				
+			success: function(retorno){	
 				if(retorno === "Senha Correta"){		
-					carregar();
+					window.location.href = "painel.php";
 				}else{
 					alert(retorno);
 				}
@@ -468,7 +472,7 @@ function login(){
 function chamaAtualizacao(){
 	var funcaoTimersts = setInterval(function(){
 		atualizatudo();
-	}, 3000);		
+	}, 1000);		
 }
 
 function carregar(){	
