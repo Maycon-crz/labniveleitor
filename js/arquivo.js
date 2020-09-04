@@ -497,18 +497,17 @@ function atualizatudo(){
 						"<p class='m-0 p-0'>Base Gel Anastrozol</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='BaseGelAnastrozol' class='2'>X</button>";
 				break;
+			}switch(retornado.tacrolimus){
+				case "1":					
+					dadosLinhaExipiente += "<button type='button'>"+
+						"<p class='m-0 p-0'>Tacrolimus</p><p class='m-0 p-0'>Acabou</p>"+
+					"</button><button type='button' id='Tacrolimus' class='1'>X</button>";
+				break; case "2":
+					dadosLinhaExipiente += "<button type='button'>"+
+						"<p class='m-0 p-0'>Tacrolimus</p><p class='m-0 p-0'>Em Produção</p>"+
+					"</button><button type='button' id='Tacrolimus' class='2'>X</button>";
+				break;
 			}
-			// switch(retornado.tacrolimus){
-			// 	case "1":					
-			// 		dadosLinhaExipiente += "<button type='button'>"+
-			// 			"<p class='m-0 p-0'>Tacrolimus</p><p class='m-0 p-0'>Acabou</p>"+
-			// 		"</button><button type='button' id='Tacrolimus' class='1'>X</button>";
-			// 	break; case "2":
-			// 		dadosLinhaExipiente += "<button type='button'>"+
-			// 			"<p class='m-0 p-0'>Tacrolimus</p><p class='m-0 p-0'>Em Produção</p>"+
-			// 		"</button><button type='button' id='Tacrolimus' class='2'>X</button>";
-			// 	break;
-			// }
 			$(".mostraDadosExipientes").html(dadosLinhaExipiente);
 			//Avisos
 			if(retornado.avisosbanco != ""){
