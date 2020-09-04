@@ -882,11 +882,11 @@
 	<div class='linhaMostraExp'>
 		<table>
 			<tr><td>
-				<button type='button' id='btmostraExipientes'>
-					<img src='img/ciencia.gif'/>
+				<button type='button' id='btmostraExipientes' class='rounded-circle p-0 m-0 btn'>
+					<img src='img/microscopio.gif'/>
 				</button>
 			</td><td>
-				<div class='mostraDadosExipientes'></div>
+				<div id='mostraDadosExipientes'></div>
 			</td></tr>
 		</table>
 	</div>

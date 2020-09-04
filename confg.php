@@ -87,7 +87,7 @@
 			$editaPreProntos = $con->prepare($sqlEditaPreProntos);
 			$editaPreProntos->bindParam(':parametroexipientes', $parametroexipientes);
 			if($editaPreProntos->execute()){
-				echo json_encode("Alerta inserido com sucesso!");
+				echo json_encode("Alerta foi configurado!");
 			}else{
 				echo json_encode("Erro em inserir alerta!");
 			}
@@ -437,6 +437,9 @@
 			$login = new login;
 			$ferramentas = new ferramentas;
 
+			if(isset($_POST['idfinalizaexcipiente'])){
+				$editadados->editaPreProntos($con, $ferramentas, $_POST['idfinalizaexcipiente'], 0);				
+			}
 			if(isset($_POST['parametroalmocando'])){
 				$editadados->almocando($con, $ferramentas, $_POST['parametroalmocando']);				
 			}

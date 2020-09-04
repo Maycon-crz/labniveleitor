@@ -15,7 +15,7 @@ body{
 	margin:0 auto;
     padding:0 auto;    
 }
-#linhaDeCadFunc, .linhaPreProntos, .mostraDadosExipientes{
+#linhaDeCadFunc, .linhaPreProntos, #mostraDadosExipientes{
 	display: none;
 }
 #linhaMostraAvisos{
@@ -30,7 +30,7 @@ body{
 	height: 60px;
 	border-radius: 50%;
 	margin: 0 !important;
-	padding: 0 !important;
+	padding: 0 !important;	
 }
 #linhaMostraAvisos img{
 	width: 68px;
@@ -84,6 +84,7 @@ body{
 	opacity: 0.9;
 	background-color: blue;
 	border-radius: 20px;
+	display: none;
 }
 .objetoPastaAzulum, .objetoPastaAzuldois, .objetoPastaAzultres, .objetoPastaAzulquatro, .objetoPastaAzulcinco{
 	position: fixed;	

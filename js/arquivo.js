@@ -36,16 +36,36 @@ function almoco(){
 			data: {'parametroalmocando': parametroalmocando},
 			dataType: 'json',
 			success: function(retornado){
-				alert(retornado);
+				alert(retornado);				
 			}
 		});		
 	});
 }
 var idbtsPreProntos = "";
 function exipientes(){
-	$(document).on('click', '#btmostraExipientes', function(){
-		$(".mostraDadosExipientes").toggle();
+	//Menu microscopio
+	$(document).on('click', '.finalizaExcipiente', function(){
+		var idfinalizaExcipiente = $(this).attr('id');
+		if(confirm("Laboratório: Deseja Finalizar este aviso?")){			
+			$.ajax({
+				url: 'confg.php',
+				type: 'post',
+				data: {'idfinalizaexcipiente': idfinalizaExcipiente},
+				dataType: 'json',
+				success: function(retornado){
+					alert(retornado);				
+					atualizatudo();
+					// if(retornado === "Alerta foi configurado!"){
+					// 	carregar();
+					// }
+				}
+			});
+		}
 	});	
+	$(document).on('click', '#btmostraExipientes', function(){
+		$("#mostraDadosExipientes").toggle();
+	});
+	//Menu pocao
 	$(document).on('click', '.btsPreProntos', function(){
 		idbtsPreProntos = $(this).attr('id');		
 		$("#linha"+idbtsPreProntos).toggle();				
@@ -568,7 +588,12 @@ function atualizatudo(){
 					"</button><button type='button' id='LocaoCapilarMinoxidil' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}
-			$(".mostraDadosExipientes").html(dadosLinhaExipiente);
+			if(dadosLinhaExipiente != ""){
+				$("#mostraDadosExipientes").html(dadosLinhaExipiente);
+				$(".linhaMostraExp").css("display", "block");							
+			}else{
+				$(".linhaMostraExp").css("display", "none");
+			}			
 			//Avisos
 			if(retornado.avisosbanco != ""){
 				$("#conteudoLinhaMostraAvisos").html(retornado.avisosbanco);
