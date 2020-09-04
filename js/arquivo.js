@@ -460,6 +460,30 @@ function atualizatudo(){
 			//Pedidos Pomerode e Brusque
 			$('#pomerode').val(retornado.pomerode);
 			$('#brusque').val(retornado.brusque);
+
+			//Exipientes
+			var dadosLinhaExipiente = "<button type='button' class='btn btn-danger rounded-circle'>i</button>";
+			switch(retornado.excipiente){
+				case "1":					
+					dadosLinhaExipiente += 
+						"<button type='button'>"+
+							"<p class='m-0 p-0'>Excipiente</p>"+
+							"<p class='m-0 p-0'>Acabou</p>"+
+						"</button>"+
+						"<button type='button' id='excipiente'>X</button>"
+					;
+				break; 
+				case "2":
+					dadosLinhaExipiente += 
+						"<button type='button'>"+
+							"<p class='m-0 p-0'>Excipiente</p>"+
+							"<p class='m-0 p-0'>Em Produção</p>"+
+						"</button>"+
+						"<button type='button' id='excipiente'>X</button>"
+					;
+				break;
+			}
+			$(".linhaMostraExp").html(dadosLinhaExipiente);
 			//Avisos
 			if(retornado.avisosbanco != ""){
 				$("#conteudoLinhaMostraAvisos").html(retornado.avisosbanco);

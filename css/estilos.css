@@ -71,6 +71,17 @@ body{
 	color: #8B4513;	
 	font-weight: bold;
 }
+.linhaMostraExp{
+	position: fixed;	
+	top:20%;
+	left:1%;	
+	opacity: 0.7;
+	background-color: blue;
+	/*transform: rotate(15deg);
+	border: double black;
+	border-width: 4px 4px 4px 1px;*/
+	/*display: none;*/
+}
 .objetoPastaAzulum, .objetoPastaAzuldois, .objetoPastaAzultres, .objetoPastaAzulquatro, .objetoPastaAzulcinco{
 	position: fixed;	
 	background-color: blue;

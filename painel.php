@@ -792,7 +792,7 @@
 				<a href="#quadroDeAvisos"><button type='button' class='btsMenuFixo mt-2'>Quadro</button></a>
 			</li><li>
 				<a href="#btmostraCadFunc"><button type='button' class='btsMenuFixo mt-2'>Cadastro</button></a>
-			</li>	<li>
+			</li><li>
 				<a href="#manual"><button type='button' class='btsMenuFixo mt-2'>Manual</button></a>
 			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='Excipiente'>Excipiente</button>
@@ -879,6 +879,14 @@
 	<div class='objetoPastaAzultres text-success'><button type='button' class='btn btn-success P-0 btmenospastaazul' id=''>OK</button>--3°--<p class='text-center text-danger mt-2'><b>URGENTE!</b></p></div>
 	<div class='objetoPastaAzulquatro text-success'><button type='button' class='btn btn-success P-0 btmenospastaazul' id=''>OK</button>--4°--<p class='text-center text-danger mt-2'><b>URGENTE!</b></p></div>
 	<div class='objetoPastaAzulcinco text-success'><button type='button' class='btn btn-success P-0 btmenospastaazul' id=''>OK</button>--5°--<p class='text-center text-danger mt-2'><b>URGENTE!</b></p></div>
+	<div class='linhaMostraExp'>
+		
+		<!-- <button type='button'>
+			<p class='m-0 p-0'>Exipiente</p>
+			<p class='m-0 p-0'>Emprodução</p>
+		</button>
+		<button type='button'><p class='m-0 p-0'>Creme Não Iônico</p><p class='m-0 p-0'>Emprodução</p></button>		 -->
+	</div>
 	<div id='linhaMostraAvisos' class='bg-success rounded-circle m-0 p-0'>
 		<table class='m-0'>
 			<tr>

@@ -80,6 +80,9 @@
 				case "LocaoCapilarMinoxidil":
 					$sqlEditaPreProntos = "UPDATE pressaopedidos SET locaocapilarminoxidil=:parametroexipientes WHERE 1=1";
 				break;
+				case 'pronto':
+					
+				break;
 			}			
 			$editaPreProntos = $con->prepare($sqlEditaPreProntos);
 			$editaPreProntos->bindParam(':parametroexipientes', $parametroexipientes);
@@ -280,7 +283,7 @@
 			}
 		}
 		function nivelDePressaoEpedidos($con, $listadedados){
-			$sqlBuscaPressaoPedidos = "SELECT nivel, pastaazul, pomerode, brusque FROM pressaopedidos WHERE 1=1";
+			$sqlBuscaPressaoPedidos = "SELECT nivel, pastaazul, pomerode, brusque, excipiente, cremenaoionico, basegelanastrozol, tacrolimus, basesabonete, baseshampooperolado, cremepsoriaseaguda, fluoretodesodio, descongestionantenasal, locaocapilarminoxidil FROM pressaopedidos WHERE 1=1";			
 			$buscaPressaoPedidos = $con->prepare($sqlBuscaPressaoPedidos);
 			if($buscaPressaoPedidos->execute()){
 				$resultadosPressaoPedidos = $buscaPressaoPedidos->fetchAll(PDO::FETCH_ASSOC);
@@ -288,6 +291,16 @@
 				$listadedados['pastaazul'] = $resultadosPressaoPedidos[0]["pastaazul"];
 				$listadedados['pomerode'] = $resultadosPressaoPedidos[0]["pomerode"];
 				$listadedados['brusque'] = $resultadosPressaoPedidos[0]["brusque"];
+				$listadedados['excipiente'] = $resultadosPressaoPedidos[0]["excipiente"];
+				$listadedados['cremenaoionico'] = $resultadosPressaoPedidos[0]["cremenaoionico"];
+				$listadedados['basegelanastrozol'] = $resultadosPressaoPedidos[0]["basegelanastrozol"];
+				$listadedados['tacrolimus'] = $resultadosPressaoPedidos[0]["tacrolimus"];
+				$listadedados['basesabonete'] = $resultadosPressaoPedidos[0]["basesabonete"];
+				$listadedados['baseshampooperolado'] = $resultadosPressaoPedidos[0]["baseshampooperolado"];
+				$listadedados['cremepsoriaseaguda'] = $resultadosPressaoPedidos[0]["cremepsoriaseaguda"];
+				$listadedados['fluoretodesodio'] = $resultadosPressaoPedidos[0]["fluoretodesodio"];
+				$listadedados['descongestionantenasal'] = $resultadosPressaoPedidos[0]["descongestionantenasal"];
+				$listadedados['locaocapilarminoxidil'] = $resultadosPressaoPedidos[0]["locaocapilarminoxidil"];
 				$this->mostraAvisos($con, $listadedados);
 			}else{
 				echo json_encode("Erro de busca em pressaopedidos");
@@ -448,6 +461,7 @@
 			if(isset($_POST['nvPressao'])){
 				$editadados->editaNivelDePressao($con, $ferramentas, $_POST['nvPressao']);								
 			}
+			// $listadados->solidos($con);
 			if(isset($_POST['atualiza'])){
 				$listadados->solidos($con);
 			}	
