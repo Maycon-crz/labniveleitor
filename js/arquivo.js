@@ -547,6 +547,16 @@ function atualizatudo(){
 						"<p class='m-0 p-0'>Fluoreto De Sódio</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='FluoretoDeSodio' class='finalizaExcipiente'>X</button>";
 				break;
+			}switch(retornado.descongestionantenasal){
+				case "1":					
+					dadosLinhaExipiente += "<button type='button'>"+
+						"<p class='m-0 p-0'>Descongestionante Nasal</p><p class='m-0 p-0'>Acabou</p>"+
+					"</button><button type='button' id='DescongestionanteNasal' class='finalizaExcipiente'>X</button>";
+				break; case "2":
+					dadosLinhaExipiente += "<button type='button'>"+
+						"<p class='m-0 p-0'>Descongestionante Nasal</p><p class='m-0 p-0'>Em Produção</p>"+
+					"</button><button type='button' id='DescongestionanteNasal' class='finalizaExcipiente'>X</button>";
+				break;
 			}
 			$(".mostraDadosExipientes").html(dadosLinhaExipiente);
 			//Avisos
