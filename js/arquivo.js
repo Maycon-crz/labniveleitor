@@ -517,6 +517,16 @@ function atualizatudo(){
 						"<p class='m-0 p-0'>Base Sabonete</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='BaseSabonete' class='2'>X</button>";
 				break;
+			}switch(retornado.baseshampooperolado){
+				case "1":					
+					dadosLinhaExipiente += "<button type='button'>"+
+						"<p class='m-0 p-0'>Base Shampoo Perolado</p><p class='m-0 p-0'>Acabou</p>"+
+					"</button><button type='button' id='BaseShampooPerolado' class='1'>X</button>";
+				break; case "2":
+					dadosLinhaExipiente += "<button type='button'>"+
+						"<p class='m-0 p-0'>Base Shampoo Perolado</p><p class='m-0 p-0'>Em Produção</p>"+
+					"</button><button type='button' id='BaseShampooPerolado' class='2'>X</button>";
+				break;
 			}
 			$(".mostraDadosExipientes").html(dadosLinhaExipiente);
 			//Avisos
