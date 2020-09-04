@@ -879,8 +879,8 @@
 	<div class='objetoPastaAzultres text-success'><button type='button' class='btn btn-success P-0 btmenospastaazul' id=''>OK</button>--3°--<p class='text-center text-danger mt-2'><b>URGENTE!</b></p></div>
 	<div class='objetoPastaAzulquatro text-success'><button type='button' class='btn btn-success P-0 btmenospastaazul' id=''>OK</button>--4°--<p class='text-center text-danger mt-2'><b>URGENTE!</b></p></div>
 	<div class='objetoPastaAzulcinco text-success'><button type='button' class='btn btn-success P-0 btmenospastaazul' id=''>OK</button>--5°--<p class='text-center text-danger mt-2'><b>URGENTE!</b></p></div>
-	<div class='linhaMostraExp'>
-		<table>
+	<div id='linhaMostraExp'>
+		<table class='m-0'>
 			<tr><td>
 				<button type='button' id='btmostraExipientes' class='rounded-circle p-0 m-0 btn'>
 					<img src='img/microscopio.gif'/>

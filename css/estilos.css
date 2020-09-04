@@ -77,7 +77,7 @@ body{
 	color: #8B4513;	
 	font-weight: bold;
 }
-.linhaMostraExp{
+#linhaMostraExp{
 	position: fixed;	
 	top:13%;
 	left:1%;	

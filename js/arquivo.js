@@ -587,13 +587,13 @@ function atualizatudo(){
 						"<p class='m-0 p-0'>Loção Capilar Minoxidil</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='LocaoCapilarMinoxidil' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
-			}
-			if(dadosLinhaExipiente != ""){
-				$("#mostraDadosExipientes").html(dadosLinhaExipiente);
-				$(".linhaMostraExp").css("display", "block");							
-			}else{
-				$(".linhaMostraExp").css("display", "none");
 			}			
+			if(dadosLinhaExipiente != ""){				
+				$("#mostraDadosExipientes").html(dadosLinhaExipiente);
+				$("#linhaMostraExp").css("display", "block");							
+			}else{								
+				$("#linhaMostraExp").css("display", "none");
+			}
 			//Avisos
 			if(retornado.avisosbanco != ""){
 				$("#conteudoLinhaMostraAvisos").html(retornado.avisosbanco);
