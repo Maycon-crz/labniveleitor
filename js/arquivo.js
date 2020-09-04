@@ -507,6 +507,16 @@ function atualizatudo(){
 						"<p class='m-0 p-0'>Tacrolimus</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='Tacrolimus' class='2'>X</button>";
 				break;
+			}switch(retornado.basesabonete){
+				case "1":					
+					dadosLinhaExipiente += "<button type='button'>"+
+						"<p class='m-0 p-0'>Base Sabonete</p><p class='m-0 p-0'>Acabou</p>"+
+					"</button><button type='button' id='BaseSabonete' class='1'>X</button>";
+				break; case "2":
+					dadosLinhaExipiente += "<button type='button'>"+
+						"<p class='m-0 p-0'>Base Sabonete</p><p class='m-0 p-0'>Em Produção</p>"+
+					"</button><button type='button' id='BaseSabonete' class='2'>X</button>";
+				break;
 			}
 			$(".mostraDadosExipientes").html(dadosLinhaExipiente);
 			//Avisos
