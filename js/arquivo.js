@@ -42,7 +42,10 @@ function almoco(){
 	});
 }
 var idbtsPreProntos = "";
-function exipientes(){	
+function exipientes(){
+	$(document).on('click', '#btmostraExipientes', function(){
+		$(".mostraDadosExipientes").toggle();
+	});	
 	$(document).on('click', '.btsPreProntos', function(){
 		idbtsPreProntos = $(this).attr('id');		
 		$("#linha"+idbtsPreProntos).toggle();				
@@ -462,28 +465,52 @@ function atualizatudo(){
 			$('#brusque').val(retornado.brusque);
 
 			//Exipientes
-			var dadosLinhaExipiente = "<button type='button' class='btn btn-danger rounded-circle'>i</button>";
+			var dadosLinhaExipiente = "";
 			switch(retornado.excipiente){
 				case "1":					
-					dadosLinhaExipiente += 
-						"<button type='button'>"+
-							"<p class='m-0 p-0'>Excipiente</p>"+
-							"<p class='m-0 p-0'>Acabou</p>"+
-						"</button>"+
-						"<button type='button' id='excipiente'>X</button>"
-					;
-				break; 
-				case "2":
-					dadosLinhaExipiente += 
-						"<button type='button'>"+
-							"<p class='m-0 p-0'>Excipiente</p>"+
-							"<p class='m-0 p-0'>Em Produção</p>"+
-						"</button>"+
-						"<button type='button' id='excipiente'>X</button>"
-					;
+					dadosLinhaExipiente += "<button type='button'>"+
+						"<p class='m-0 p-0'>Excipiente</p><p class='m-0 p-0'>Acabou</p>"+
+					"</button><button type='button' id='Excipiente' class='1'>X</button>";
+				break; case "2":
+					dadosLinhaExipiente += "<button type='button'>"+
+						"<p class='m-0 p-0'>Excipiente</p><p class='m-0 p-0'>Em Produção</p>"+
+					"</button><button type='button' id='Excipiente' class='2'>X</button>";
 				break;
 			}
-			$(".linhaMostraExp").html(dadosLinhaExipiente);
+			switch(retornado.cremenaoionico){
+				case "1":					
+					dadosLinhaExipiente += "<button type='button'>"+
+						"<p class='m-0 p-0'>Creme não iônico</p><p class='m-0 p-0'>Acabou</p>"+
+					"</button><button type='button' id='CremeNaoIonico' class='1'>X</button>";
+				break; case "2":
+					dadosLinhaExipiente += "<button type='button'>"+
+						"<p class='m-0 p-0'>Creme não iônico</p><p class='m-0 p-0'>Em Produção</p>"+
+					"</button><button type='button' id='CremeNaoIonico' class='2'>X</button>";
+				break;
+			}
+			// switch(retornado.basegelanastrozol){
+			// 	case "1":					
+			// 		dadosLinhaExipiente += "<button type='button'>"+
+			// 			"<p class='m-0 p-0'>Base Gel Anastrozol</p><p class='m-0 p-0'>Acabou</p>"+
+			// 		"</button><button type='button' id='BaseGelAnastrozol' class='1'>X</button>";
+			// 	break; case "2":
+			// 		dadosLinhaExipiente += "<button type='button'>"+
+			// 			"<p class='m-0 p-0'>Base Gel Anastrozol</p><p class='m-0 p-0'>Em Produção</p>"+
+			// 		"</button><button type='button' id='BaseGelAnastrozol' class='2'>X</button>";
+			// 	break;
+			// }
+			// switch(retornado.tacrolimus){
+			// 	case "1":					
+			// 		dadosLinhaExipiente += "<button type='button'>"+
+			// 			"<p class='m-0 p-0'>Tacrolimus</p><p class='m-0 p-0'>Acabou</p>"+
+			// 		"</button><button type='button' id='Tacrolimus' class='1'>X</button>";
+			// 	break; case "2":
+			// 		dadosLinhaExipiente += "<button type='button'>"+
+			// 			"<p class='m-0 p-0'>Tacrolimus</p><p class='m-0 p-0'>Em Produção</p>"+
+			// 		"</button><button type='button' id='Tacrolimus' class='2'>X</button>";
+			// 	break;
+			// }
+			$(".mostraDadosExipientes").html(dadosLinhaExipiente);
 			//Avisos
 			if(retornado.avisosbanco != ""){
 				$("#conteudoLinhaMostraAvisos").html(retornado.avisosbanco);

@@ -880,12 +880,13 @@
 	<div class='objetoPastaAzulquatro text-success'><button type='button' class='btn btn-success P-0 btmenospastaazul' id=''>OK</button>--4°--<p class='text-center text-danger mt-2'><b>URGENTE!</b></p></div>
 	<div class='objetoPastaAzulcinco text-success'><button type='button' class='btn btn-success P-0 btmenospastaazul' id=''>OK</button>--5°--<p class='text-center text-danger mt-2'><b>URGENTE!</b></p></div>
 	<div class='linhaMostraExp'>
-		
-		<!-- <button type='button'>
-			<p class='m-0 p-0'>Exipiente</p>
-			<p class='m-0 p-0'>Emprodução</p>
-		</button>
-		<button type='button'><p class='m-0 p-0'>Creme Não Iônico</p><p class='m-0 p-0'>Emprodução</p></button>		 -->
+		<table>
+			<tr><td>
+				<button type='button' id='btmostraExipientes' class='btn btn-danger rounded-circle'>i</button>
+			</td><td>
+				<div class='mostraDadosExipientes'></div>
+			</td></tr>
+		</table>
 	</div>
 	<div id='linhaMostraAvisos' class='bg-success rounded-circle m-0 p-0'>
 		<table class='m-0'>
