@@ -25,7 +25,13 @@ body{
 	z-index: 10;
 	height: 200px;
 }
-
+#btmostraExipientes, #btmostraExipientes img{
+	width: 80px;
+	height: 60px;
+	border-radius: 50%;
+	margin: 0 !important;
+	padding: 0 !important;
+}
 #linhaMostraAvisos img{
 	width: 68px;
 	height: 80px;
@@ -73,21 +79,18 @@ body{
 }
 .linhaMostraExp{
 	position: fixed;	
-	top:20%;
+	top:13%;
 	left:1%;	
-	opacity: 0.7;
+	opacity: 0.9;
 	background-color: blue;
-	/*transform: rotate(15deg);
-	border: double black;
-	border-width: 4px 4px 4px 1px;*/
-	/*display: none;*/
+	border-radius: 20px;
 }
 .objetoPastaAzulum, .objetoPastaAzuldois, .objetoPastaAzultres, .objetoPastaAzulquatro, .objetoPastaAzulcinco{
 	position: fixed;	
 	background-color: blue;
 	left:1%;
 	width: 100px;
-	height: 100px;	
+	height: 100px;
 	opacity: 0.7;
 	transform: rotate(15deg);
 	border: double black;

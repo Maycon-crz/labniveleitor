@@ -882,7 +882,9 @@
 	<div class='linhaMostraExp'>
 		<table>
 			<tr><td>
-				<button type='button' id='btmostraExipientes' class='btn btn-danger rounded-circle'>i</button>
+				<button type='button' id='btmostraExipientes'>
+					<img src='img/ciencia.gif'/>
+				</button>
 			</td><td>
 				<div class='mostraDadosExipientes'></div>
 			</td></tr>

@@ -468,94 +468,104 @@ function atualizatudo(){
 			var dadosLinhaExipiente = "";
 			switch(retornado.excipiente){
 				case "1":					
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Excipiente</p><p class='m-0 p-0'>Acabou</p>"+
-					"</button><button type='button' id='Excipiente' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='Excipiente' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Excipiente</p><p class='m-0 p-0'>Em Produção</p>"+
-					"</button><button type='button' id='Excipiente' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='Excipiente' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}
 			switch(retornado.cremenaoionico){
 				case "1":					
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Creme não iônico</p><p class='m-0 p-0'>Acabou</p>"+
-					"</button><button type='button' id='CremeNaoIonico' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='CremeNaoIonico' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Creme não iônico</p><p class='m-0 p-0'>Em Produção</p>"+
-					"</button><button type='button' id='CremeNaoIonico' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='CremeNaoIonico' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.basegelanastrozol){
 				case "1":					
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Base Gel Anastrozol</p><p class='m-0 p-0'>Acabou</p>"+
-					"</button><button type='button' id='BaseGelAnastrozol' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='BaseGelAnastrozol' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Base Gel Anastrozol</p><p class='m-0 p-0'>Em Produção</p>"+
-					"</button><button type='button' id='BaseGelAnastrozol' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='BaseGelAnastrozol' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.tacrolimus){
 				case "1":					
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Tacrolimus</p><p class='m-0 p-0'>Acabou</p>"+
-					"</button><button type='button' id='Tacrolimus' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='Tacrolimus' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Tacrolimus</p><p class='m-0 p-0'>Em Produção</p>"+
-					"</button><button type='button' id='Tacrolimus' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='Tacrolimus' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.basesabonete){
 				case "1":					
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Base Sabonete</p><p class='m-0 p-0'>Acabou</p>"+
-					"</button><button type='button' id='BaseSabonete' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='BaseSabonete' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Base Sabonete</p><p class='m-0 p-0'>Em Produção</p>"+
-					"</button><button type='button' id='BaseSabonete' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='BaseSabonete' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.baseshampooperolado){
 				case "1":					
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Base Shampoo Perolado</p><p class='m-0 p-0'>Acabou</p>"+
-					"</button><button type='button' id='BaseShampooPerolado' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='BaseShampooPerolado' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Base Shampoo Perolado</p><p class='m-0 p-0'>Em Produção</p>"+
-					"</button><button type='button' id='BaseShampooPerolado' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='BaseShampooPerolado' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.cremepsoriaseaguda){
 				case "1":					
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Creme Psoriase Aguda</p><p class='m-0 p-0'>Acabou</p>"+
-					"</button><button type='button' id='CremePsoriaseAguda' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='CremePsoriaseAguda' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>CremePsoriaseAguda</p><p class='m-0 p-0'>Em Produção</p>"+
-					"</button><button type='button' id='CremePsoriaseAguda' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='CremePsoriaseAguda' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.fluoretodesodio){
 				case "1":					
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Fluoreto De Sódio</p><p class='m-0 p-0'>Acabou</p>"+
-					"</button><button type='button' id='FluoretoDeSodio' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='FluoretoDeSodio' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Fluoreto De Sódio</p><p class='m-0 p-0'>Em Produção</p>"+
-					"</button><button type='button' id='FluoretoDeSodio' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='FluoretoDeSodio' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.descongestionantenasal){
 				case "1":					
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Descongestionante Nasal</p><p class='m-0 p-0'>Acabou</p>"+
-					"</button><button type='button' id='DescongestionanteNasal' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='DescongestionanteNasal' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
-					dadosLinhaExipiente += "<button type='button'>"+
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Descongestionante Nasal</p><p class='m-0 p-0'>Em Produção</p>"+
-					"</button><button type='button' id='DescongestionanteNasal' class='finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='DescongestionanteNasal' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break;
+			}switch(retornado.locaocapilarminoxidil){
+				case "1":					
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
+						"<p class='m-0 p-0'>Loção Capilar Minoxidil</p><p class='m-0 p-0'>Acabou</p>"+
+					"</button><button type='button' id='LocaoCapilarMinoxidil' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break; case "2":
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
+						"<p class='m-0 p-0'>Loção Capilar Minoxidil</p><p class='m-0 p-0'>Em Produção</p>"+
+					"</button><button type='button' id='LocaoCapilarMinoxidil' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}
 			$(".mostraDadosExipientes").html(dadosLinhaExipiente);
