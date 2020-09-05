@@ -868,8 +868,8 @@
 				<button type='button' class='btsPreProntos mt-2' id='Almoco'>Almoço</button>
 			</li><li>
 				<div class='linhaPreProntos' id='linhaAlmoco'>
-					<button type='button' class='almocando form-control btn btn-secondary' id='galeraSolidos'>Sólidos</button>
-					<button type='button' class='almocando form-control btn btn-primary' id='galeraSemiSolidos'>Semi-sólidos</button>
+					<button type='button' class='btsFaltaProducao form-control btn btn-secondary' id='acabou'>Sólidos</button>
+					<button type='button' class='btsFaltaProducao form-control btn btn-primary' id='producao'>Semi-sólidos</button>
 				</div>
 			</li>
 		</ul>	

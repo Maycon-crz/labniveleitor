@@ -41,7 +41,6 @@ function almoco(){
 		});		
 	});
 }
-var idbtsPreProntos = "";
 function exipientes(){
 	//Menu microscopio
 	$(document).on('click', '.finalizaExcipiente', function(){
@@ -55,9 +54,6 @@ function exipientes(){
 				success: function(retornado){
 					alert(retornado);				
 					atualizatudo();
-					// if(retornado === "Alerta foi configurado!"){
-					// 	carregar();
-					// }
 				}
 			});
 		}
@@ -587,13 +583,23 @@ function atualizatudo(){
 						"<p class='m-0 p-0'>Loção Capilar Minoxidil</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='LocaoCapilarMinoxidil' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
+			}switch(retornado.almoco){
+				case "1":
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
+						"Turma dos Sólidos no Almoço!"+
+					"</button><button type='button' id='Almoco' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break; case "2":
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
+						"Turma dos Semi-Sólidos! no Almoço"+
+					"</button><button type='button' id='Almoco' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break;
 			}			
 			if(dadosLinhaExipiente != ""){				
 				$("#mostraDadosExipientes").html(dadosLinhaExipiente);
 				$("#linhaMostraExp").css("display", "block");							
 			}else{								
 				$("#linhaMostraExp").css("display", "none");
-			}
+			}					
 			//Avisos
 			if(retornado.avisosbanco != ""){
 				$("#conteudoLinhaMostraAvisos").html(retornado.avisosbanco);
