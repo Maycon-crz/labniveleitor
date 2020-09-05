@@ -1,5 +1,4 @@
-$(document).ready(function(){
-	almoco();
+$(document).ready(function(){	
 	exipientes();
 	avisos();
 	pastaAzul();
@@ -15,32 +14,6 @@ $(document).ready(function(){
 	cadastroDeFuncionarios();
 	login();	
 });
-function almoco(){
-	$(document).on('click', '.almocando', function(){
-		var idalmocando = $(this).attr('id');
-		var parametroalmocando=0;
-		switch(idalmocando){
-			case 'galeraSolidos':
-				parametroalmocando=1;
-			break;
-			case 'galeraSemiSolidos':
-				parametroalmocando=2
-			break;
-			case 'zero':			
-				parametroalmocando=0;
-			break;
-		}
-		$.ajax({
-			url: 'confg.php',
-			type: 'post',
-			data: {'parametroalmocando': parametroalmocando},
-			dataType: 'json',
-			success: function(retornado){
-				alert(retornado);				
-			}
-		});		
-	});
-}
 function exipientes(){
 	//Menu microscopio
 	$(document).on('click', '.finalizaExcipiente', function(){
@@ -68,6 +41,7 @@ function exipientes(){
 	});
 	$(document).on('click', '.btsFaltaProducao', function(){
 		var idbtsFaltaProducao = $(this).attr('id');
+		$("#linha"+idbtsPreProntos).toggle();
 		var parametroexipientes = 0;
 		switch(idbtsFaltaProducao){
 			case 'acabou':
@@ -482,12 +456,15 @@ function atualizatudo(){
 
 			//Exipientes
 			var dadosLinhaExipiente = "";
+			var qtdExps=0;
 			switch(retornado.excipiente){
 				case "1":					
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Excipiente</p><p class='m-0 p-0'>Acabou</p>"+
 					"</button><button type='button' id='Excipiente' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Excipiente</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='Excipiente' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
@@ -495,113 +472,135 @@ function atualizatudo(){
 			}
 			switch(retornado.cremenaoionico){
 				case "1":					
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Creme não iônico</p><p class='m-0 p-0'>Acabou</p>"+
 					"</button><button type='button' id='CremeNaoIonico' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Creme não iônico</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='CremeNaoIonico' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.basegelanastrozol){
 				case "1":					
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Base Gel Anastrozol</p><p class='m-0 p-0'>Acabou</p>"+
 					"</button><button type='button' id='BaseGelAnastrozol' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Base Gel Anastrozol</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='BaseGelAnastrozol' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.tacrolimus){
 				case "1":					
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Tacrolimus</p><p class='m-0 p-0'>Acabou</p>"+
 					"</button><button type='button' id='Tacrolimus' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Tacrolimus</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='Tacrolimus' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.basesabonete){
 				case "1":					
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Base Sabonete</p><p class='m-0 p-0'>Acabou</p>"+
 					"</button><button type='button' id='BaseSabonete' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Base Sabonete</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='BaseSabonete' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.baseshampooperolado){
 				case "1":					
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Base Shampoo Perolado</p><p class='m-0 p-0'>Acabou</p>"+
 					"</button><button type='button' id='BaseShampooPerolado' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Base Shampoo Perolado</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='BaseShampooPerolado' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.cremepsoriaseaguda){
 				case "1":					
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Creme Psoriase Aguda</p><p class='m-0 p-0'>Acabou</p>"+
 					"</button><button type='button' id='CremePsoriaseAguda' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>CremePsoriaseAguda</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='CremePsoriaseAguda' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.fluoretodesodio){
 				case "1":					
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Fluoreto De Sódio</p><p class='m-0 p-0'>Acabou</p>"+
 					"</button><button type='button' id='FluoretoDeSodio' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Fluoreto De Sódio</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='FluoretoDeSodio' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.descongestionantenasal){
 				case "1":					
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Descongestionante Nasal</p><p class='m-0 p-0'>Acabou</p>"+
 					"</button><button type='button' id='DescongestionanteNasal' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Descongestionante Nasal</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='DescongestionanteNasal' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.locaocapilarminoxidil){
 				case "1":					
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Loção Capilar Minoxidil</p><p class='m-0 p-0'>Acabou</p>"+
 					"</button><button type='button' id='LocaoCapilarMinoxidil' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Loção Capilar Minoxidil</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='LocaoCapilarMinoxidil' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.almoco){
 				case "1":
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"Turma dos Sólidos no Almoço!"+
 					"</button><button type='button' id='Almoco' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
+					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
-						"Turma dos Semi-Sólidos! no Almoço"+
+						"Turma dos Semi-Sólidos! no Almoço!"+
 					"</button><button type='button' id='Almoco' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}			
-			if(dadosLinhaExipiente != ""){				
+			if(dadosLinhaExipiente != ""){	
+				$("#qtdExipientes").html(qtdExps);
 				$("#mostraDadosExipientes").html(dadosLinhaExipiente);
 				$("#linhaMostraExp").css("display", "block");							
 			}else{								
 				$("#linhaMostraExp").css("display", "none");
 			}					
 			//Avisos
-			if(retornado.avisosbanco != ""){
+			if(retornado.avisosbanco != ""){				
+				$("#linhaqtdavisos").html(retornado.qtdavisos);
 				$("#conteudoLinhaMostraAvisos").html(retornado.avisosbanco);
 				$("#linhaMostraAvisos").css("display", "block");
 			}else{

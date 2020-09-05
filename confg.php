@@ -42,10 +42,6 @@
 		}
 	}
 	class editadados{
-		function almocando($con, $ferramentas, $parametroalmocando){
-			$parametroalmocando = $ferramentas->filtrando($parametroalmocando);
-			echo json_encode("Funcao chamada operação: ".$parametroalmocando);
-		}
 		function editaPreProntos($con, $ferramentas, $idbtsPreProntos, $parametroexipientes){			
 			$idbtsPreProntos = $ferramentas->filtrando($idbtsPreProntos);
 			$parametroexipientes = $ferramentas->filtrando($parametroexipientes);
@@ -122,7 +118,7 @@
 				echo json_encode("Erro ao atualizar o pedido!");
 			}
 		}
-		function editaQTDformulasSolidos($con, $ferramentas, $valor, $nomehorariodb, $tipoTbHora, $cor){
+		function editaQTDformulas($con, $ferramentas, $valor, $nomehorariodb, $tipoTbHora, $cor){
 			$valor = $ferramentas->filtrando($valor); $nomehorariodb = $ferramentas->filtrando($nomehorariodb);
 			$tipoTbHora = $ferramentas->filtrando($tipoTbHora); $cor = $ferramentas->filtrando($cor);
 			switch($tipoTbHora){
@@ -318,10 +314,11 @@
 				foreach($msgAvisos as $msgAvisosDB){
 					$qtdavisos++;					
 					$avisosDB .= "<div class='border border-danger'>						
-						<p class='p-0 m-0'>".$msgAvisosDB['horario']."</p><h2 class='p-0 m-0'>".$msgAvisosDB['nome'].": </h2>						
+						<p class='p-0 m-0'>".$msgAvisosDB['horario']."</p><h2 class='p-0 m-0'>".$msgAvisosDB['nome'].": ".$qtdavisos."</h2>						
 						<h5 class='p-0 m-0 text-danger'>".$msgAvisosDB['msg']."<img src='img/lixeiraum.gif' class='lixeiraum' id='".$msgAvisosDB['id']."'/></h5>			
 					</div>";
 				}				
+				$listadedados['qtdavisos'] = $qtdavisos;
 				$listadedados['avisosbanco'] = $avisosDB;
 			}
 			echo json_encode($listadedados);
@@ -381,7 +378,7 @@
 			if(!empty($nome)){
 				$nome = strtolower($ferramentas->filtrando($nome));
 				$senha = $ferramentas->filtrando($senha);
-				$sqlNomeLogin = "SELECT nome, senha FROM usuarios WHERE nome=:nomeLogin";
+				$sqlNomeLogin = "SELECT nome, senha, nivel FROM usuarios WHERE nome=:nomeLogin";
 				$nomeLogin = $con->prepare($sqlNomeLogin);
 				$nomeLogin->bindParam(":nomeLogin", $nome);
 				if($nomeLogin->execute()){
@@ -395,6 +392,8 @@
 							if(password_verify($senha, $retornado['senha'])){	
 								session_start();
 								$_SESSION['logado'] = "sim";
+								$_SESSION['nome'] = "{---".$retornado['nome']."---}";
+								$_SESSION['nivel'] = $retornado['nivel'];
 								echo json_encode("Senha Correta");
 							}else{
 								echo json_encode("Senha incorreta");
@@ -416,7 +415,10 @@
 	class ferramentas{
 		function sair(){
 			session_start();
-			$_SESSION['logado'] = "nao";
+			session_unset();
+			session_destroy();
+			session_start();
+			$_SESSION['logado'] = "nao";		
 			echo json_encode("saiu");
 		}
 		function filtrando($dados){
@@ -427,7 +429,7 @@
 		}
 	}
 	class inicia{
-		function iniciando(){			
+		function iniciando(){				
 			$banco = new banco;
 			$con = $banco->conexao();
 			
@@ -439,13 +441,16 @@
 			$ferramentas = new ferramentas;
 
 			if(isset($_POST['idfinalizaexcipiente'])){
-				$editadados->editaPreProntos($con, $ferramentas, $_POST['idfinalizaexcipiente'], 0);				
-			}
-			if(isset($_POST['parametroalmocando'])){
-				$editadados->almocando($con, $ferramentas, $_POST['parametroalmocando']);				
+				session_start(); 
+				if($_SESSION['nivel'] === "1"){
+					$editadados->editaPreProntos($con, $ferramentas, $_POST['idfinalizaexcipiente'], 0);
+				}else{echo json_encode("Função restrita ao laboratório!");}		
 			}
 			if(isset($_POST['idbtsPreProntos']) || isset($_POST['parametroexipientes'])){
-				$editadados->editaPreProntos($con, $ferramentas, $_POST['idbtsPreProntos'], $_POST['parametroexipientes']);
+				session_start(); 
+				if($_SESSION['nivel'] === "1"){
+					$editadados->editaPreProntos($con, $ferramentas, $_POST['idbtsPreProntos'], $_POST['parametroexipientes']);
+				}else{echo json_encode("Função restrita ao laboratório!");}
 			}
 			if(isset($_POST['idlixeira'])){
 				$avisos->excluiAviso($con, $ferramentas, $_POST['idlixeira']);
@@ -456,14 +461,23 @@
 			if(isset($_POST['valorPastaAzul'])){				
 				$editadados->editaValorPastaAzul($con, $ferramentas, $_POST['valorPastaAzul']);
 			}
-			if(isset($_POST['editapedidosnomefilial'])){				
-				$editadados->editapedidos($con, $ferramentas, $_POST['editapedidosnomefilial'], $_POST['editapedidosqtdpedidos']);
+			if(isset($_POST['editapedidosnomefilial'])){
+				session_start(); 
+				if($_SESSION['nivel'] === "1"){				
+					$editadados->editapedidos($con, $ferramentas, $_POST['editapedidosnomefilial'], $_POST['editapedidosqtdpedidos']);
+				}else{echo json_encode("Função restrita ao laboratório!");}
 			}
-			if(isset($_POST['valor'])){				
-				$editadados->editaQTDformulasSolidos($con, $ferramentas, $_POST['valor'], $_POST['nomehorariodb'], $_POST['tipoTbHora'], $_POST['cor']);
+			if(isset($_POST['valor'])){
+				session_start(); 
+				if($_SESSION['nivel'] === "1"){	
+					$editadados->editaQTDformulas($con, $ferramentas, $_POST['valor'], $_POST['nomehorariodb'], $_POST['tipoTbHora'], $_POST['cor']);
+				}else{echo json_encode("Função restrita ao laboratório!");}
 			}
 			if(isset($_POST['nvPressao'])){
-				$editadados->editaNivelDePressao($con, $ferramentas, $_POST['nvPressao']);								
+				session_start(); 
+				if($_SESSION['nivel'] === "1"){
+					$editadados->editaNivelDePressao($con, $ferramentas, $_POST['nvPressao']);
+				}else{echo json_encode("Função restrita ao laboratório!");}								
 			}
 			// $listadados->solidos($con);
 			if(isset($_POST['atualiza'])){

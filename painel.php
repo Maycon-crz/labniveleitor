@@ -887,15 +887,18 @@
 				</button>
 			</td><td>
 				<div id='mostraDadosExipientes'></div>
+			</td><td>
+				<span id='qtdExipientes' class='text-warning m-0 p-0'></span>
 			</td></tr>
 		</table>
 	</div>
 	<div id='linhaMostraAvisos' class='bg-success rounded-circle m-0 p-0'>
 		<table class='m-0'>
-			<tr>
-				<td>
-					<button type='button' class='rounded-circle p-0 m-0 btn btn-info' id='btmostraAvisos'>
-						<img src="img/radiocapsula.gif"/>
+			<tr>				
+				<td>					
+					<button type='button' class='rounded-circle pt-4 m-0 btn btn-success' id='btmostraAvisos'></p>
+						<p><span id='linhaqtdavisos' class='text-warning rounded-circle m-0 btn btn-danger'></span>
+						<p><img src="img/radiocapsula.gif"/></p>
 					</button>
 				</td><td>
 					<div id='conteudoLinhaMostraAvisos' class='bg-success p-0 m-0'></div>

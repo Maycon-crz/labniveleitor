@@ -18,19 +18,28 @@ body{
 #linhaDeCadFunc, .linhaPreProntos, #mostraDadosExipientes{
 	display: none;
 }
+#linhaMostraExp{
+	position: fixed;	
+	top:13%;
+	/*left:0.5%;	*/
+	opacity: 0.9;
+	background-color: blue;
+	border-radius: 20px;
+	display: none;
+}
+#btmostraExipientes, #btmostraExipientes img{
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	margin: 0 !important;
+	padding: 0 !important;	
+}
 #linhaMostraAvisos{
 	display: none;
 	position: fixed;	
 	top:67%;
 	z-index: 10;
 	height: 200px;
-}
-#btmostraExipientes, #btmostraExipientes img{
-	width: 90px;
-	height: 80px;
-	border-radius: 50%;
-	margin: 0 !important;
-	padding: 0 !important;	
 }
 #linhaMostraAvisos img{
 	width: 68px;
@@ -76,15 +85,6 @@ body{
 .corhorarios{
 	color: #8B4513;	
 	font-weight: bold;
-}
-#linhaMostraExp{
-	position: fixed;	
-	top:13%;
-	left:1%;	
-	opacity: 0.9;
-	background-color: blue;
-	border-radius: 20px;
-	display: none;
 }
 .objetoPastaAzulum, .objetoPastaAzuldois, .objetoPastaAzultres, .objetoPastaAzulquatro, .objetoPastaAzulcinco{
 	position: fixed;	
