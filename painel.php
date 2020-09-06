@@ -685,12 +685,18 @@
 		</div>
 		<div class='row linhaPedidosPomerode' id='pedidos'>
 			<div class='col-12 border border-success mt-5'>
-				<h1>Iten(s):<input type="text" name='' size='4' class='text-center pegapedidos' id='pomerode'/><-Pedidos de Pomerode</h1>
+				<h1>
+					Iten(s):<input type="text" name='' size='4' class='text-center pegapedidos' id='pomerode'/>
+					<-Pedidos de Pomerode <button type='button' value='pomerode' class='pedidosProntos btn btn-success'>Pronto</button>
+				</h1>					
 			</div>
 		</div>
 		<div class='row linhaPedidosBrusque'>
 			<div class='col-12 border border-success'>
-				<h1>Iten(s):<input type="text" name='' size='4' class='text-center pegapedidos' id='brusque'/><-Pedidos de Brusque</h1>
+				<h1>
+					Iten(s):<input type="text" name='' size='4' class='text-center pegapedidos' id='brusque'/>
+					<-Pedidos de Brusque <button type='button' value='brusque' class='pedidosProntos btn btn-success'>Pronto</button>
+				</h1>
 			</div>
 		</div>
 		<div class='row'>

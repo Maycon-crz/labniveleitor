@@ -1,5 +1,5 @@
 $(document).ready(function(){	
-	exipientes();
+	exipientes();	
 	avisos();
 	pastaAzul();
 	menufixo();
@@ -146,6 +146,23 @@ function menufixo(){
 	});
 }
 function pegaPedidosDasFiliais(){
+	$(document).on('click', '.pedidosProntos', function(){
+		var idpedidosProntos = $(this).val();
+		var inputnomemensageiro = "LabNíveLeitor";
+		var inputaviso = "Pedido de "+idpedidosProntos+" está pronto!";				
+		$.ajax({
+			url: 'confg.php',
+			type: 'post',
+			data: {
+				'inputnomemensageiro': inputnomemensageiro,
+				'inputaviso': inputaviso
+			},
+			dataType: 'json',
+			success: function(retorno){
+				alert(retorno);				
+			}
+		});
+	});
 	$('.pegapedidos').keyup(function() {
 		var editapedidosnomefilial = $(this).attr('id');
 		var editapedidosqtdpedidos = $(this).val();

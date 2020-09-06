@@ -314,7 +314,7 @@
 				foreach($msgAvisos as $msgAvisosDB){
 					$qtdavisos++;					
 					$avisosDB .= "<div class='border border-danger'>						
-						<p class='p-0 m-0'>".$msgAvisosDB['horario']."</p><h2 class='p-0 m-0'>".$msgAvisosDB['nome'].": ".$qtdavisos."</h2>						
+						<p class='p-0 m-0'>".$msgAvisosDB['horario']."</p><h2 class='p-0 m-0'>".$msgAvisosDB['nome'].":</h2>						
 						<h5 class='p-0 m-0 text-danger'>".$msgAvisosDB['msg']."<img src='img/lixeiraum.gif' class='lixeiraum' id='".$msgAvisosDB['id']."'/></h5>			
 					</div>";
 				}				
