@@ -478,7 +478,7 @@ function atualizatudo(){
 				case "1":					
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
-						"<p class='m-0 p-0'>Excipiente</p><p class='m-0 p-0'>Acabou</p>"+
+						"<p class='m-0 p-0'>Excipiente</p><p class='m-0 p-0'>Acabando</p>"+
 					"</button><button type='button' id='Excipiente' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
 					qtdExps++;
@@ -491,7 +491,7 @@ function atualizatudo(){
 				case "1":					
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
-						"<p class='m-0 p-0'>Creme não iônico</p><p class='m-0 p-0'>Acabou</p>"+
+						"<p class='m-0 p-0'>Creme não iônico</p><p class='m-0 p-0'>Acabando</p>"+
 					"</button><button type='button' id='CremeNaoIonico' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
 					qtdExps++;
@@ -503,7 +503,7 @@ function atualizatudo(){
 				case "1":					
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
-						"<p class='m-0 p-0'>Base Gel Anastrozol</p><p class='m-0 p-0'>Acabou</p>"+
+						"<p class='m-0 p-0'>Base Gel Anastrozol</p><p class='m-0 p-0'>Acabando</p>"+
 					"</button><button type='button' id='BaseGelAnastrozol' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
 					qtdExps++;
@@ -515,7 +515,7 @@ function atualizatudo(){
 				case "1":					
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
-						"<p class='m-0 p-0'>Tacrolimus</p><p class='m-0 p-0'>Acabou</p>"+
+						"<p class='m-0 p-0'>Tacrolimus</p><p class='m-0 p-0'>Acabando</p>"+
 					"</button><button type='button' id='Tacrolimus' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
 					qtdExps++;
@@ -527,7 +527,7 @@ function atualizatudo(){
 				case "1":					
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
-						"<p class='m-0 p-0'>Base Sabonete</p><p class='m-0 p-0'>Acabou</p>"+
+						"<p class='m-0 p-0'>Base Sabonete</p><p class='m-0 p-0'>Acabando</p>"+
 					"</button><button type='button' id='BaseSabonete' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
 					qtdExps++;
@@ -539,7 +539,7 @@ function atualizatudo(){
 				case "1":					
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
-						"<p class='m-0 p-0'>Base Shampoo Perolado</p><p class='m-0 p-0'>Acabou</p>"+
+						"<p class='m-0 p-0'>Base Shampoo Perolado</p><p class='m-0 p-0'>Acabando</p>"+
 					"</button><button type='button' id='BaseShampooPerolado' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
 					qtdExps++;
@@ -551,7 +551,7 @@ function atualizatudo(){
 				case "1":					
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
-						"<p class='m-0 p-0'>Creme Psoriase Aguda</p><p class='m-0 p-0'>Acabou</p>"+
+						"<p class='m-0 p-0'>Creme Psoriase Aguda</p><p class='m-0 p-0'>Acabando</p>"+
 					"</button><button type='button' id='CremePsoriaseAguda' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
 					qtdExps++;
@@ -563,7 +563,7 @@ function atualizatudo(){
 				case "1":					
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
-						"<p class='m-0 p-0'>Fluoreto De Sódio</p><p class='m-0 p-0'>Acabou</p>"+
+						"<p class='m-0 p-0'>Fluoreto De Sódio</p><p class='m-0 p-0'>Acabando</p>"+
 					"</button><button type='button' id='FluoretoDeSodio' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
 					qtdExps++;
@@ -575,7 +575,7 @@ function atualizatudo(){
 				case "1":					
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
-						"<p class='m-0 p-0'>Descongestionante Nasal</p><p class='m-0 p-0'>Acabou</p>"+
+						"<p class='m-0 p-0'>Descongestionante Nasal</p><p class='m-0 p-0'>Acabando</p>"+
 					"</button><button type='button' id='DescongestionanteNasal' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
 					qtdExps++;
@@ -587,7 +587,7 @@ function atualizatudo(){
 				case "1":					
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
-						"<p class='m-0 p-0'>Loção Capilar Minoxidil</p><p class='m-0 p-0'>Acabou</p>"+
+						"<p class='m-0 p-0'>Loção Capilar Minoxidil</p><p class='m-0 p-0'>Acabando</p>"+
 					"</button><button type='button' id='LocaoCapilarMinoxidil' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
 					qtdExps++;

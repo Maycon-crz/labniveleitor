@@ -804,70 +804,70 @@
 				<button type='button' class='btsPreProntos mt-2' id='Excipiente'>Excipiente</button>
 			</li><li>
 				<div class='linhaPreProntos' id='linhaExcipiente'>
-					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabou</button>
+					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabando</button>
 					<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 				</div>
 			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='CremeNaoIonico'>Creme Não Iônico</button>
 			</li><li>
 				<div class='linhaPreProntos' id='linhaCremeNaoIonico'>
-					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabou</button>
+					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabando</button>
 					<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 				</div>
 			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='BaseGelAnastrozol'>Base Gel Anastrozol</button>
 			</li><li>
 				<div class='linhaPreProntos' id='linhaBaseGelAnastrozol'>
-					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabou</button>
+					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabando</button>
 					<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 				</div>
 			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='Tacrolimus'>Tacrolimus</button>
 			</li><li>
 				<div class='linhaPreProntos' id='linhaTacrolimus'>
-					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabou</button>
+					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabando</button>
 					<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 				</div>
 			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='BaseSabonete'>Base<br/>Sabonete</button>
 			</li><li>
 				<div class='linhaPreProntos' id='linhaBaseSabonete'>
-					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabou</button>
+					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabando</button>
 					<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 				</div>
 			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='BaseShampooPerolado'>Base<br/>Shampoo<br/>Perolado</button>
 			</li><li>
 				<div class='linhaPreProntos' id='linhaBaseShampooPerolado'>
-					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabou</button>
+					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabando</button>
 					<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 				</div>
 			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='CremePsoriaseAguda'>Creme<br/>Psoriase<br/>Aguda</button>
 			</li><li>
 				<div class='linhaPreProntos' id='linhaCremePsoriaseAguda'>
-					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabou</button>
+					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabando</button>
 					<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 				</div>
 			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='FluoretoDeSodio'>Fluoreto<br/>de<br/>sódio</button>
 			</li><li>
 				<div class='linhaPreProntos' id='linhaFluoretoDeSodio'>
-					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabou</button>
+					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabando</button>
 					<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 				</div>
 			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='DescongestionanteNasal'>Descongestionante<br/>Nasal</button>
 			</li><li>
 				<div class='linhaPreProntos' id='linhaDescongestionanteNasal'>
-					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabou</button>
+					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabando</button>
 					<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 				</div>
 			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='LocaoCapilarMinoxidil'>Loção<br/>capilar<br/>Minoxidil</button>
 			</li><li>
 				<div class='linhaPreProntos' id='linhaLocaoCapilarMinoxidil'>
-					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabou</button>
+					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabando</button>
 					<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 				</div>
 			</li><li>
