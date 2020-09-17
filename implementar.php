@@ -8,3 +8,5 @@ nivel 2 para laboratorio;
 permite fazer algumas modificacoes!!!
 
 - Ver código do farm de respostas prontas e tentar embutir no labniveleitor
+
+-Zerar o pedido da filial quando clicar em pronto

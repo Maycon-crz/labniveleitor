@@ -147,15 +147,19 @@ function menufixo(){
 }
 function pegaPedidosDasFiliais(){
 	$(document).on('click', '.pedidosProntos', function(){
+		//Chamando 2 funções no php
 		var idpedidosProntos = $(this).val();
 		var inputnomemensageiro = "LabNíveLeitor";
 		var inputaviso = "Pedido de "+idpedidosProntos+" está pronto!";				
+		var editapedidosqtdpedidos = 0;
 		$.ajax({
 			url: 'confg.php',
 			type: 'post',
 			data: {
 				'inputnomemensageiro': inputnomemensageiro,
-				'inputaviso': inputaviso
+				'inputaviso': inputaviso,
+				"editapedidosnomefilial": idpedidosProntos,
+				"editapedidosqtdpedidos": editapedidosqtdpedidos
 			},
 			dataType: 'json',
 			success: function(retorno){
