@@ -606,6 +606,30 @@ function atualizatudo(){
 						"<p class='m-0 p-0'>Loção Capilar Minoxidil</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='LocaoCapilarMinoxidil' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
+			}switch(retornado.anastrozoldiluido){
+				case "1":					
+					qtdExps++;
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
+						"<p class='m-0 p-0'>anastrozoldiluido</p><p class='m-0 p-0'>Acabando</p>"+
+					"</button><button type='button' id='anastrozoldiluido' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break; case "2":
+					qtdExps++;
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
+						"<p class='m-0 p-0'>anastrozoldiluido</p><p class='m-0 p-0'>Em Produção</p>"+
+					"</button><button type='button' id='anastrozoldiluido' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break;
+			}switch(retornado.metilcobalaminadiluida){
+				case "1":					
+					qtdExps++;
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
+						"<p class='m-0 p-0'>metilcobalaminadiluida</p><p class='m-0 p-0'>Acabando</p>"+
+					"</button><button type='button' id='LocaoCapilarMinoxidil' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break; case "2":
+					qtdExps++;
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
+						"<p class='m-0 p-0'>metilcobalaminadiluida</p><p class='m-0 p-0'>Em Produção</p>"+
+					"</button><button type='button' id='LocaoCapilarMinoxidil' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break;
 			}switch(retornado.almoco){
 				case "1":
 					qtdExps++;

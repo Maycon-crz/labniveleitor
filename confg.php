@@ -76,6 +76,12 @@
 				case "LocaoCapilarMinoxidil":
 					$sqlEditaPreProntos = "UPDATE pressaopedidos SET locaocapilarminoxidil=:parametroexipientes WHERE 1=1";
 				break;
+				case "AnastrozolDiluido":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET anastrozoldiluido=:parametroexipientes WHERE 1=1";
+				break;
+				case "MetilcobalaminaDiluida":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilcobalaminadiluida=:parametroexipientes WHERE 1=1";
+				break;				
 				case "Almoco":
 					$sqlEditaPreProntos = "UPDATE pressaopedidos SET almoco=:parametroexipientes WHERE 1=1";
 				break;
