@@ -285,7 +285,7 @@
 			}
 		}
 		function nivelDePressaoEpedidos($con, $listadedados){
-			$sqlBuscaPressaoPedidos = "SELECT nivel, pastaazul, pomerode, brusque, excipiente, cremenaoionico, basegelanastrozol, tacrolimus, basesabonete, baseshampooperolado, cremepsoriaseaguda, fluoretodesodio, descongestionantenasal, locaocapilarminoxidil, almoco FROM pressaopedidos WHERE 1=1";
+			$sqlBuscaPressaoPedidos = "SELECT nivel, pastaazul, pomerode, brusque, excipiente, cremenaoionico, basegelanastrozol, tacrolimus, basesabonete, baseshampooperolado, cremepsoriaseaguda, fluoretodesodio, descongestionantenasal, locaocapilarminoxidil, anastrozoldiluido, metilcobalaminadiluida, almoco FROM pressaopedidos WHERE 1=1";
 			$buscaPressaoPedidos = $con->prepare($sqlBuscaPressaoPedidos);
 			if($buscaPressaoPedidos->execute()){
 				$resultadosPressaoPedidos = $buscaPressaoPedidos->fetchAll(PDO::FETCH_ASSOC);
@@ -303,6 +303,8 @@
 				$listadedados['fluoretodesodio'] = $resultadosPressaoPedidos[0]["fluoretodesodio"];
 				$listadedados['descongestionantenasal'] = $resultadosPressaoPedidos[0]["descongestionantenasal"];
 				$listadedados['locaocapilarminoxidil'] = $resultadosPressaoPedidos[0]["locaocapilarminoxidil"];
+				$listadedados['anastrozoldiluido'] = $resultadosPressaoPedidos[0]["anastrozoldiluido"];
+				$listadedados['metilcobalaminadiluida'] = $resultadosPressaoPedidos[0]["metilcobalaminadiluida"];
 				$listadedados['almoco'] = $resultadosPressaoPedidos[0]["almoco"];
 				$this->mostraAvisos($con, $listadedados);
 			}else{
