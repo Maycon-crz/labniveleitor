@@ -871,6 +871,20 @@
 					<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 				</div>
 			</li><li>
+				<button type='button' class='btsPreProntos mt-2' id='AnastrozolDiluido'>Anastrozol Diluído</button>
+			</li><li>
+				<div class='linhaPreProntos' id='linhaAnastrozolDiluido'>
+					<button type='button' class='btsFaltaProducao form-control btn btn-secondary' id='acabou'>Acabando</button>
+					<button type='button' class='btsFaltaProducao form-control btn btn-primary' id='producao'>Produção</button>
+				</div>
+			</li><li>
+				<button type='button' class='btsPreProntos mt-2' id='MetilcobalaminaDiluida'>Metilcobalamina Diluída</button>
+			</li><li>
+				<div class='linhaPreProntos' id='linhaMetilcobalaminaDiluida'>
+					<button type='button' class='btsFaltaProducao form-control btn btn-secondary' id='acabou'>Acabando</button>
+					<button type='button' class='btsFaltaProducao form-control btn btn-primary' id='producao'>Produção</button>
+				</div>
+			</li><li>
 				<button type='button' class='btsPreProntos mt-2' id='Almoco'>Almoço</button>
 			</li><li>
 				<div class='linhaPreProntos' id='linhaAlmoco'>
