@@ -27,6 +27,7 @@
 	--->Homologação
 
 		-->(29/09/2020)
+			-> Criado linha opções do laboratório com BT Toggle
 			-> Melhorar o layout cortado do menu poção;
 			-> Adicionar mais estas opções no menu poção labniveleitor: 
 			Anastrozol Diluido; Metilcobalamina diluida;

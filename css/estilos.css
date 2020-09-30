@@ -15,7 +15,7 @@ body{
 	margin:0 auto;
     padding:0 auto;    
 }
-#linhaDeCadFunc, .linhaPreProntos, #mostraDadosExipientes{
+#linhaDeCadFunc, .linhaPreProntos, #mostraDadosExipientes, #linhaOpcoesLaboratorio{
 	display: none;
 }
 #linhaMostraExp{
@@ -158,7 +158,7 @@ body{
   border: 3px solid var(--scrollbarBG);
 }
 
-.btsMenuFixo, .btsPreProntos, .linhaPreProntos, .btsPreProntos{
+.btsMenuFixo, .btsPreProntos, .linhaPreProntos, #btOpcoesLaboratorio{
 	background-color: hsla(120, 80%, 35%, 0.9);
 	color: #8B4513;		
 	font-weight: bold;

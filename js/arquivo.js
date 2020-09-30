@@ -1,4 +1,5 @@
-$(document).ready(function(){	
+$(document).ready(function(){
+	opcoesLaboratorios();
 	exipientes();	
 	avisos();
 	pastaAzul();
@@ -12,8 +13,14 @@ $(document).ready(function(){
 	chamaAtualizacao();
 	sair();
 	cadastroDeFuncionarios();
-	login();	
+	login();
 });
+function opcoesLaboratorios(){
+	//Abre/Fecha Botões do laboratório menu poções
+	$(document).on('click', '#btOpcoesLaboratorio', function(){
+		$("#linhaOpcoesLaboratorio").toggle();
+	});
+}
 function exipientes(){
 	//Menu microscopio
 	$(document).on('click', '.finalizaExcipiente', function(){
