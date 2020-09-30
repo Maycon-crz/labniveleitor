@@ -808,14 +808,14 @@
 					<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 				</div>
 			</li><li>
-				<button type='button' class='btsPreProntos mt-2' id='CremeNaoIonico'>Creme Não Iônico</button>
+				<button type='button' class='btsPreProntos mt-2' id='CremeNaoIonico'>Creme<br/>Não<br/>Iônico</button>
 			</li><li>
 				<div class='linhaPreProntos' id='linhaCremeNaoIonico'>
 					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabando</button>
 					<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 				</div>
 			</li><li>
-				<button type='button' class='btsPreProntos mt-2' id='BaseGelAnastrozol'>Base Gel Anastrozol</button>
+				<button type='button' class='btsPreProntos mt-2' id='BaseGelAnastrozol'>Base<br/>Gel<br/>Anastrozol</button>
 			</li><li>
 				<div class='linhaPreProntos' id='linhaBaseGelAnastrozol'>
 					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabando</button>
@@ -857,7 +857,7 @@
 					<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 				</div>
 			</li><li>
-				<button type='button' class='btsPreProntos mt-2' id='DescongestionanteNasal'>Descongestionante<br/>Nasal</button>
+				<button type='button' class='btsPreProntos mt-2' id='DescongestionanteNasal'>Desobstruidor<br/>Nasal</button>
 			</li><li>
 				<div class='linhaPreProntos' id='linhaDescongestionanteNasal'>
 					<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabando</button>
