@@ -704,7 +704,7 @@
 				<form id='formAvisos'>
 					<ul class='ml-5 mr-5 mb-0 mt-0 p-0' id='quadroDeAvisos'>
 						<li><h1 class='text-center text-danger p-5'>Quadro de Avisos</h1></li>
-						<li><input type='text' name='inputnomemensageiro' class='form-control text-center text-primary bg-transparent' id='' placeholder="Nome do Mensageiro"/></li>
+						<li><input type='text' name='inputnomemensageiro' class='form-control text-center text-primary bg-transparent' id='' placeholder="Nome do Mensageiro(a)"/></li>
 						<li><textarea name='inputaviso' class='form-control text-warning bg-transparent pt-5 pb-5' placeholder="Digite aqui um Aviso ou uma mensagem...&#10;Obs:Todos usuários logados podem ver!"></textarea></li>
 						<li><button type='submit' class='form-control text-success btn btn-transparent'>ENVIAR AVISO</button></li>
 					</ul>

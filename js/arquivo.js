@@ -153,12 +153,26 @@ function menufixo(){
 		$("#conteudoMenuFixo").toggle();		
 	});
 }
+function zerapedidos(idpedidosProntos, editapedidosqtdpedidos){
+	$.ajax({
+		url: 'confg.php',
+		type: 'post',
+		data: {			
+			"editapedidosnomefilial": idpedidosProntos,
+			"editapedidosqtdpedidos": editapedidosqtdpedidos
+		},
+		dataType: 'json',
+		success: function(retorno){
+			// alert(retorno);			
+		}
+	});
+}
 function pegaPedidosDasFiliais(){
 	$(document).on('click', '.pedidosProntos', function(){
 		//Chamando 2 funções no php
 		var idpedidosProntos = $(this).val();
 		var qtdPedidos = $("#"+idpedidosProntos).val();
-		var inputnomemensageiro = "---//---";
+		var inputnomemensageiro = "LabNíveLeitor";
 		var inputaviso = "Pedido de "+idpedidosProntos+" no Balde! ["+qtdPedidos+"] iten(s)!";				
 		var editapedidosqtdpedidos = 0;
 		$.ajax({
@@ -166,13 +180,14 @@ function pegaPedidosDasFiliais(){
 			type: 'post',
 			data: {
 				'inputnomemensageiro': inputnomemensageiro,
-				'inputaviso': inputaviso,
-				"editapedidosnomefilial": idpedidosProntos,
-				"editapedidosqtdpedidos": editapedidosqtdpedidos
+				'inputaviso': inputaviso
+				// "editapedidosnomefilial": idpedidosProntos,
+				// "editapedidosqtdpedidos": editapedidosqtdpedidos
 			},
 			dataType: 'json',
 			success: function(retorno){
-				alert(retorno);				
+				alert(retorno);	
+				zerapedidos(idpedidosProntos, editapedidosqtdpedidos);
 			}
 		});
 	});

@@ -3,6 +3,7 @@
 
 --------->Modificações site online:	
 	
+	-> Sem session['nivel'] bugando
 
 <---------
 --->Tarefas 
