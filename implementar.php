@@ -25,7 +25,9 @@
 -----------------------Concluidos(Organizar por DATA!!!)-----------------------
 	
 	--->Homologação
-
+		-->(30/09/2020)
+			-> Menu poção: Adicionei opção Metilfolato Diluído e coluna no DB
+		<--
 		-->(29/09/2020)
 			-> Criei 2 colunas na tabela pressaopedidos
 			-> Criado linha opções do laboratório com BT Toggle
