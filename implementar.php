@@ -8,9 +8,9 @@
 --->Tarefas 
 	--->Mais urgentes
 
-		-> Quando pronto ao invés de pedido pronto na frase, escrever pedidos no balde, pegar a quantidade de itens do pedido e embutir no cadastro do aviso;		
+		-> Quando pronto ao invés de pedido pronto na frase, escrever pedidos no balde, pegar a quantidade de itens do pedido e embutir no cadastro do aviso;
 
-		-> Encontrar uma forma de mostrar as pastas atrasadas de ontêm;		
+		-> Encontrar uma forma de mostrar as pastas atrasadas de ontêm;	
 		-> Restringir a ter no minimo nivel 1 
 		para alterar qualquer parametro no banco e 
 		nivel 2 para laboratorio;

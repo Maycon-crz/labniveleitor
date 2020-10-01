@@ -81,6 +81,9 @@
 				break;
 				case "MetilcobalaminaDiluida":
 					$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilcobalaminadiluida=:parametroexipientes WHERE 1=1";
+				break;
+				case "MetilfolatoDiluido":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilfolatodiluido=:parametroexipientes WHERE 1=1";
 				break;				
 				case "Almoco":
 					$sqlEditaPreProntos = "UPDATE pressaopedidos SET almoco=:parametroexipientes WHERE 1=1";
@@ -285,7 +288,7 @@
 			}
 		}
 		function nivelDePressaoEpedidos($con, $listadedados){
-			$sqlBuscaPressaoPedidos = "SELECT nivel, pastaazul, pomerode, brusque, excipiente, cremenaoionico, basegelanastrozol, tacrolimus, basesabonete, baseshampooperolado, cremepsoriaseaguda, fluoretodesodio, descongestionantenasal, locaocapilarminoxidil, anastrozoldiluido, metilcobalaminadiluida, almoco FROM pressaopedidos WHERE 1=1";
+			$sqlBuscaPressaoPedidos = "SELECT nivel, pastaazul, pomerode, brusque, excipiente, cremenaoionico, basegelanastrozol, tacrolimus, basesabonete, baseshampooperolado, cremepsoriaseaguda, fluoretodesodio, descongestionantenasal, locaocapilarminoxidil, anastrozoldiluido, metilcobalaminadiluida, metilfolatodiluido, almoco FROM pressaopedidos WHERE 1=1";
 			$buscaPressaoPedidos = $con->prepare($sqlBuscaPressaoPedidos);
 			if($buscaPressaoPedidos->execute()){
 				$resultadosPressaoPedidos = $buscaPressaoPedidos->fetchAll(PDO::FETCH_ASSOC);
@@ -305,6 +308,7 @@
 				$listadedados['locaocapilarminoxidil'] = $resultadosPressaoPedidos[0]["locaocapilarminoxidil"];
 				$listadedados['anastrozoldiluido'] = $resultadosPressaoPedidos[0]["anastrozoldiluido"];
 				$listadedados['metilcobalaminadiluida'] = $resultadosPressaoPedidos[0]["metilcobalaminadiluida"];
+				$listadedados['metilfolatodiluido'] = $resultadosPressaoPedidos[0]["metilfolatodiluido"];				
 				$listadedados['almoco'] = $resultadosPressaoPedidos[0]["almoco"];
 				$this->mostraAvisos($con, $listadedados);
 			}else{

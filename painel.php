@@ -889,6 +889,13 @@
 						<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 					</div>
 				</li><li>
+					<button type='button' class='btsPreProntos mt-2' id='MetilfolatoDiluido'>Metilfolato Diluído</button>
+				</li><li>
+					<div class='linhaPreProntos' id='linhaMetilfolatoDiluido'>
+						<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabando</button>
+						<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
+					</div>
+				</li><li>
 					<button type='button' class='btsPreProntos mt-2' id='Almoco'>Almoço</button>
 				</li><li>
 					<div class='linhaPreProntos' id='linhaAlmoco'>

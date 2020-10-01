@@ -43,12 +43,13 @@ function exipientes(){
 	});
 	//Menu pocao
 	$(document).on('click', '.btsPreProntos', function(){
-		idbtsPreProntos = $(this).attr('id');		
+		idbtsPreProntos = $(this).attr('id');	
 		$("#linha"+idbtsPreProntos).toggle();				
 	});
 	$(document).on('click', '.btsFaltaProducao', function(){
 		var idbtsFaltaProducao = $(this).attr('id');
 		$("#linha"+idbtsPreProntos).toggle();
+		$("#linhaOpcoesLaboratorio").toggle();
 		var parametroexipientes = 0;
 		switch(idbtsFaltaProducao){
 			case 'acabou':
@@ -482,7 +483,7 @@ function atualizatudo(){
 			$('#pomerode').val(retornado.pomerode);
 			$('#brusque').val(retornado.brusque);
 
-			//Exipientes
+			//Exipientes|Pré-Prontos
 			var dadosLinhaExipiente = "";
 			var qtdExps=0;
 			switch(retornado.excipiente){
@@ -610,25 +611,37 @@ function atualizatudo(){
 				case "1":					
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
-						"<p class='m-0 p-0'>Anastrozol Diluido</p><p class='m-0 p-0'>Acabando</p>"+
+						"<p class='m-0 p-0'>Anastrozol Diluído</p><p class='m-0 p-0'>Acabando</p>"+
 					"</button><button type='button' id='AnastrozolDiluido' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
-						"<p class='m-0 p-0'>Anastrozol Diluido</p><p class='m-0 p-0'>Em Produção</p>"+
+						"<p class='m-0 p-0'>Anastrozol Diluído</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='AnastrozolDiluido' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.metilcobalaminadiluida){
 				case "1":					
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
-						"<p class='m-0 p-0'>Metilcobalamina Diluida</p><p class='m-0 p-0'>Acabando</p>"+
+						"<p class='m-0 p-0'>Metilcobalamina Diluída</p><p class='m-0 p-0'>Acabando</p>"+
 					"</button><button type='button' id='MetilcobalaminaDiluida' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
-						"<p class='m-0 p-0'>Metilcobalamina Diluida</p><p class='m-0 p-0'>Em Produção</p>"+
+						"<p class='m-0 p-0'>Metilcobalamina Diluída</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='MetilcobalaminaDiluida' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break;
+			}switch(retornado.metilfolatodiluido){
+				case "1":					
+					qtdExps++;
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
+						"<p class='m-0 p-0'>Metilfolato Diluído</p><p class='m-0 p-0'>Acabando</p>"+
+					"</button><button type='button' id='MetilfolatoDiluido' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break; case "2":
+					qtdExps++;
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
+						"<p class='m-0 p-0'>Metilfolato Diluído</p><p class='m-0 p-0'>Em Produção</p>"+
+					"</button><button type='button' id='MetilfolatoDiluido' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.almoco){
 				case "1":
