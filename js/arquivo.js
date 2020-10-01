@@ -158,7 +158,7 @@ function pegaPedidosDasFiliais(){
 		//Chamando 2 funções no php
 		var idpedidosProntos = $(this).val();
 		var qtdPedidos = $("#"+idpedidosProntos).val();
-		var inputnomemensageiro = "LabNíveLeitor";
+		var inputnomemensageiro = "---//---";
 		var inputaviso = "Pedido de "+idpedidosProntos+" no Balde! ["+qtdPedidos+"] iten(s)!";				
 		var editapedidosqtdpedidos = 0;
 		$.ajax({

@@ -6,9 +6,7 @@
 
 <---------
 --->Tarefas 
-	--->Mais urgentes
-
-		-> Quando pronto ao invés de pedido pronto na frase, escrever pedidos no balde, pegar a quantidade de itens do pedido e embutir no cadastro do aviso;
+	--->Mais urgentes		
 
 		-> Encontrar uma forma de mostrar as pastas atrasadas de ontêm;	
 		-> Restringir a ter no minimo nivel 1 
@@ -27,6 +25,7 @@
 	--->Homologação
 		-->(30/09/2020)
 			-> Menu poção: Adicionei opção Metilfolato Diluído e coluna no DB
+			-> Quando pronto ao invés de pedido pronto na frase, escrever pedidos no balde, pegar a quantidade de itens do pedido e embutir no cadastro do aviso;
 		<--
 		-->(29/09/2020)
 			-> Criei 2 colunas na tabela pressaopedidos
