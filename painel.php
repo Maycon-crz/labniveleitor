@@ -21,11 +21,35 @@
 			</div>
 		</div>
 		<div class='row'>								
+			<div class='col-6 bg-warning'>
+				<p class='m-3 p-0'>
+					<h5 class='text-center text-success'>
+						Pastas Para Amanhã em diante:
+						<input type='text' name='' class='text-center' size="4">
+						<button type='button' id='' class='btn btn-success rounded-pill'>Ok</button>
+					</h5>
+				</p>
+			</div>
+			<div class='col-6 bg-warning'>
+				<p class='m-3 p-0'>
+					<h5 class='text-center text-success'>
+						Pastas Atrasadas de ontem:
+						<input type='text' name='' class='text-center' size="4">
+						<button type='button' id='' class='btn btn-success rounded-pill'>Ok</button>
+					</h5>
+				</p>
+			</div>
+		</div>
+		<div class='row'>								
 			<div class='col-6 bg-secondary'>
-				<a href="#manualtabelasSSS"><h1 class='text-center text-dark m-0'>Sólidos</h1></a>		
+				<p><a href="#manualtabelasSSS" class='text-dark'><h1 class='text-center text-dark m-0'>Sólidos</h1></a></p>				
+				
 			</div>
 			<div class='col-6 bg-primary'>
-				<a href="#manualtabelasSSS"><h1 class='text-center text-dark m-0'>Semi-sólidos</h1></a>
+				<p><a href="#manualtabelasSSS" class='text-dark'><h1 class='text-center text-dark m-0'>Semi-sólidos</h1></a></p>
+				<p class='m-0 p-0'>
+					
+				</p>
 			</div>
 		</div>
 		<div class='row' id='tbHorariosLinhaUm'>
