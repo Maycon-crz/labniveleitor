@@ -22,22 +22,28 @@
 		</div>
 		<div class='row'>								
 			<div class='col-6 bg-warning'>
-				<p class='m-3 p-0'>
-					<h5 class='text-center text-success'>
-						Pastas Para Amanhã em diante:
-						<input type='text' name='' class='text-center' size="4">
+				<ul>
+					<li class='text-center text-success'>
+						<h5>Pastas Para Amanhã em diante:</h5>
+					</li><li class='text-center text-success'>
 						<button type='button' id='' class='btn btn-success rounded-pill'>Ok</button>
-					</h5>
-				</p>
+						<button type='button' class='tbHoraVerde menosformulasnivel' id=1>-</button>
+						<button type='button' class='tbHoraVerde maisformulasnivel' id=1>+</button>	
+						<input type='text' name='' class='text-center bg-danger' size="4">
+					</li>
+				</ul>
 			</div>
 			<div class='col-6 bg-warning'>
-				<p class='m-3 p-0'>
-					<h5 class='text-center text-success'>
-						Pastas Atrasadas de ontem:
-						<input type='text' name='' class='text-center' size="4">
+				<ul>
+					<li class='text-center text-success'>
+						<h5>Pastas Atrasadas de ontem:</h5>
+					</li><li class='text-center text-success'>
 						<button type='button' id='' class='btn btn-success rounded-pill'>Ok</button>
-					</h5>
-				</p>
+						<button type='button' class='tbHoraVerde menosformulasnivel' id=1>-</button>
+						<button type='button' class='tbHoraVerde maisformulasnivel' id=1>+</button>	
+						<input type='text' name='' class='text-center bg-danger' size="4">
+					</li>
+				</ul>
 			</div>
 		</div>
 		<div class='row'>								
