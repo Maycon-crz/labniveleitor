@@ -42,6 +42,23 @@
 		}
 	}
 	class editadados{
+		function updateAtrasadasAdiantadas($con, $ferramentas, $inputAtrasadasAdiantadas, $parametroAtrasadasAdiantadas){						
+			switch($parametroAtrasadasAdiantadas){
+				case "adiantadas":
+					$sqlEditaAtrasadasAdiantadas = "UPDATE pressaopedidos SET adiantadas=:inputAtrasadasAdiantadas WHERE 1=1";
+				break;
+				case "atrasadas":
+					$sqlEditaAtrasadasAdiantadas = "UPDATE pressaopedidos SET atrasadas=:inputAtrasadasAdiantadas WHERE 1=1";
+				break;
+			}
+			$editaAtrasadasAdiantadas = $con->prepare($sqlEditaAtrasadasAdiantadas);			
+			$editaAtrasadasAdiantadas->bindParam(':inputAtrasadasAdiantadas', $inputAtrasadasAdiantadas);				
+			if($editaAtrasadasAdiantadas->execute()){
+				echo json_encode("A quantidade foi editada!");
+			}else{
+				echo json_encode("Erro ao editar a quantidade!");
+			}
+		}
 		function editaPreProntos($con, $ferramentas, $idbtsPreProntos, $parametroexipientes){			
 			$idbtsPreProntos = $ferramentas->filtrando($idbtsPreProntos);
 			$parametroexipientes = $ferramentas->filtrando($parametroexipientes);
@@ -288,12 +305,14 @@
 			}
 		}
 		function nivelDePressaoEpedidos($con, $listadedados){
-			$sqlBuscaPressaoPedidos = "SELECT nivel, pastaazul, pomerode, brusque, excipiente, cremenaoionico, basegelanastrozol, tacrolimus, basesabonete, baseshampooperolado, cremepsoriaseaguda, fluoretodesodio, descongestionantenasal, locaocapilarminoxidil, anastrozoldiluido, metilcobalaminadiluida, metilfolatodiluido, almoco FROM pressaopedidos WHERE 1=1";
+			$sqlBuscaPressaoPedidos = "SELECT nivel, pastaazul, atrasadas, adiantadas, pomerode, brusque, excipiente, cremenaoionico, basegelanastrozol, tacrolimus, basesabonete, baseshampooperolado, cremepsoriaseaguda, fluoretodesodio, descongestionantenasal, locaocapilarminoxidil, anastrozoldiluido, metilcobalaminadiluida, metilfolatodiluido, almoco FROM pressaopedidos WHERE 1=1";
 			$buscaPressaoPedidos = $con->prepare($sqlBuscaPressaoPedidos);
 			if($buscaPressaoPedidos->execute()){
 				$resultadosPressaoPedidos = $buscaPressaoPedidos->fetchAll(PDO::FETCH_ASSOC);
 				$listadedados['nivel'] = $resultadosPressaoPedidos[0]["nivel"];
 				$listadedados['pastaazul'] = $resultadosPressaoPedidos[0]["pastaazul"];
+				$listadedados['atrasadas'] = $resultadosPressaoPedidos[0]["atrasadas"];
+				$listadedados['adiantadas'] = $resultadosPressaoPedidos[0]["adiantadas"];
 				$listadedados['pomerode'] = $resultadosPressaoPedidos[0]["pomerode"];
 				$listadedados['brusque'] = $resultadosPressaoPedidos[0]["brusque"];
 				$listadedados['excipiente'] = $resultadosPressaoPedidos[0]["excipiente"];
@@ -452,6 +471,9 @@
 			$login = new login;
 			$ferramentas = new ferramentas;
 
+			if(isset($_POST['inputAtrasadasAdiantadas']) || isset($_POST['parametroAtrasadasAdiantadas'])){
+				$editadados->updateAtrasadasAdiantadas($con, $ferramentas, $_POST['inputAtrasadasAdiantadas'], $_POST['parametroAtrasadasAdiantadas']);
+			}
 			if(isset($_POST['idfinalizaexcipiente'])){
 				session_start(); 
 				if($_SESSION['nivel'] === "1"){

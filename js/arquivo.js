@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	pastasAtrasadasAdiantadas();
 	opcoesLaboratorios();
 	exipientes();	
 	avisos();
@@ -7,14 +8,54 @@ $(document).ready(function(){
 	pegaPedidosDasFiliais();
 	btsMaisMenosTbHora();
 	diretoInputTbHora();
-	nivelDePressao();	
-	// auto();		
+	nivelDePressao();
 	atualizatudo();	
 	chamaAtualizacao();
 	sair();
 	cadastroDeFuncionarios();
 	login();
 });
+function updateAtrasadasAdiantadas(inputAtrasadasAdiantadas, parametroAtrasadasAdiantadas){
+	$.ajax({
+		url: 'confg.php',
+		type: 'post',
+		data: {
+			'inputAtrasadasAdiantadas': inputAtrasadasAdiantadas,
+			'parametroAtrasadasAdiantadas': parametroAtrasadasAdiantadas
+		},
+		dataType: 'json',
+		success: function(retornado){					
+			atualizatudo();
+		}
+	});
+}
+function pastasAtrasadasAdiantadas(){	
+	$(document).on('click', '.btMaisAdiantadas', function(){		
+		var valorAdiantadas = $("#adiantadas").val();
+		valorAdiantadas = parseInt(valorAdiantadas)+1;
+		updateAtrasadasAdiantadas(valorAdiantadas, "adiantadas");
+	});
+	$(document).on('click', '.btMenosAdiantadas', function(){		
+		var valorAdiantadas = $("#adiantadas").val();
+		valorAdiantadas = parseInt(valorAdiantadas)-1;
+		updateAtrasadasAdiantadas(valorAdiantadas, "adiantadas");
+	});
+	$(document).on('click', '.btMaisAtrasadas', function(){		
+		var valorAtrasadas = $("#atrasadas").val();
+		valorAtrasadas = parseInt(valorAtrasadas)+1;
+		updateAtrasadasAdiantadas(valorAtrasadas, "atrasadas");
+	});
+	$(document).on('click', '.btMenosAtrasadas', function(){		
+		var valorAtrasadas = $("#atrasadas").val();
+		valorAtrasadas = parseInt(valorAtrasadas)-1;
+		updateAtrasadasAdiantadas(valorAtrasadas, "atrasadas");
+	});
+	$('.inputAtrasadasAdiantadas').keyup(function(){
+		var inputAtrasadasAdiantadas = $(this).val();
+		parametroAtrasadasAdiantadas = $(this).attr('id');
+		updateAtrasadasAdiantadas(inputAtrasadasAdiantadas, parametroAtrasadasAdiantadas);		
+	});	
+}
 function opcoesLaboratorios(){
 	//Abre/Fecha Botões do laboratório menu poções
 	$(document).on('click', '#btOpcoesLaboratorio', function(){
@@ -293,8 +334,6 @@ function nivelDePressao(){
 		}		
 	});
 };
-// function auto(){
-// };
 function atualizatudo(){
 	// alert("Vamos atualizar!");
 	var vfLogin = $(".vfLogin").val();
@@ -307,7 +346,10 @@ function atualizatudo(){
 		type: "post",
 		data: {"atualiza": atualiza},
 		dataType: "json",
-		success: function(retornado){			
+		success: function(retornado){	
+			//Atrasadas e Adiantadas
+				$('#adiantadas').val(retornado.adiantadas);			
+				$('#atrasadas').val(retornado.atrasadas);				
 			//Linha um
 				//Solidos
 					$('#ipTbHora1').val(retornado.oitonoveVerde);
