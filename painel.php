@@ -728,10 +728,10 @@
 				</div>				
 			</div>						
 		</div>
-		<div class='row bg-success border border-warning'>
+		<div class='row bg-success'>
 			<div class='col-12 m-3'>
-				<h5 class='text-center'>Total de Pastas:
-					<input type='text' size='3' class='bg-warning' id='totalDePastasNoLab' disabled />
+				<h5 class='text-center text-warning'>Total de Pastas:
+					<input type='text' size='3' class='bg-warning text-danger' id='totalDePastasNoLab' disabled />
 				</h5>
 			</div>
 		</div>
