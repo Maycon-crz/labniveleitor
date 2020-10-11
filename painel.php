@@ -32,6 +32,23 @@
 					</li>
 				</ul>
 			</div>
+			<!-- <div class='col-6 bg-warning'>
+				<ul>
+					<li class='text-center text-success'>
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Pastas Para Amanhã em diante:
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								Pastas Para Amanhã:
+								<button type='button' class='tbHoraVerde btMenosAdiantadas'>-</button>
+								<button type='button' class='tbHoraVerde btMaisAdiantadas'>+</button>	
+								<input type='text' name='' size='4' class='text-center bg-danger inputAtrasadasAdiantadas' id='adiantadas'>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div> -->
 			<div class='col-6 bg-warning'>
 				<ul>
 					<li class='text-center text-success'>
@@ -710,6 +727,13 @@
 					</div>
 				</div>				
 			</div>						
+		</div>
+		<div class='row bg-success border border-warning'>
+			<div class='col-12 m-3'>
+				<h5 class='text-center'>Total de Pastas:
+					<input type='text' size='3' class='bg-warning' id='totalDePastasNoLab' disabled />
+				</h5>
+			</div>
 		</div>
 		<div class='row linhaPedidosPomerode' id='pedidos'>
 			<div class='col-12 border border-success mt-5'>

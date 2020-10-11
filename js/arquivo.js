@@ -348,130 +348,157 @@ function atualizatudo(){
 		dataType: "json",
 		success: function(retornado){	
 			//Atrasadas e Adiantadas
-				$('#adiantadas').val(retornado.adiantadas);			
-				$('#atrasadas').val(retornado.atrasadas);				
+				var adiantadas = retornado.adiantadas;
+				$('#adiantadas').val(adiantadas);
+				var atrasadas = retornado.atrasadas;		
+				$('#atrasadas').val(atrasadas);				
 			//Linha um
 				//Solidos
 					$('#ipTbHora1').val(retornado.oitonoveVerde);
 					$('#ipTbHora2').val(retornado.oitonoveAmarela);
 					$('#ipTbHora3').val(retornado.oitonoveVermelha);
-					$('#tbHoraTotal1').val(parseInt(retornado.oitonoveVerde)+parseInt(retornado.oitonoveAmarela)+parseInt(retornado.oitonoveVermelha));
+					var tbHoraTotal1 = parseInt(retornado.oitonoveVerde)+parseInt(retornado.oitonoveAmarela)+parseInt(retornado.oitonoveVermelha);
+					$('#tbHoraTotal1').val(tbHoraTotal1);
 
 					$('#ipTbHora4').val(retornado.novedezVerde);
 					$('#ipTbHora5').val(retornado.novedezAmarela);
 					$('#ipTbHora6').val(retornado.novedezVermelha);
-					$('#tbHoraTotal2').val(parseInt(retornado.novedezVerde)+parseInt(retornado.novedezAmarela)+parseInt(retornado.novedezVermelha));
+					var tbHoraTotal2 = parseInt(retornado.novedezVerde)+parseInt(retornado.novedezAmarela)+parseInt(retornado.novedezVermelha);
+					$('#tbHoraTotal2').val(tbHoraTotal2);
 				//Semi solidos
 					$('#ipTbHora34').val(retornado.semisolidos_oitonoveVerde);
 					$('#ipTbHora35').val(retornado.semisolidos_oitonoveAmarela);
 					$('#ipTbHora36').val(retornado.semisolidos_oitonoveVermelha);
-					$('#tbHoraTotal3').val(parseInt(retornado.semisolidos_oitonoveVerde)+parseInt(retornado.semisolidos_oitonoveAmarela)+parseInt(retornado.semisolidos_oitonoveVermelha));
+					var tbHoraTotal3 = parseInt(retornado.semisolidos_oitonoveVerde)+parseInt(retornado.semisolidos_oitonoveAmarela)+parseInt(retornado.semisolidos_oitonoveVermelha);
+					$('#tbHoraTotal3').val(tbHoraTotal3);
 
 					$('#ipTbHora37').val(retornado.semisolidos_novedezVerde);
 					$('#ipTbHora38').val(retornado.semisolidos_novedezAmarela);
 					$('#ipTbHora39').val(retornado.semisolidos_novedezVermelha);
-					$('#tbHoraTotal4').val(parseInt(retornado.semisolidos_novedezVerde)+parseInt(retornado.semisolidos_novedezAmarela)+parseInt(retornado.semisolidos_novedezVermelha));
+					var tbHoraTotal4 = parseInt(retornado.semisolidos_novedezVerde)+parseInt(retornado.semisolidos_novedezAmarela)+parseInt(retornado.semisolidos_novedezVermelha);
+					$('#tbHoraTotal4').val(tbHoraTotal4);
 				//--
 			//Linha dois
 				//Solidos
 					$('#ipTbHora7').val(retornado.dezonzeVerde);
 					$('#ipTbHora8').val(retornado.dezonzeAmarela);
 					$('#ipTbHora9').val(retornado.dezonzeVermelha);
-					$('#tbHoraTotal5').val(parseInt(retornado.dezonzeVerde)+parseInt(retornado.dezonzeAmarela)+parseInt(retornado.dezonzeVermelha));
+					var tbHoraTotal5 = parseInt(retornado.dezonzeVerde)+parseInt(retornado.dezonzeAmarela)+parseInt(retornado.dezonzeVermelha);
+					$('#tbHoraTotal5').val(tbHoraTotal5);
 
 					$('#ipTbHora10').val(retornado.onzedozeVerde);
 					$('#ipTbHora11').val(retornado.onzedozeAmarela);
 					$('#ipTbHora12').val(retornado.onzedozeVermelha);
-					$('#tbHoraTotal6').val(parseInt(retornado.onzedozeVerde)+parseInt(retornado.onzedozeAmarela)+parseInt(retornado.onzedozeVermelha));
+					var tbHoraTotal6 = parseInt(retornado.onzedozeVerde)+parseInt(retornado.onzedozeAmarela)+parseInt(retornado.onzedozeVermelha);
+					$('#tbHoraTotal6').val(tbHoraTotal6);
 				//Semi solidos
 					$('#ipTbHora40').val(retornado.semisolidos_dezonzeVerde);
 					$('#ipTbHora41').val(retornado.semisolidos_dezonzeAmarela);
 					$('#ipTbHora42').val(retornado.semisolidos_dezonzeVermelha);
-					$('#tbHoraTotal7').val(parseInt(retornado.semisolidos_dezonzeVerde)+parseInt(retornado.semisolidos_dezonzeAmarela)+parseInt(retornado.semisolidos_dezonzeVermelha));
+					var tbHoraTotal7 = parseInt(retornado.semisolidos_dezonzeVerde)+parseInt(retornado.semisolidos_dezonzeAmarela)+parseInt(retornado.semisolidos_dezonzeVermelha);
+					$('#tbHoraTotal7').val(tbHoraTotal7);
 
 					$('#ipTbHora43').val(retornado.semisolidos_onzedozeVerde);
 					$('#ipTbHora44').val(retornado.semisolidos_onzedozeAmarela);
 					$('#ipTbHora45').val(retornado.semisolidos_onzedozeVermelha);
-					$('#tbHoraTotal8').val(parseInt(retornado.semisolidos_onzedozeVerde)+parseInt(retornado.semisolidos_onzedozeAmarela)+parseInt(retornado.semisolidos_onzedozeVermelha));
+					var tbHoraTotal8 = parseInt(retornado.semisolidos_onzedozeVerde)+parseInt(retornado.semisolidos_onzedozeAmarela)+parseInt(retornado.semisolidos_onzedozeVermelha);
+					$('#tbHoraTotal8').val(tbHoraTotal8);
 				//--
 			//Linha tres
 				//Solidos
 					$('#ipTbHora13').val(retornado.dozetrezeVerde);
 					$('#ipTbHora14').val(retornado.dozetrezeAmarela);
 					$('#ipTbHora15').val(retornado.dozetrezeVermelha);
-					$('#tbHoraTotal9').val(parseInt(retornado.dozetrezeVerde)+parseInt(retornado.dozetrezeAmarela)+parseInt(retornado.dozetrezeVermelha));
+					var tbHoraTotal9 = parseInt(retornado.dozetrezeVerde)+parseInt(retornado.dozetrezeAmarela)+parseInt(retornado.dozetrezeVermelha);
+					$('#tbHoraTotal9').val(tbHoraTotal9);
 
 					$('#ipTbHora16').val(retornado.trezequaVerde);
 					$('#ipTbHora17').val(retornado.trezequaAmarela);
 					$('#ipTbHora18').val(retornado.trezequaVermelha);
-					$('#tbHoraTotal10').val(parseInt(retornado.trezequaVerde)+parseInt(retornado.trezequaAmarela)+parseInt(retornado.trezequaVermelha));				
+					var tbHoraTotal10 = parseInt(retornado.trezequaVerde)+parseInt(retornado.trezequaAmarela)+parseInt(retornado.trezequaVermelha);
+					$('#tbHoraTotal10').val(tbHoraTotal10);				
 				//Semi solidos
 					$('#ipTbHora46').val(retornado.semisolidos_dozetrezeVerde);
 					$('#ipTbHora47').val(retornado.semisolidos_dozetrezeAmarela);
 					$('#ipTbHora48').val(retornado.semisolidos_dozetrezeVermelha);
-					$('#tbHoraTotal11').val(parseInt(retornado.semisolidos_dozetrezeVerde)+parseInt(retornado.semisolidos_dozetrezeAmarela)+parseInt(retornado.semisolidos_dozetrezeVermelha));
+					var tbHoraTotal11 = parseInt(retornado.semisolidos_dozetrezeVerde)+parseInt(retornado.semisolidos_dozetrezeAmarela)+parseInt(retornado.semisolidos_dozetrezeVermelha);
+					$('#tbHoraTotal11').val(tbHoraTotal11);
 
 					$('#ipTbHora49').val(retornado.semisolidos_trezequaVerde);
 					$('#ipTbHora50').val(retornado.semisolidos_trezequaAmarela);
 					$('#ipTbHora51').val(retornado.semisolidos_trezequaVermelha);
-					$('#tbHoraTotal12').val(parseInt(retornado.semisolidos_trezequaVerde)+parseInt(retornado.semisolidos_trezequaAmarela)+parseInt(retornado.semisolidos_trezequaVermelha));
+					var tbHoraTotal12 = parseInt(retornado.semisolidos_trezequaVerde)+parseInt(retornado.semisolidos_trezequaAmarela)+parseInt(retornado.semisolidos_trezequaVermelha);
+					$('#tbHoraTotal12').val(tbHoraTotal12);
 				//--
 			//Linha quatro
 				//Solidos
 					$('#ipTbHora19').val(retornado.quaquiVerde);
 					$('#ipTbHora20').val(retornado.quaquiAmarela);
 					$('#ipTbHora21').val(retornado.quaquiVermelha);
-					$('#tbHoraTotal13').val(parseInt(retornado.quaquiVerde)+parseInt(retornado.quaquiAmarela)+parseInt(retornado.quaquiVermelha));
+					var tbHoraTotal13 = parseInt(retornado.quaquiVerde)+parseInt(retornado.quaquiAmarela)+parseInt(retornado.quaquiVermelha);
+					$('#tbHoraTotal13').val(tbHoraTotal13);
 
 					$('#ipTbHora22').val(retornado.quidseisVerde);
 					$('#ipTbHora23').val(retornado.quidseisAmarela);
 					$('#ipTbHora24').val(retornado.quidseisVermelha);				
-					$('#tbHoraTotal14').val(parseInt(retornado.quidseisVerde)+parseInt(retornado.quidseisAmarela)+parseInt(retornado.quidseisVermelha));
+					var tbHoraTotal14 = parseInt(retornado.quidseisVerde)+parseInt(retornado.quidseisAmarela)+parseInt(retornado.quidseisVermelha);
+					$('#tbHoraTotal14').val(tbHoraTotal14);
 				//Semi solidos
 					$('#ipTbHora52').val(retornado.semisolidos_quaquiVerde);
 					$('#ipTbHora53').val(retornado.semisolidos_quaquiAmarela);
 					$('#ipTbHora54').val(retornado.semisolidos_quaquiVermelha);
-					$('#tbHoraTotal15').val(parseInt(retornado.semisolidos_quaquiVerde)+parseInt(retornado.semisolidos_quaquiAmarela)+parseInt(retornado.semisolidos_quaquiVermelha));
+					var tbHoraTotal15 = parseInt(retornado.semisolidos_quaquiVerde)+parseInt(retornado.semisolidos_quaquiAmarela)+parseInt(retornado.semisolidos_quaquiVermelha);
+					$('#tbHoraTotal15').val(tbHoraTotal15);
 
 					$('#ipTbHora55').val(retornado.semisolidos_quidseisVerde);
 					$('#ipTbHora56').val(retornado.semisolidos_quidseisAmarela);
 					$('#ipTbHora57').val(retornado.semisolidos_quidseisVermelha);
-					$('#tbHoraTotal16').val(parseInt(retornado.semisolidos_quidseisVerde)+parseInt(retornado.semisolidos_quidseisAmarela)+parseInt(retornado.semisolidos_quidseisVermelha));
+					var tbHoraTotal16 = parseInt(retornado.semisolidos_quidseisVerde)+parseInt(retornado.semisolidos_quidseisAmarela)+parseInt(retornado.semisolidos_quidseisVermelha);
+					$('#tbHoraTotal16').val(tbHoraTotal16);
 				//--
 			//Linha cinco
 				//Solidos
 					$('#ipTbHora25').val(retornado.dseisdseteVerde);
 					$('#ipTbHora26').val(retornado.dseisdseteAmarela);
 					$('#ipTbHora27').val(retornado.dseisdseteVermelha);
-					$('#tbHoraTotal17').val(parseInt(retornado.dseisdseteVerde)+parseInt(retornado.dseisdseteAmarela)+parseInt(retornado.dseisdseteVermelha));
+					var tbHoraTotal17 = parseInt(retornado.dseisdseteVerde)+parseInt(retornado.dseisdseteAmarela)+parseInt(retornado.dseisdseteVermelha);
+					$('#tbHoraTotal17').val(tbHoraTotal17);
 
 					$('#ipTbHora28').val(retornado.dsetedoitoVerde);
 					$('#ipTbHora29').val(retornado.dsetedoitoAmarela);
 					$('#ipTbHora30').val(retornado.dsetedoitoVermelha);
-					$('#tbHoraTotal18').val(parseInt(retornado.dsetedoitoVerde)+parseInt(retornado.dsetedoitoAmarela)+parseInt(retornado.dsetedoitoVermelha));
+					var tbHoraTotal18 = parseInt(retornado.dsetedoitoVerde)+parseInt(retornado.dsetedoitoAmarela)+parseInt(retornado.dsetedoitoVermelha);
+					$('#tbHoraTotal18').val(tbHoraTotal18);
 				//Semi solidos
 					$('#ipTbHora58').val(retornado.semisolidos_dseisdseteVerde);
 					$('#ipTbHora59').val(retornado.semisolidos_dseisdseteAmarela);
 					$('#ipTbHora60').val(retornado.semisolidos_dseisdseteVermelha);
-					$('#tbHoraTotal19').val(parseInt(retornado.semisolidos_dseisdseteVerde)+parseInt(retornado.semisolidos_dseisdseteAmarela)+parseInt(retornado.semisolidos_dseisdseteVermelha));
+					var tbHoraTotal19 = parseInt(retornado.semisolidos_dseisdseteVerde)+parseInt(retornado.semisolidos_dseisdseteAmarela)+parseInt(retornado.semisolidos_dseisdseteVermelha);
+					$('#tbHoraTotal19').val(tbHoraTotal19);
 
 					$('#ipTbHora61').val(retornado.semisolidos_dsetedoitoVerde);
 					$('#ipTbHora62').val(retornado.semisolidos_dsetedoitoAmarela);
 					$('#ipTbHora63').val(retornado.semisolidos_dsetedoitoVermelha);
-					$('#tbHoraTotal20').val(parseInt(retornado.semisolidos_dsetedoitoVerde)+parseInt(retornado.semisolidos_dsetedoitoAmarela)+parseInt(retornado.semisolidos_dsetedoitoVermelha));
+					var tbHoraTotal20 = parseInt(retornado.semisolidos_dsetedoitoVerde)+parseInt(retornado.semisolidos_dsetedoitoAmarela)+parseInt(retornado.semisolidos_dsetedoitoVermelha);
+					$('#tbHoraTotal20').val(tbHoraTotal20);
 				//--
 			//Linha seis
 				//Solidos
 					$('#ipTbHora31').val(retornado.doitodnoveVerde);
 					$('#ipTbHora32').val(retornado.doitodnoveAmarela);
 					$('#ipTbHora33').val(retornado.doitodnoveVermelha);
-					$('#tbHoraTotal21').val(parseInt(retornado.doitodnoveVerde)+parseInt(retornado.doitodnoveAmarela)+parseInt(retornado.doitodnoveVermelha));
+					var tbHoraTotal21 = parseInt(retornado.doitodnoveVerde)+parseInt(retornado.doitodnoveAmarela)+parseInt(retornado.doitodnoveVermelha);
+					$('#tbHoraTotal21').val(tbHoraTotal21);
 				//Semi solidos
 					$('#ipTbHora64').val(retornado.semisolidos_doitodnoveVerde);
 					$('#ipTbHora65').val(retornado.semisolidos_doitodnoveAmarela);
 					$('#ipTbHora66').val(retornado.semisolidos_doitodnoveVermelha);
-					$('#tbHoraTotal22').val(parseInt(retornado.semisolidos_doitodnoveVerde)+parseInt(retornado.semisolidos_doitodnoveAmarela)+parseInt(retornado.semisolidos_doitodnoveVermelha));
+					var tbHoraTotal22 = parseInt(retornado.semisolidos_doitodnoveVerde)+parseInt(retornado.semisolidos_doitodnoveAmarela)+parseInt(retornado.semisolidos_doitodnoveVermelha);
+					$('#tbHoraTotal22').val(tbHoraTotal22);
 				//--
+			//---
+			//Total de Pastas no laboratório // Contar para amanha e atrasadas								
+				var totalDePastasNoLab = parseInt(tbHoraTotal1)+parseInt(tbHoraTotal2)+parseInt(tbHoraTotal3)+parseInt(tbHoraTotal4)+parseInt(tbHoraTotal5)+parseInt(tbHoraTotal6)+parseInt(tbHoraTotal7)+parseInt(tbHoraTotal8)+parseInt(tbHoraTotal9)+parseInt(tbHoraTotal10)+parseInt(tbHoraTotal11)+parseInt(tbHoraTotal12)+parseInt(tbHoraTotal13)+parseInt(tbHoraTotal14)+parseInt(tbHoraTotal15)+parseInt(tbHoraTotal16)+parseInt(tbHoraTotal17)+parseInt(tbHoraTotal18)+parseInt(tbHoraTotal19)+parseInt(tbHoraTotal20)+parseInt(tbHoraTotal21)+parseInt(tbHoraTotal22)+parseInt(adiantadas)+parseInt(atrasadas);				$('#totalDePastasNoLab').val(totalDePastasNoLab);
 			//---
 			//Nivel de Presão
 			switch(retornado.nivel){
