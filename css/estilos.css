@@ -15,7 +15,7 @@ body{
 	margin:0 auto;
     padding:0 auto;    
 }
-#linhaDeCadFunc, .linhaPreProntos, #mostraDadosExipientes, #linhaOpcoesLaboratorio{
+#linhaDeCadFunc, .linhaPreProntos, #mostraDadosExipientes, #linhaOpcoesLaboratorio, #linhaProntas, #linhaCadastromsgsprontas{
 	display: none;
 }
 #linhaMostraExp{
