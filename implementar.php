@@ -9,7 +9,8 @@
 --->Tarefas 
 	--->Mais urgentes		
 
-		-> No menu poção Criar botões: Metil testosterona(Para peixe), Base Efervescente Abacaxi, limão e laranja, Vitamina B12 diluida, T3 diluido, T4 Diluido, Vitamina D3 Diluida;
+		-> Criei botões: Metil testosterona(Para peixe), Base Efervescente Abacaxi, limão e laranja, Vitamina B12 diluida, T3 diluido, T4 Diluido, Vitamina D3 Diluida Porém não implementei eles no
+		Javascript nem na tabela do Banco de Dados!;
 		
 		-> Restringir a ter no minimo nivel 1 
 		para alterar qualquer parametro no banco e 
@@ -25,11 +26,13 @@
 -----------------------Concluidos(Organizar por DATA!!!)-----------------------
 	
 	--->Homologação
-		
+		-->(13/10/2020)
+			-> No menu poção Criar botões: Metil testosterona(Para peixe), Base Efervescente Abacaxi, limão e laranja, Vitamina B12 diluida, T3 diluido, T4 Diluido, Vitamina D3 Diluida;
+		<--
 	<---
 
 	--->online
-		-->(13/10/2020)
+		-->(12/10/2020)
 			-> Ver código do farm de respostas prontas e tentar embutir no labniveleitor
 		<--
 		-->(30/09/2020)
