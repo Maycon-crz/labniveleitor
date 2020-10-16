@@ -101,7 +101,11 @@
 				break;
 				case "MetilfolatoDiluido":
 					$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilfolatodiluido=:parametroexipientes WHERE 1=1";
-				break;				
+				break;
+				// case "MetilTestosterona":
+				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilfolatodiluido=:parametroexipientes WHERE 1=1";
+				// break;
+				
 				case "Almoco":
 					$sqlEditaPreProntos = "UPDATE pressaopedidos SET almoco=:parametroexipientes WHERE 1=1";
 				break;
