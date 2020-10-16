@@ -111,7 +111,9 @@
 				// case "BaseEfervescenteLimao":
 				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilfolatodiluido=:parametroexipientes WHERE 1=1";
 				// break;
-				
+				// case "BaseEfervescenteLaranja":
+				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilfolatodiluido=:parametroexipientes WHERE 1=1";
+				// break;
 				case "Almoco":
 					$sqlEditaPreProntos = "UPDATE pressaopedidos SET almoco=:parametroexipientes WHERE 1=1";
 				break;
