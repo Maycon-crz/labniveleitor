@@ -219,6 +219,7 @@
 					// $listadedados['debug'] = "HJ!";
 					// $sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidos WHERE 1=1";
 				break;
+				case 'opcaoTabelaDeAmanha':
 					// $listadedados['debug'] = "AM!";
 					// $sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidosamanha WHERE 1=1";
 				break;
