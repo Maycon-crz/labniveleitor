@@ -19,7 +19,15 @@ $(document).ready(function(){
 function selectDiaTabelaSolidosSemiSolidos(){
 	$(document).on('change', '#SelectTabelaSolidosSemisolidosDia', function(){
 		var idTabelaSolidosSemisolidosDia = $(this).val();
-		alert("Boraaa - "+idTabelaSolidosSemisolidosDia);
+		$.ajax({
+			url: 'confg.php',
+			type: 'post',
+			data: {'idTabelaSolidosSemisolidosDia': idTabelaSolidosSemisolidosDia},
+			dataType: 'json',
+			success: function(retornado){
+				alert(retornado);
+			}
+		});
 	});
 }
 function updateAtrasadasAdiantadas(inputAtrasadasAdiantadas, parametroAtrasadasAdiantadas){
