@@ -46,10 +46,10 @@
 		</div>
 		<div class='row'>
 			<div class='col-12 p-0'>
-				<select class='form-control bg-success border-warning text-warning'>
-					<option>Tabela Por Níveil Da Dificuldade De Fórmulas - Hoje</option>
-					<option>Tabela De Amanhã</option>					
-					<option>Tabela Depois De Amanhã</option>
+				<select id='SelectTabelaSolidosSemisolidosDia' class='form-control bg-success border-warning text-warning'>
+					<option value='opcaoTabelaDeHoje'>Tabela Por Níveil Da Dificuldade De Fórmulas - Hoje</option>
+					<option value='opcaoTabelaDeAmanha'>Tabela De Amanhã</option>					
+					<option value='opcaoTabelaDepoisDeAmanha'>Tabela Depois De Amanhã</option>
 				</select>
 			</div>
 		</div>

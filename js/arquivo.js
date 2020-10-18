@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	selectDiaTabelaSolidosSemiSolidos();
 	pastasAtrasadasAdiantadas();
 	opcoesLaboratorios();
 	exipientes();	
@@ -15,6 +16,12 @@ $(document).ready(function(){
 	cadastroDeFuncionarios();
 	login();
 });
+function selectDiaTabelaSolidosSemiSolidos(){
+	$(document).on('change', '#SelectTabelaSolidosSemisolidosDia', function(){
+		var idTabelaSolidosSemisolidosDia = $(this).val();
+		alert("Boraaa - "+idTabelaSolidosSemisolidosDia);
+	});
+}
 function updateAtrasadasAdiantadas(inputAtrasadasAdiantadas, parametroAtrasadasAdiantadas){
 	$.ajax({
 		url: 'confg.php',
