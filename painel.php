@@ -20,53 +20,45 @@
 				<h1 class='text-left'>Vermelho:<span> Muita coisa para hoje, Marca para outro dia por favor!</span></h1>
 			</div>
 		</div>
-		<div class='row'>								
-			<div class='col-6 bg-warning'>
+		<div class='row border border-warning'>								
+			<div class='col-6 bg-success'>
 				<ul>
-					<li class='text-center text-success'>
+					<li class='text-center text-warning'>
 						<h5 class='mt-3'>Pastas Para Amanhã em diante:</h5>
-					</li><li class='text-center text-success'>						
-						<button type='button' class='tbHoraVerde btMenosAdiantadas'>-</button>
-						<button type='button' class='tbHoraVerde btMaisAdiantadas'>+</button>	
-						<input type='text' name='' size='4' class='text-center bg-danger inputAtrasadasAdiantadas' id='adiantadas'>
+					</li><li class='text-center text-warning'>						
+						<button type='button' class='tbHoraVerde btMenosAdiantadas bg-warning border-danger text-danger'>-</button>
+						<button type='button' class='tbHoraVerde btMaisAdiantadas bg-warning border-danger text-danger'>+</button>	
+						<input type='text' name='' size='4' class='text-center text-warning border-danger bg-danger inputAtrasadasAdiantadas' id='adiantadas'>
 					</li>
 				</ul>
 			</div>
-			<!-- <div class='col-6 bg-warning'>
+			<div class='col-6 bg-success'>
 				<ul>
-					<li class='text-center text-success'>
-						<div class="dropdown">
-							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Pastas Para Amanhã em diante:
-							</button>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								Pastas Para Amanhã:
-								<button type='button' class='tbHoraVerde btMenosAdiantadas'>-</button>
-								<button type='button' class='tbHoraVerde btMaisAdiantadas'>+</button>	
-								<input type='text' name='' size='4' class='text-center bg-danger inputAtrasadasAdiantadas' id='adiantadas'>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div> -->
-			<div class='col-6 bg-warning'>
-				<ul>
-					<li class='text-center text-success'>
+					<li class='text-center text-warning'>
 						<h5 class='mt-3'>Pastas: Atrasadas ou Falta Algo:</h5>
-					</li><li class='text-center text-success'>						
-						<button type='button' class='tbHoraVerde btMenosAtrasadas'>-</button>
-						<button type='button' class='tbHoraVerde btMaisAtrasadas'>+</button>	
-						<input type='text' name='' size='4' class='text-center bg-danger inputAtrasadasAdiantadas' id='atrasadas'>
+					</li><li class='text-center text-warning'>						 
+						<button type='button' class='tbHoraVerde btMenosAtrasadas bg-warning border-danger text-danger'>-</button>
+						<button type='button' class='tbHoraVerde btMaisAtrasadas bg-warning border-danger text-danger'>+</button>	
+						<input type='text' name='' size='4' class='text-center text-warning border-danger bg-danger inputAtrasadasAdiantadas' id='atrasadas'>
 					</li>
 				</ul>
 			</div>
 		</div>
+		<div class='row'>
+			<div class='col-12 p-0'>
+				<select class='form-control bg-success border-warning text-warning'>
+					<option>Tabela Por Níveil Da Dificuldade De Fórmulas - Hoje</option>
+					<option>Tabela De Amanhã</option>					
+					<option>Tabela Depois De Amanhã</option>
+				</select>
+			</div>
+		</div>
 		<div class='row'>								
-			<div class='col-6 bg-secondary'>
+			<div class='col-6 bg-secondary border border-warning'>
 				<p><a href="#manualtabelasSSS" class='text-dark'><h1 class='text-center text-dark m-0'>Sólidos</h1></a></p>				
 				
 			</div>
-			<div class='col-6 bg-primary'>
+			<div class='col-6 bg-primary border border-warning'>
 				<p><a href="#manualtabelasSSS" class='text-dark'><h1 class='text-center text-dark m-0'>Semi-sólidos</h1></a></p>
 				<p class='m-0 p-0'>
 					

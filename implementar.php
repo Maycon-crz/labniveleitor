@@ -27,7 +27,7 @@
 	
 	--->Homologação
 		-->(13/10/2020)
-			-> No menu poção Criar botões: Metil testosterona(Para peixe), Base Efervescente Abacaxi, limão e laranja, Vitamina B12 diluida, T3 diluido, T4 Diluido, Vitamina D3 Diluida;
+			-> Criar colunas: Metil testosterona(Para peixe), Base Efervescente Abacaxi, limão e laranja, Vitamina B12 diluida, T3 diluido, T4 Diluido, Vitamina D3 Diluida na tabela no DB;
 		<--
 	<---
 
