@@ -18,16 +18,17 @@ $(document).ready(function(){
 });
 function selectDiaTabelaSolidosSemiSolidos(){
 	$(document).on('change', '#SelectTabelaSolidosSemisolidosDia', function(){
-		var idTabelaSolidosSemisolidosDia = $(this).val();
-		$.ajax({
-			url: 'confg.php',
-			type: 'post',
-			data: {'idTabelaSolidosSemisolidosDia': idTabelaSolidosSemisolidosDia},
-			dataType: 'json',
-			success: function(retornado){
-				alert(retornado);
-			}
-		});
+		// var idTabelaSolidosSemisolidosDia = $(this).val();
+		atualizatudo();
+		// $.ajax({
+		// 	url: 'confg.php',
+		// 	type: 'post',
+		// 	data: {'idTabelaSolidosSemisolidosDia': idTabelaSolidosSemisolidosDia},
+		// 	dataType: 'json',
+		// 	success: function(retornado){
+		// 		alert(retornado);
+		// 	}
+		// });
 	});
 }
 function updateAtrasadasAdiantadas(inputAtrasadasAdiantadas, parametroAtrasadasAdiantadas){
@@ -355,13 +356,14 @@ function atualizatudo(){
     if(vfLogin == "nao"){
     	window.location.href = "index.php";   
     }
-	var atualiza = "atualiza";
+	var atualiza = $("#SelectTabelaSolidosSemisolidosDia").val();
+
 	$.ajax({
 		url: "confg.php",
 		type: "post",
 		data: {"atualiza": atualiza},
 		dataType: "json",
-		success: function(retornado){	
+		success: function(retornado){			
 			//Atrasadas e Adiantadas
 				var adiantadas = retornado.adiantadas;
 				$('#adiantadas').val(adiantadas);

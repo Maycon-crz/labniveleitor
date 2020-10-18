@@ -209,12 +209,28 @@
 		}		
 	}
 	class listadados{
-		function solidos($con){
+		function solidos($con, $atualiza){
+
+			//Criar cópia das tabelas solido, semi-solidos... com outros nomes para poder selecionar mais Dias...
+
+			$listadedados = array("");
+			switch($atualiza){
+				case 'opcaoTabelaDeHoje':
+					// $listadedados['debug'] = "HJ!";
+					// $sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidos WHERE 1=1";
+				break;
+					// $listadedados['debug'] = "AM!";
+					// $sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidosamanha WHERE 1=1";
+				break;
+				case 'opcaoTabelaDepoisDeAmanha':
+					// $listadedados['debug'] = "DM!";
+					// $sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidosdepoisdeamanha WHERE 1=1";
+				break;
+			}									
 			$sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidos WHERE 1=1";
 			$buscasolidos = $con->prepare($sqlBuscasolidos);
 			if($buscasolidos->execute()){
-				$resultadosSolidos = $buscasolidos->fetchAll(PDO::FETCH_ASSOC);
-				$listadedados = array("");		
+				$resultadosSolidos = $buscasolidos->fetchAll(PDO::FETCH_ASSOC);					
 				$listadedados['oitonoveVerde'] 	= $resultadosSolidos[0]["verde"];
 				$listadedados['oitonoveAmarela'] 	= $resultadosSolidos[0]["amarela"];
 				$listadedados['oitonoveVermelha'] 	= $resultadosSolidos[0]["vermelha"];
@@ -483,9 +499,9 @@
 			$login = new login;
 			$ferramentas = new ferramentas;
 
-			if(isset($_POST['idTabelaSolidosSemisolidosDia'])){
-				echo json_encode('Pronto para chamar função! Parametro: '.$_POST['idTabelaSolidosSemisolidosDia']);
-			}
+			// if(isset($_POST['idTabelaSolidosSemisolidosDia'])){
+			// 	echo json_encode('Pronto para chamar função! Parametro: '.$_POST['idTabelaSolidosSemisolidosDia']);
+			// }
 			if(isset($_POST['inputAtrasadasAdiantadas']) || isset($_POST['parametroAtrasadasAdiantadas'])){
 				$editadados->updateAtrasadasAdiantadas($con, $ferramentas, $_POST['inputAtrasadasAdiantadas'], $_POST['parametroAtrasadasAdiantadas']);
 			}
@@ -529,8 +545,8 @@
 				}else{echo json_encode("Função restrita ao laboratório!");}								
 			}
 			// $listadados->solidos($con);
-			if(isset($_POST['atualiza'])){
-				$listadados->solidos($con);
+			if(isset($_POST['atualiza'])){				
+				$listadados->solidos($con, $_POST['atualiza']);
 			}	
 			if(isset($_POST['sair'])){
 				$ferramentas->sair();
