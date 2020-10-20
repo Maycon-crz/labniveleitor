@@ -216,20 +216,18 @@
 			$listadedados = array("");
 			switch($atualiza){
 				case 'opcaoTabelaDeHoje':
-					// $listadedados['debug'] = "HJ!";
-					// $sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidos WHERE 1=1";
+					$sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidos WHERE 1=1";
+					$buscasolidos = $con->prepare($sqlBuscasolidos);					
 				break;
-				case 'opcaoTabelaDeAmanha':
-					// $listadedados['debug'] = "AM!";
-					// $sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidosamanha WHERE 1=1";
+				case 'opcaoTabelaDeAmanha':					
+					$sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidosamanha WHERE 1=1";
+					$buscasolidos = $con->prepare($sqlBuscasolidos);					
 				break;
-				case 'opcaoTabelaDepoisDeAmanha':
-					// $listadedados['debug'] = "DM!";
-					// $sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidosdepoisdeamanha WHERE 1=1";
+				case 'opcaoTabelaDepoisDeAmanha':					
+					$sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidosdepoisdeamanha WHERE 1=1";
+					$buscasolidos = $con->prepare($sqlBuscasolidos);					
 				break;
-			}									
-			$sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidos WHERE 1=1";
-			$buscasolidos = $con->prepare($sqlBuscasolidos);
+			}
 			if($buscasolidos->execute()){
 				$resultadosSolidos = $buscasolidos->fetchAll(PDO::FETCH_ASSOC);					
 				$listadedados['oitonoveVerde'] 	= $resultadosSolidos[0]["verde"];
@@ -275,14 +273,26 @@
 				$listadedados['doitodnoveVerde'] 	= $resultadosSolidos[10]["verde"];
 				$listadedados['doitodnoveAmarela'] = $resultadosSolidos[10]["amarela"];
 				$listadedados['doitodnoveVermelha'] = $resultadosSolidos[10]["vermelha"];				
-				$this->semisolidos($con, $listadedados);
+				$this->semisolidos($con, $listadedados, $atualiza);
 			}else{
 				echo json_encode("Erro de busca de solidos");
 			}
 		}
-		function semisolidos($con, $listadedados){
-			$sqlBuscaSemiSolidos = "SELECT nomehorario, verde, amarela, vermelha FROM semisolidos WHERE 1=1";
-			$buscaSemiSolidos = $con->prepare($sqlBuscaSemiSolidos);
+		function semisolidos($con, $listadedados, $atualiza){
+			switch($atualiza){
+				case 'opcaoTabelaDeHoje':
+					$sqlBuscaSemiSolidos = "SELECT nomehorario, verde, amarela, vermelha FROM semisolidos WHERE 1=1";
+					$buscaSemiSolidos = $con->prepare($sqlBuscaSemiSolidos);				
+				break;
+				case 'opcaoTabelaDeAmanha':					
+					$sqlBuscaSemiSolidos = "SELECT nomehorario, verde, amarela, vermelha FROM semisolidosamanha WHERE 1=1";
+					$buscaSemiSolidos = $con->prepare($sqlBuscaSemiSolidos);						
+				break;
+				case 'opcaoTabelaDepoisDeAmanha':					
+					$sqlBuscaSemiSolidos = "SELECT nomehorario, verde, amarela, vermelha FROM semisolidosdepoisdeamanha WHERE 1=1";
+					$buscaSemiSolidos = $con->prepare($sqlBuscaSemiSolidos);						
+				break;
+			}				
 			if($buscaSemiSolidos->execute()){
 				$resultadosSemiSolidos = $buscaSemiSolidos->fetchAll(PDO::FETCH_ASSOC);
 				$listadedados['semisolidos_oitonoveVerde'] 	= $resultadosSemiSolidos[0]["verde"];

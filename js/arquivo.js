@@ -16,9 +16,10 @@ $(document).ready(function(){
 	cadastroDeFuncionarios();
 	login();
 });
+var idTabelaSolidosSemisolidosDia = "opcaoTabelaDeHoje";
 function selectDiaTabelaSolidosSemiSolidos(){
 	$(document).on('change', '#SelectTabelaSolidosSemisolidosDia', function(){
-		// var idTabelaSolidosSemisolidosDia = $(this).val();
+		idTabelaSolidosSemisolidosDia = $(this).val();
 		atualizatudo();
 		// $.ajax({
 		// 	url: 'confg.php',
@@ -356,8 +357,10 @@ function atualizatudo(){
     if(vfLogin == "nao"){
     	window.location.href = "index.php";   
     }
-	var atualiza = $("#SelectTabelaSolidosSemisolidosDia").val();
-
+	var atualiza = idTabelaSolidosSemisolidosDia;
+	$(document).on('change', '#SelectTabelaSolidosSemisolidosDia', function(){
+		var atualiza = $(this).val();
+	});
 	$.ajax({
 		url: "confg.php",
 		type: "post",

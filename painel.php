@@ -47,7 +47,7 @@
 		<div class='row'>
 			<div class='col-12 p-0'>
 				<select id='SelectTabelaSolidosSemisolidosDia' class='form-control bg-success border-warning text-warning'>
-					<option value='opcaoTabelaDeHoje' selected>Tabela Por Níveil Da Dificuldade De Fórmulas - Hoje</option>
+					<option value='opcaoTabelaDeHoje'>Tabela Por Níveil Da Dificuldade De Fórmulas - Hoje</option>
 					<option value='opcaoTabelaDeAmanha'>Tabela De Amanhã</option>					
 					<option value='opcaoTabelaDepoisDeAmanha'>Tabela Depois De Amanhã</option>
 				</select>
