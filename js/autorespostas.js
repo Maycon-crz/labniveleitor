@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	excluindoDinamicoMSGpronta();
 	excluindoMensagemPronta();
 	editandoMensagemPronta();
 	copiarTextoDaMSGSpronta();
@@ -6,6 +7,13 @@ $(document).ready(function(){
 	cadastroMSGSprontas();
 });
 var contaDinamicos=0;
+function excluindoDinamicoMSGpronta(){
+	$(document).on('click', '.btExcluindoDinamicoMSGpronta', function(){
+		var idBtExcluindoDinamicoMSGpronta = $(this).attr('id');
+		var valueBtExcluindoDinamicoMSGpronta = $(this).val();
+		alert(idBtExcluindoDinamicoMSGpronta+"-"+valueBtExcluindoDinamicoMSGpronta);
+	});
+}
 function excluindoMensagemPronta(){
 	$(document).on('click', '.btExluiMSGSprontaDB', function(){
 		var idbtExluiMSGSprontaDB = $(this).val();
