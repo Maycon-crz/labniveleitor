@@ -9,14 +9,18 @@
 --->Tarefas 
 	--->Mais urgentes		
 
-		-> Criei botões: Metil testosterona(Para peixe), Base Efervescente Abacaxi, limão e laranja, Vitamina B12 diluida, T3 diluido, T4 Diluido, Vitamina D3 Diluida Porém não implementei eles no
+		-> Na hora de Editar a Quantidade de pastas editar a tabela do dia especificado no select!	
+
+		-> (Talvez não precise com a nova Dinamica)Criei botões: Metil testosterona(Para peixe), Base Efervescente Abacaxi, limão e laranja, Vitamina B12 diluida, T3 diluido, T4 Diluido, Vitamina D3 Diluida Porém não implementei eles no
 		Javascript nem na tabela do Banco de Dados!;
+
 		-> Remodelar ao invés de botões criar input para adicionar pré-prontos Digitando o nome mas ainda
-		com as opções Acabando e Acabou
-		-> Criar botões para adicionar dinâmicos na listagem de msgs prontas também
+		com as opções Acabando e Acabou;
+
 		-> Restringir a ter no minimo nivel 1 
 		para alterar qualquer parametro no banco e 
 		nivel 2 para coisas do laboratorio;
+
 		-> Verificar um BUG de sessao que dura apenas 180 minutos perdendo os dados de $_SESSION['nivel'] ai mesmo estando logado no nivel 1 depois de um tempo não
 		permite fazer algumas modificacoes!!!(Tempo de sessão está com apenas 180 minutos procurar uma forma de aumentar)
 
@@ -30,6 +34,10 @@
 	--->Homologação
 		-->(13/10/2020)
 			-> Criar colunas: Metil testosterona(Para peixe), Base Efervescente Abacaxi, limão e laranja, Vitamina B12 diluida, T3 diluido, T4 Diluido, Vitamina D3 Diluida na tabela no DB;
+
+			-> Criar botões para adicionar dinâmicos na listagem de msgs prontas também (Criei Botões de excluir e de adicionar);
+
+			-> Criei input para subistituir botões de pré-prontos(Acabando e Acabou) e tabela uma nova para armazenar os parametros;
 		<--
 	<---
 
