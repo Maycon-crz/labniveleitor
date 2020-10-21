@@ -11,7 +11,9 @@
 
 		-> Criei botões: Metil testosterona(Para peixe), Base Efervescente Abacaxi, limão e laranja, Vitamina B12 diluida, T3 diluido, T4 Diluido, Vitamina D3 Diluida Porém não implementei eles no
 		Javascript nem na tabela do Banco de Dados!;
-		
+		-> Remodelar ao invés de botões criar input para adicionar pré-prontos Digitando o nome mas ainda
+		com as opções Acabando e Acabou
+		-> Criar botões para adicionar dinâmicos na listagem de msgs prontas também
 		-> Restringir a ter no minimo nivel 1 
 		para alterar qualquer parametro no banco e 
 		nivel 2 para coisas do laboratorio;

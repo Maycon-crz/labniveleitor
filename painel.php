@@ -1033,6 +1033,11 @@
 						<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 					</div>
 				</li><li>
+					<input type='text' placeholder='' size='16' id=''/>
+				</li><li>					
+					<button type='button' class='btsFaltaProducao form-control btn btn-danger m-0 p-0' id='acabou'>Acabando</button>
+					<button type='button' class='btsFaltaProducao form-control btn btn-warning m-0 p-0' id='producao'>Produção</button>					
+				</li><li>
 					<button type='button' class='btsPreProntos mt-2' id='Almoco'>Almoço</button>
 				</li><li>
 					<div class='linhaPreProntos' id='linhaAlmoco'>
