@@ -98,7 +98,8 @@
 					$MSGSprontasCorpo .= "<li class='pt-1'>
 						<button type='button' class='btn btn-success mr-3 btVisualizarMSGSprontaDoDB' id='".$contadorprontas."'>Visualizar</button>
 						<button type='button' class='btn btn-warning mr-3 btEditaMSGSprontaDB' value='".$corpoMSGS['id']."' id='".$contadorprontas."'>Gravar Edição</button>
-						<button type='button' class='btn btn-danger btExluiMSGSprontaDB' value='".$corpoMSGS['id']."' id='".$contadorprontas."'>Excluir</button>
+						<button type='button' class='btn btn-danger  mr-3 btExluiMSGSprontaDB' value='".$corpoMSGS['id']."' id='".$contadorprontas."'>Excluir</button>
+						<button type='button' class='btn btn-primary' value='".$corpoMSGS['id']."' id='".$contadorprontas."'>Adicionar Dinâmicos</button>
 					</li>";
 					$MSGSprontasCorpo .= "<li id='visualizandoMSGSdb".$contadorprontas."'></li>";
 					$MSGSprontasCorpo .= "<li><hr class='bg-dark'/></li>";									
