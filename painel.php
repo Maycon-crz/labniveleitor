@@ -47,9 +47,18 @@
 		<div class='row'>
 			<div class='col-12 p-0'>
 				<select id='SelectTabelaSolidosSemisolidosDia' class='form-control bg-success border-warning text-warning'>
-					<option value='opcaoTabelaDeHoje'>Tabela Por Níveil Da Dificuldade De Fórmulas - Hoje</option>
-					<option value='opcaoTabelaDeAmanha'>Tabela De Amanhã</option>					
-					<option value='opcaoTabelaDepoisDeAmanha'>Tabela Depois De Amanhã</option>
+					<option value='opcaoTabelaDeHoje'>{*** Tabela De Hoje ***}</option>
+					<option value='opcaoTabelaDeAmanha'>{*** Tabela De Amanhã ***}</option>					
+					<option value='opcaoTabelaDepoisDeAmanha'>{*** Tabela Depois De Amanhã ***}</option>
+				</select>
+			</div>
+		</div>
+		<div class='row'>
+			<div class='col-12 p-0'>
+				<select id='tranferirDadosTabelaSolidosSemisolidos' class='form-control bg-success border-warning text-warning'>					
+					<option value=''>--- Transferência de dados ---</option>
+					<option value='RefreshAmanha'>Transferir dados da tabela de Amanhã para Tabela de Hoje</option>
+					<option value='RefreshDepoisDeAmanha'>Transferir dados da tabela Depois de amanhã para Tabela de Hoje</option>
 				</select>
 			</div>
 		</div>
