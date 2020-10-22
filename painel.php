@@ -57,7 +57,7 @@
 			<div class='col-12 p-0'>
 				<select id='tranferirDadosTabelaSolidosSemisolidos' class='form-control bg-success border-warning text-warning'>					
 					<option value=''>--- Transferência de dados ---</option>
-					<option value='RefreshAmanha'>Transferir dados da tabela de Amanhã para Tabela de Hoje</option>
+					<option value='RefreshAmanha'>Transferir dados da tabela de Amanhã para Tabela de hoje</option>
 					<option value='RefreshDepoisDeAmanha'>Transferir dados da tabela Depois de amanhã para Tabela de Hoje</option>
 				</select>
 			</div>

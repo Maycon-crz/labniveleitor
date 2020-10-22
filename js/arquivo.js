@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	tranferirDadosTabelaSolidosSemisolidos();
 	selectDiaTabelaSolidosSemiSolidos();
 	pastasAtrasadasAdiantadas();
 	opcoesLaboratorios();
@@ -17,31 +18,28 @@ $(document).ready(function(){
 	login();
 });
 var idTabelaSolidosSemisolidosDia = "opcaoTabelaDeHoje";
-function selectDiaTabelaSolidosSemiSolidos(){
+function tranferirDadosTabelaSolidosSemisolidos(){
 	$(document).on('change', '#tranferirDadosTabelaSolidosSemisolidos', function(){
 		idTabelaSolidosSemisolidosDia = $(this).val();
 		switch(idTabelaSolidosSemisolidosDia){
 			case 'RefreshAmanha':
-				if(confirm("Deseja Transferir dados das tabelas Sólidos e Semi-Sólidos de Amanhã para Hoje?")){
-					alert("Bora lá então tranferir Amanhã para Hoje!");
+				if(confirm("Deseja Transferir dados das tabelas sólidos e semi-sólidos de Amanhã para Tabela de Hoje?")){
+					alert("Bora la Amanha");
 				}
 			break;
 			case 'RefreshDepoisDeAmanha':
-			if(confirm("Deseja Transferir dados das tabelas Sólidos e Semi-Sólidos Depois de Amanhã para Hoje?")){
-				alert("Bora lá então tranferir Depois Amanhã para Hoje!");
-			}
+				if(confirm("Deseja Transferir dados das tabelas sólidos e semi-sólidos Depois de Amanhã para Tabela de Hoje?")){
+					alert("Bora la Depois de Amanha");
+				}
 			break;
 		}
+		// atualizatudo();
+	});
+}
+function selectDiaTabelaSolidosSemiSolidos(){
+	$(document).on('change', '#SelectTabelaSolidosSemisolidosDia', function(){
+		idTabelaSolidosSemisolidosDia = $(this).val();
 		atualizatudo();
-		// $.ajax({
-		// 	url: 'confg.php',
-		// 	type: 'post',
-		// 	data: {'idTabelaSolidosSemisolidosDia': idTabelaSolidosSemisolidosDia},
-		// 	dataType: 'json',
-		// 	success: function(retornado){
-		// 		alert(retornado);
-		// 	}
-		// });
 	});
 }
 function updateAtrasadasAdiantadas(inputAtrasadasAdiantadas, parametroAtrasadasAdiantadas){
