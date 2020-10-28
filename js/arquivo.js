@@ -18,18 +18,31 @@ $(document).ready(function(){
 	login();
 });
 var idTabelaSolidosSemisolidosDia = "opcaoTabelaDeHoje";
+function refresh(refreshTranferirDadosEntreTabelas){
+	$.ajax({
+		url: 'confg.php',
+		type: 'POST',
+		data: {'refreshTranferirDadosEntreTabelas': refreshTranferirDadosEntreTabelas},
+		dataType: 'json',
+		success: function(retornado){
+			alert(retornado);
+			carregar();
+		}
+	});
+}
 function tranferirDadosTabelaSolidosSemisolidos(){
 	$(document).on('change', '#tranferirDadosTabelaSolidosSemisolidos', function(){
-		idTabelaSolidosSemisolidosDia = $(this).val();
-		switch(idTabelaSolidosSemisolidosDia){
+		var refreshTranferirDadosEntreTabelas = $(this).val();
+		switch(refreshTranferirDadosEntreTabelas){
 			case 'RefreshAmanha':
 				if(confirm("Deseja Transferir dados das tabelas sólidos e semi-sólidos de Amanhã para Tabela de Hoje?")){
-					alert("Bora la Amanha");
+					// alert("Bora la Amanha");
+					refresh(refreshTranferirDadosEntreTabelas);
 				}
-			break;
-			case 'RefreshDepoisDeAmanha':
+			break; case 'RefreshDepoisDeAmanha':
 				if(confirm("Deseja Transferir dados das tabelas sólidos e semi-sólidos Depois de Amanhã para Tabela de Hoje?")){
-					alert("Bora la Depois de Amanha");
+					// alert("Bora la Depois de Amanha");
+					refresh(refreshTranferirDadosEntreTabelas);
 				}
 			break;
 		}

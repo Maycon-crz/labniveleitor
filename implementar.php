@@ -9,7 +9,7 @@
 --->Tarefas 
 	--->Mais urgentes		
 
-		-> Na hora de Editar a Quantidade de pastas editar a tabela do dia especificado no select!	
+			
 
 		-> (Talvez não precise com a nova Dinamica)Criei botões: Metil testosterona(Para peixe), Base Efervescente Abacaxi, limão e laranja, Vitamina B12 diluida, T3 diluido, T4 Diluido, Vitamina D3 Diluida Porém não implementei eles no
 		Javascript nem na tabela do Banco de Dados!;
@@ -32,6 +32,9 @@
 -----------------------Concluidos(Organizar por DATA!!!)-----------------------
 	
 	--->Homologação
+		-->(27/10/2020)
+			-> Na hora de Editar a Quantidade de pastas editar a tabela do dia especificado no select!
+		<--
 		-->(13/10/2020)
 			-> Criar colunas: Metil testosterona(Para peixe), Base Efervescente Abacaxi, limão e laranja, Vitamina B12 diluida, T3 diluido, T4 Diluido, Vitamina D3 Diluida na tabela no DB;
 

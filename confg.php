@@ -519,9 +519,9 @@
 			$login = new login;
 			$ferramentas = new ferramentas;
 
-			// if(isset($_POST['idTabelaSolidosSemisolidosDia'])){
-			// 	echo json_encode('Pronto para chamar função! Parametro: '.$_POST['idTabelaSolidosSemisolidosDia']);
-			// }
+			if(isset($_POST['refreshTranferirDadosEntreTabelas'])){
+				echo json_encode('Pronto para chamar função! Parametro: '.$_POST['refreshTranferirDadosEntreTabelas']);
+			}
 			if(isset($_POST['inputAtrasadasAdiantadas']) || isset($_POST['parametroAtrasadasAdiantadas'])){
 				$editadados->updateAtrasadasAdiantadas($con, $ferramentas, $_POST['inputAtrasadasAdiantadas'], $_POST['parametroAtrasadasAdiantadas']);
 			}
