@@ -156,33 +156,44 @@
 				echo json_encode("Erro ao atualizar o pedido!");
 			}
 		}
-		function editaQTDformulas($con, $ferramentas, $valor, $nomehorariodb, $tipoTbHora, $cor){
+		function editaQTDformulas($con, $ferramentas, $valor, $nomehorariodb, $tipoTbHora, $cor, $diaDaTabela){
 			$valor = $ferramentas->filtrando($valor); $nomehorariodb = $ferramentas->filtrando($nomehorariodb);
 			$tipoTbHora = $ferramentas->filtrando($tipoTbHora); $cor = $ferramentas->filtrando($cor);
+			$diaDaTabela = $ferramentas->filtrando($diaDaTabela);
+			$diaDaTabelaSemiSolidos = "";
+			$diaDaTabelaSolidos = "";
+			switch($diaDaTabela){
+				case 'opcaoTabelaDeHoje':
+					$diaDaTabelaSemiSolidos = "semisolidos";
+					$diaDaTabelaSolidos = "solidos";
+				break; case 'opcaoTabelaDeAmanha':										
+					$diaDaTabelaSemiSolidos = "semisolidosamanha";
+					$diaDaTabelaSolidos = "solidosamanha";		
+				break; case 'opcaoTabelaDepoisDeAmanha':					
+					$diaDaTabelaSemiSolidos = "semisolidosdepoisdeamanha";
+					$diaDaTabelaSolidos = "solidosdepoisdeamanha";					
+				break;
+			}
 			switch($tipoTbHora){
 				case 'solidos':
 					switch($cor){
 						case 'verde':
-							$sqlUpdateTbHora = "UPDATE solidos SET verde=:valor WHERE nomehorario=:nomehorariodb";
-						break;
-						case 'amarela':
-							$sqlUpdateTbHora = "UPDATE solidos SET amarela=:valor WHERE nomehorario=:nomehorariodb";
-						break;
-						case 'vermelha':
-							$sqlUpdateTbHora = "UPDATE solidos SET vermelha=:valor WHERE nomehorario=:nomehorariodb";
+							$sqlUpdateTbHora = "UPDATE $diaDaTabelaSolidos SET verde=:valor WHERE nomehorario=:nomehorariodb";
+						break; case 'amarela':
+							$sqlUpdateTbHora = "UPDATE $diaDaTabelaSolidos SET amarela=:valor WHERE nomehorario=:nomehorariodb";
+						break; case 'vermelha':
+							$sqlUpdateTbHora = "UPDATE $diaDaTabelaSolidos SET vermelha=:valor WHERE nomehorario=:nomehorariodb";
 						break;
 					}					
 				break;
 				case 'semisolidos':
 					switch($cor){
 						case 'verde':
-							$sqlUpdateTbHora = "UPDATE semisolidos SET verde=:valor WHERE nomehorario=:nomehorariodb";
-						break;
-						case 'amarela':
-							$sqlUpdateTbHora = "UPDATE semisolidos SET amarela=:valor WHERE nomehorario=:nomehorariodb";
-						break;
-						case 'vermelha':
-							$sqlUpdateTbHora = "UPDATE semisolidos SET vermelha=:valor WHERE nomehorario=:nomehorariodb";
+							$sqlUpdateTbHora = "UPDATE $diaDaTabelaSemiSolidos SET verde=:valor WHERE nomehorario=:nomehorariodb";
+						break; case 'amarela':
+							$sqlUpdateTbHora = "UPDATE $diaDaTabelaSemiSolidos SET amarela=:valor WHERE nomehorario=:nomehorariodb";
+						break; case 'vermelha':
+							$sqlUpdateTbHora = "UPDATE $diaDaTabelaSemiSolidos SET vermelha=:valor WHERE nomehorario=:nomehorariodb";
 						break;
 					}			
 				break;
@@ -218,12 +229,10 @@
 				case 'opcaoTabelaDeHoje':
 					$sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidos WHERE 1=1";
 					$buscasolidos = $con->prepare($sqlBuscasolidos);					
-				break;
-				case 'opcaoTabelaDeAmanha':					
+				break; case 'opcaoTabelaDeAmanha':					
 					$sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidosamanha WHERE 1=1";
 					$buscasolidos = $con->prepare($sqlBuscasolidos);					
-				break;
-				case 'opcaoTabelaDepoisDeAmanha':					
+				break; case 'opcaoTabelaDepoisDeAmanha':					
 					$sqlBuscasolidos = "SELECT nomehorario, verde, amarela, vermelha FROM solidosdepoisdeamanha WHERE 1=1";
 					$buscasolidos = $con->prepare($sqlBuscasolidos);					
 				break;
@@ -546,7 +555,7 @@
 			if(isset($_POST['valor'])){
 				session_start(); 
 				if($_SESSION['nivel'] === "1"){	
-					$editadados->editaQTDformulas($con, $ferramentas, $_POST['valor'], $_POST['nomehorariodb'], $_POST['tipoTbHora'], $_POST['cor']);
+					$editadados->editaQTDformulas($con, $ferramentas, $_POST['valor'], $_POST['nomehorariodb'], $_POST['tipoTbHora'], $_POST['cor'], $_POST['diaDaTabela']);
 				}else{echo json_encode("Função restrita ao laboratório!");}
 			}
 			if(isset($_POST['nvPressao'])){

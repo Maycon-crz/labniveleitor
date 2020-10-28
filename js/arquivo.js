@@ -276,7 +276,7 @@ function pegaPedidosDasFiliais(){
 		});
 	});
 }
-function enviaEdicaoQTDTbHora(valor, nomehorariodb, tipoTbHora, cor){	
+function enviaEdicaoQTDTbHora(valor, nomehorariodb, tipoTbHora, cor, diaDaTabela){	
 	$.ajax({
 		url: 'confg.php',
 		type: 'post',
@@ -285,6 +285,7 @@ function enviaEdicaoQTDTbHora(valor, nomehorariodb, tipoTbHora, cor){
 			"nomehorariodb": nomehorariodb,
 			"tipoTbHora": tipoTbHora,
 			"cor": cor,
+			"diaDaTabela": diaDaTabela
 		},
 		dataType: 'json',
 		success: function(retornado){
@@ -304,7 +305,8 @@ function btsMaisMenosTbHora(){
 		var nomehorariodb = $("#nomehorario"+maisformulasnivel).attr("name");
 		var tipoTbHora = $("#nomehorario"+maisformulasnivel).attr("class");
 		var cor = $("#nomehorario"+maisformulasnivel).val();		
-		enviaEdicaoQTDTbHora(somando, nomehorariodb, tipoTbHora, cor);
+		var diaDaTabela = $("#SelectTabelaSolidosSemisolidosDia").val();
+		enviaEdicaoQTDTbHora(somando, nomehorariodb, tipoTbHora, cor, diaDaTabela);
 	});
 	$(document).on('click', '.menosformulasnivel',function(){
 		var menosformulasnivel = $(this).attr('id');
@@ -313,9 +315,9 @@ function btsMaisMenosTbHora(){
 		var subitraido = parseInt(valorAntigoInputTbHoraMenos) - parseInt(menosum);
 		var nomehorariodb = $("#nomehorario"+menosformulasnivel).attr("name");
 		var tipoTbHora = $("#nomehorario"+menosformulasnivel).attr("class");
-		var cor = $("#nomehorario"+menosformulasnivel).val();		
-		enviaEdicaoQTDTbHora(subitraido, nomehorariodb, tipoTbHora, cor);
-		// atualizatudo();
+		var cor = $("#nomehorario"+menosformulasnivel).val();
+		var diaDaTabela = $("#SelectTabelaSolidosSemisolidosDia").val();
+		enviaEdicaoQTDTbHora(subitraido, nomehorariodb, tipoTbHora, cor, diaDaTabela);
 	});
 }
 function diretoInputTbHora(){
