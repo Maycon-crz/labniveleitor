@@ -1,6 +1,6 @@
 <?php include('include/conn.php');?>
 <?php
-    $_SESSION['logado'] = "nao";
+    $_SESSION['logado'] = "nao";    
 	class avisos{
 		function excluiAviso($con, $ferramentas, $idlixeira){
 			$idlixeira = $ferramentas->filtrando($idlixeira);
@@ -39,6 +39,12 @@
 			}else{
 				echo json_encode("Erro ao enviar Aviso!");
 			}
+		}
+	}
+	class tranferenciaEntreTabelasParaHoje{
+		function tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, $refreshTranferirDadosEntreTabelas){
+			$listadados->solidos($con, $ferramentas, $refreshTranferirDadosEntreTabelas, $parametroTabelas);
+			// echo json_encode('Funcao chamada! Parametro: '.$_POST['refreshTranferirDadosEntreTabelas']);
 		}
 	}
 	class editadados{
@@ -220,10 +226,7 @@
 		}		
 	}
 	class listadados{
-		function solidos($con, $atualiza){
-
-			//Criar cópia das tabelas solido, semi-solidos... com outros nomes para poder selecionar mais Dias...
-
+		function solidos($con, $ferramentas, $atualiza, $parametroTabelas){
 			$listadedados = array("");
 			switch($atualiza){
 				case 'opcaoTabelaDeHoje':
@@ -282,12 +285,14 @@
 				$listadedados['doitodnoveVerde'] 	= $resultadosSolidos[10]["verde"];
 				$listadedados['doitodnoveAmarela'] = $resultadosSolidos[10]["amarela"];
 				$listadedados['doitodnoveVermelha'] = $resultadosSolidos[10]["vermelha"];				
-				$this->semisolidos($con, $listadedados, $atualiza);
+				$this->semisolidos($con, $listadedados, $atualiza, $parametroTabelas);
 			}else{
-				echo json_encode("Erro de busca de solidos");
+				if($parametroTabelas === "Atualizando"){
+					echo json_encode("Erro de busca de solidos");
+				}else{return json_encode("Erro de busca de solidos");}				
 			}
 		}
-		function semisolidos($con, $listadedados, $atualiza){
+		function semisolidos($con, $listadedados, $atualiza, $parametroTabelas){
 			switch($atualiza){
 				case 'opcaoTabelaDeHoje':
 					$sqlBuscaSemiSolidos = "SELECT nomehorario, verde, amarela, vermelha FROM semisolidos WHERE 1=1";
@@ -346,8 +351,10 @@
 
 				$listadedados['semisolidos_doitodnoveVerde'] 	= $resultadosSemiSolidos[10]["verde"];
 				$listadedados['semisolidos_doitodnoveAmarela'] = $resultadosSemiSolidos[10]["amarela"];
-				$listadedados['semisolidos_doitodnoveVermelha'] = $resultadosSemiSolidos[10]["vermelha"];								
-				$this->nivelDePressaoEpedidos($con, $listadedados);
+				$listadedados['semisolidos_doitodnoveVermelha'] = $resultadosSemiSolidos[10]["vermelha"];
+				if($parametroTabelas === "Atualizando"){								
+					$this->nivelDePressaoEpedidos($con, $listadedados);
+				}else{return $listadedados;}
 			}else{
 				echo json_encode("Erro de busca de solidos");
 			}
@@ -511,16 +518,17 @@
 		function iniciando(){				
 			$banco = new banco;
 			$con = $banco->conexao();
-			
+						
 			$avisos = new avisos;
-			$editadados = new editadados;
+			$tranferenciaEntreTabelasParaHoje = new tranferenciaEntreTabelasParaHoje;
+			$editadados = new editadados;			
 			$listadados = new listadados;
 			$cadastroDeFuncionarios = new cadastroDeFuncionarios;
 			$login = new login;
 			$ferramentas = new ferramentas;
 
 			if(isset($_POST['refreshTranferirDadosEntreTabelas'])){
-				echo json_encode('Pronto para chamar função! Parametro: '.$_POST['refreshTranferirDadosEntreTabelas']);
+				$tranferenciaEntreTabelasParaHoje->tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, $_POST['refreshTranferirDadosEntreTabelas']);
 			}
 			if(isset($_POST['inputAtrasadasAdiantadas']) || isset($_POST['parametroAtrasadasAdiantadas'])){
 				$editadados->updateAtrasadasAdiantadas($con, $ferramentas, $_POST['inputAtrasadasAdiantadas'], $_POST['parametroAtrasadasAdiantadas']);
@@ -566,7 +574,7 @@
 			}
 			// $listadados->solidos($con);
 			if(isset($_POST['atualiza'])){				
-				$listadados->solidos($con, $_POST['atualiza']);
+				$listadados->solidos($con, $ferramentas, $_POST['atualiza'], "Atualizando");
 			}	
 			if(isset($_POST['sair'])){
 				$ferramentas->sair();

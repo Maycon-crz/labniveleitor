@@ -26,7 +26,7 @@ function refresh(refreshTranferirDadosEntreTabelas){
 		dataType: 'json',
 		success: function(retornado){
 			alert(retornado);
-			carregar();
+			// carregar();
 		}
 	});
 }
