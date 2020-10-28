@@ -42,8 +42,19 @@
 		}
 	}
 	class tranferenciaEntreTabelasParaHoje{
+
+		// Fazer funcionar isto pegar dados da funcao mais velha e por nessa
+
 		function tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, $refreshTranferirDadosEntreTabelas){
-			$listadados->solidos($con, $ferramentas, $refreshTranferirDadosEntreTabelas, $parametroTabelas);
+			$refreshTranferirDadosEntreTabelas = $ferramentas->filtrando($refreshTranferirDadosEntreTabelas);
+			switch($refreshTranferirDadosEntreTabelas){
+				case "RefreshAmanha":
+					$refreshTranferirDadosEntreTabelas = "opcaoTabelaDeAmanha";
+				break; case "RefreshDepoisDeAmanha":
+					$refreshTranferirDadosEntreTabelas =  "opcaoTabelaDepoisDeAmanha";
+				break; 
+			}
+			echo json_encode($listadados->solidos($con, $ferramentas, $refreshTranferirDadosEntreTabelas, "Transferindo pastas"));
 			// echo json_encode('Funcao chamada! Parametro: '.$_POST['refreshTranferirDadosEntreTabelas']);
 		}
 	}
@@ -69,45 +80,45 @@
 			$idbtsPreProntos = $ferramentas->filtrando($idbtsPreProntos);
 			$parametroexipientes = $ferramentas->filtrando($parametroexipientes);
 			switch($idbtsPreProntos){
-				case "Excipiente":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET excipiente=:parametroexipientes WHERE 1=1";
-				break;
-				case "CremeNaoIonico":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremenaoionico=:parametroexipientes WHERE 1=1";
-				break;
-				case "BaseGelAnastrozol":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET basegelanastrozol=:parametroexipientes WHERE 1=1";
-				break;
-				case "Tacrolimus":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET tacrolimus=:parametroexipientes WHERE 1=1";
-				break;
-				case "BaseSabonete":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET basesabonete=:parametroexipientes WHERE 1=1";
-				break;
-				case "BaseShampooPerolado":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseshampooperolado=:parametroexipientes WHERE 1=1";
-				break;
-				case "CremePsoriaseAguda":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremepsoriaseaguda=:parametroexipientes WHERE 1=1";
-				break;
-				case "FluoretoDeSodio":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET fluoretodesodio=:parametroexipientes WHERE 1=1";
-				break;
-				case "DescongestionanteNasal":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET descongestionantenasal=:parametroexipientes WHERE 1=1";
-				break;
-				case "LocaoCapilarMinoxidil":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET locaocapilarminoxidil=:parametroexipientes WHERE 1=1";
-				break;
-				case "AnastrozolDiluido":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET anastrozoldiluido=:parametroexipientes WHERE 1=1";
-				break;
-				case "MetilcobalaminaDiluida":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilcobalaminadiluida=:parametroexipientes WHERE 1=1";
-				break;
-				case "MetilfolatoDiluido":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilfolatodiluido=:parametroexipientes WHERE 1=1";
-				break;
+				// case "Excipiente":
+				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET excipiente=:parametroexipientes WHERE 1=1";
+				// break;
+				// case "CremeNaoIonico":
+				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremenaoionico=:parametroexipientes WHERE 1=1";
+				// break;
+				// case "BaseGelAnastrozol":
+				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET basegelanastrozol=:parametroexipientes WHERE 1=1";
+				// break;
+				// case "Tacrolimus":
+				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET tacrolimus=:parametroexipientes WHERE 1=1";
+				// break;
+				// case "BaseSabonete":
+				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET basesabonete=:parametroexipientes WHERE 1=1";
+				// break;
+				// case "BaseShampooPerolado":
+				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseshampooperolado=:parametroexipientes WHERE 1=1";
+				// break;
+				// case "CremePsoriaseAguda":
+				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremepsoriaseaguda=:parametroexipientes WHERE 1=1";
+				// break;
+				// case "FluoretoDeSodio":
+				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET fluoretodesodio=:parametroexipientes WHERE 1=1";
+				// break;
+				// case "DescongestionanteNasal":
+				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET descongestionantenasal=:parametroexipientes WHERE 1=1";
+				// break;
+				// case "LocaoCapilarMinoxidil":
+				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET locaocapilarminoxidil=:parametroexipientes WHERE 1=1";
+				// break;
+				// case "AnastrozolDiluido":
+				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET anastrozoldiluido=:parametroexipientes WHERE 1=1";
+				// break;
+				// case "MetilcobalaminaDiluida":
+				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilcobalaminadiluida=:parametroexipientes WHERE 1=1";
+				// break;
+				// case "MetilfolatoDiluido":
+				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilfolatodiluido=:parametroexipientes WHERE 1=1";
+				// break;
 				// case "MetilTestosterona":
 				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilfolatodiluido=:parametroexipientes WHERE 1=1";
 				// break;
@@ -527,6 +538,7 @@
 			$login = new login;
 			$ferramentas = new ferramentas;
 
+			// $tranferenciaEntreTabelasParaHoje->tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, "RefreshAmanha");
 			if(isset($_POST['refreshTranferirDadosEntreTabelas'])){
 				$tranferenciaEntreTabelasParaHoje->tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, $_POST['refreshTranferirDadosEntreTabelas']);
 			}
