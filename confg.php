@@ -54,8 +54,10 @@
 					$refreshTranferirDadosEntreTabelas =  "opcaoTabelaDepoisDeAmanha";
 				break; 
 			}
-			echo json_encode($listadados->solidos($con, $ferramentas, $refreshTranferirDadosEntreTabelas, "Transferindo pastas"));
-			// echo json_encode('Funcao chamada! Parametro: '.$_POST['refreshTranferirDadosEntreTabelas']);
+			$listandoSolidos = $listadados->solidos($con, $ferramentas, "opcaoTabelaDeAmanha", "Transferindo");
+			$listadedados = array("");
+			$listandoSemiSolidos = $listadados->semisolidos($con, $listadedados, "opcaoTabelaDeAmanha", "Transferindo");
+			var_dump($listandoSemiSolidos);
 		}
 	}
 	class editadados{
@@ -295,10 +297,12 @@
 
 				$listadedados['doitodnoveVerde'] 	= $resultadosSolidos[10]["verde"];
 				$listadedados['doitodnoveAmarela'] = $resultadosSolidos[10]["amarela"];
-				$listadedados['doitodnoveVermelha'] = $resultadosSolidos[10]["vermelha"];				
-				$this->semisolidos($con, $listadedados, $atualiza, $parametroTabelas);
+				$listadedados['doitodnoveVermelha'] = $resultadosSolidos[10]["vermelha"];						
+				if($parametroTabelas == "Atualizando"){			
+					$this->semisolidos($con, $listadedados, $atualiza, $parametroTabelas);
+				}else{return $listadedados;}				
 			}else{
-				if($parametroTabelas === "Atualizando"){
+				if($parametroTabelas == "Atualizando"){
 					echo json_encode("Erro de busca de solidos");
 				}else{return json_encode("Erro de busca de solidos");}				
 			}
@@ -363,9 +367,9 @@
 				$listadedados['semisolidos_doitodnoveVerde'] 	= $resultadosSemiSolidos[10]["verde"];
 				$listadedados['semisolidos_doitodnoveAmarela'] = $resultadosSemiSolidos[10]["amarela"];
 				$listadedados['semisolidos_doitodnoveVermelha'] = $resultadosSemiSolidos[10]["vermelha"];
-				if($parametroTabelas === "Atualizando"){								
+				if($parametroTabelas == "Atualizando"){			
 					$this->nivelDePressaoEpedidos($con, $listadedados);
-				}else{return $listadedados;}
+				}else{return $listadedados;}											
 			}else{
 				echo json_encode("Erro de busca de solidos");
 			}
@@ -538,7 +542,7 @@
 			$login = new login;
 			$ferramentas = new ferramentas;
 
-			// $tranferenciaEntreTabelasParaHoje->tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, "RefreshAmanha");
+			$tranferenciaEntreTabelasParaHoje->tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, "opcaoTabelaDeAmanha");
 			if(isset($_POST['refreshTranferirDadosEntreTabelas'])){
 				$tranferenciaEntreTabelasParaHoje->tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, $_POST['refreshTranferirDadosEntreTabelas']);
 			}
