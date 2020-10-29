@@ -45,7 +45,7 @@
 
 		// Fazer funcionar isto pegar dados da funcao mais velha e por nessa
 
-		function tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, $refreshTranferirDadosEntreTabelas){
+		function tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, $editadados, $refreshTranferirDadosEntreTabelas){
 			$refreshTranferirDadosEntreTabelas = $ferramentas->filtrando($refreshTranferirDadosEntreTabelas);
 			switch($refreshTranferirDadosEntreTabelas){
 				case "RefreshAmanha":
@@ -54,10 +54,15 @@
 					$refreshTranferirDadosEntreTabelas =  "opcaoTabelaDepoisDeAmanha";
 				break; 
 			}
-			$listandoSolidos = $listadados->solidos($con, $ferramentas, "opcaoTabelaDeAmanha", "Transferindo");
+			$listandoSolidos = $listadados->solidos($con, $ferramentas, $refreshTranferirDadosEntreTabelas, "Transferindo");
+
 			$listadedados = array("");
-			$listandoSemiSolidos = $listadados->semisolidos($con, $listadedados, "opcaoTabelaDeAmanha", "Transferindo");
-			var_dump($listandoSemiSolidos);
+			$listandoSemiSolidos = $listadados->semisolidos($con, $listadedados, $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			// $editadados->editaQTDformulas($con, $ferramentas, $valor, $nomehorariodb, $tipoTbHora, $cor, $diaDaTabela){
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['oitonoveVerde'], "oitonove", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
+
+			// var_dump($listandoSolidos['oitonoveVerde']);
 		}
 	}
 	class editadados{
@@ -175,7 +180,7 @@
 				echo json_encode("Erro ao atualizar o pedido!");
 			}
 		}
-		function editaQTDformulas($con, $ferramentas, $valor, $nomehorariodb, $tipoTbHora, $cor, $diaDaTabela){
+		function editaQTDformulas($con, $ferramentas, $valor, $nomehorariodb, $tipoTbHora, $cor, $diaDaTabela, $parametroTransferindo){
 			$valor = $ferramentas->filtrando($valor); $nomehorariodb = $ferramentas->filtrando($nomehorariodb);
 			$tipoTbHora = $ferramentas->filtrando($tipoTbHora); $cor = $ferramentas->filtrando($cor);
 			$diaDaTabela = $ferramentas->filtrando($diaDaTabela);
@@ -221,9 +226,13 @@
 			$UpdateTbHora->bindParam(":valor", $valor);
 			$UpdateTbHora->bindParam(":nomehorariodb", $nomehorariodb);
 			if($UpdateTbHora->execute()){
-				echo json_encode("Valor foi atualizado!");
+				if($parametroTransferindo == "controlador"){
+					echo json_encode("Valor foi atualizado!");	
+				}else{return "ok";}
 			}else{
-				echo json_encode("Erro ao atualizar o valor");
+				if($parametroTransferindo == "controlador"){
+					echo json_encode("Erro ao atualizar o valor");
+				}else{return "erro";}
 			}
 		}
 		function editaNivelDePressao($con, $ferramentas, $parametronivel){	
@@ -542,9 +551,9 @@
 			$login = new login;
 			$ferramentas = new ferramentas;
 
-			$tranferenciaEntreTabelasParaHoje->tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, "opcaoTabelaDeAmanha");
+			// $tranferenciaEntreTabelasParaHoje->tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, $editadados, "opcaoTabelaDeAmanha");
 			if(isset($_POST['refreshTranferirDadosEntreTabelas'])){
-				$tranferenciaEntreTabelasParaHoje->tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, $_POST['refreshTranferirDadosEntreTabelas']);
+				$tranferenciaEntreTabelasParaHoje->tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, $editadados, $_POST['refreshTranferirDadosEntreTabelas']);
 			}
 			if(isset($_POST['inputAtrasadasAdiantadas']) || isset($_POST['parametroAtrasadasAdiantadas'])){
 				$editadados->updateAtrasadasAdiantadas($con, $ferramentas, $_POST['inputAtrasadasAdiantadas'], $_POST['parametroAtrasadasAdiantadas']);
@@ -579,7 +588,7 @@
 			if(isset($_POST['valor'])){
 				session_start(); 
 				if($_SESSION['nivel'] === "1"){	
-					$editadados->editaQTDformulas($con, $ferramentas, $_POST['valor'], $_POST['nomehorariodb'], $_POST['tipoTbHora'], $_POST['cor'], $_POST['diaDaTabela']);
+					$editadados->editaQTDformulas($con, $ferramentas, $_POST['valor'], $_POST['nomehorariodb'], $_POST['tipoTbHora'], $_POST['cor'], $_POST['diaDaTabela'], "controlador");
 				}else{echo json_encode("Função restrita ao laboratório!");}
 			}
 			if(isset($_POST['nvPressao'])){
