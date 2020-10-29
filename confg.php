@@ -64,9 +64,9 @@
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['oitonoveAmarela'], "oitonove", "solidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['oitonoveVermelha'], "oitonove", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
-			// $editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['oitonoveVerde'], "oitonove", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
-			// $editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['oitonoveVerde'], "oitonove", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
-			// $editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['oitonoveVerde'], "oitonove", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['novedezVerde'], "novedez", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['novedezAmarela'], "novedez", "solidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['novedezVermelha'], "novedez", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
 			// $editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['oitonoveVerde'], "oitonove", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
 			// $editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['oitonoveVerde'], "oitonove", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
