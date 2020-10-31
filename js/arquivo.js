@@ -340,8 +340,9 @@ function diretoInputTbHora(){
 		var nomehorariodb = $("#"+nome).attr("name");
 		var tipoTbHora = $("#"+nome).attr("class");
 		var cor = $("#"+nome).val();
+		var diaDaTabela = $("#SelectTabelaSolidosSemisolidosDia").val();
 		if(confirm("Deseja Atualizar para "+valor+" ?")){			
-			enviaEdicaoQTDTbHora(valor, nomehorariodb, tipoTbHora, cor);
+			enviaEdicaoQTDTbHora(valor, nomehorariodb, tipoTbHora, cor, diaDaTabela);
 			//Só atualizar se for numero!
 		}else{
 			alert("Não foi Atualizado!");

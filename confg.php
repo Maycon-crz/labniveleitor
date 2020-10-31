@@ -42,6 +42,98 @@
 		}
 	}
 	class tranferenciaEntreTabelasParaHoje{
+		function zerandoDadosTabelaTranferidaDia($con, $ferramentas, $editadados, $refreshTranferirDadosEntreTabelas){							
+			// -->solidos
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "oitonove", "solidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "oitonove", "solidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "oitonove", "solidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "novedez", "solidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "novedez", "solidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "novedez", "solidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dezonze", "solidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dezonze", "solidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dezonze", "solidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "onzedoze", "solidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "onzedoze", "solidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "onzedoze", "solidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dozetreze", "solidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dozetreze", "solidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dozetreze", "solidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "trezequa", "solidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "trezequa", "solidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "trezequa", "solidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "quaqui", "solidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "quaqui", "solidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "quaqui", "solidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "quidseis", "solidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "quidseis", "solidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "quidseis", "solidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dseisdsete", "solidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dseisdsete", "solidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dseisdsete", "solidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dsetedoito", "solidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dsetedoito", "solidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dsetedoito", "solidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "doitodnove", "solidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "doitodnove", "solidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "doitodnove", "solidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			// //<---
+			// //Semi-Sólidos
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "oitonove", "semisolidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "oitonove", "semisolidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "oitonove", "semisolidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "novedez", "semisolidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "novedez", "semisolidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "novedez", "semisolidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dezonze", "semisolidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dezonze", "semisolidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dezonze", "semisolidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "onzedoze", "semisolidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "onzedoze", "semisolidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "onzedoze", "semisolidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dozetreze", "semisolidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dozetreze", "semisolidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dozetreze", "semisolidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "trezequa", "semisolidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "trezequa", "semisolidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "trezequa", "semisolidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "quaqui", "semisolidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "quaqui", "semisolidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "quaqui", "semisolidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "quidseis", "semisolidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "quidseis", "semisolidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "quidseis", "semisolidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dseisdsete", "semisolidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dseisdsete", "semisolidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dseisdsete", "semisolidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dsetedoito", "semisolidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dsetedoito", "semisolidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "dsetedoito", "semisolidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");
+
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "doitodnove", "semisolidos", "verde", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "doitodnove", "semisolidos", "amarela", $refreshTranferirDadosEntreTabelas, "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, "0", "doitodnove", "semisolidos", "vermelha", $refreshTranferirDadosEntreTabelas, "Transferindo");			
+		}
 		function tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, $editadados, $refreshTranferirDadosEntreTabelas){
 			$refreshTranferirDadosEntreTabelas = $ferramentas->filtrando($refreshTranferirDadosEntreTabelas);
 			switch($refreshTranferirDadosEntreTabelas){
@@ -66,7 +158,7 @@
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['novedezVerde'], "novedez", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['novedezAmarela'], "novedez", "solidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['novedezVermelha'], "novedez", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
-			// ---------
+			
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dezonzeVerde'], "dezonze", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dezonzeAmarela'], "dezonze", "solidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dezonzeVermelha'], "dezonze", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
@@ -76,32 +168,32 @@
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['onzedozeVermelha'], "onzedoze", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dozetrezeVerde'], "dozetreze", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dozetrezeVerde'], "dozetreze", "solidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dozetrezeVerde'], "dozetreze", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dozetrezeAmarela'], "dozetreze", "solidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dozetrezeVermelha'], "dozetreze", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['trezequaVerde'], "trezequa", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['trezequaAmarela'], "trezequa", "solidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['trezequaVerde'], "trezequa", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['trezequaVermelha'], "trezequa", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['quaquiVerde'], "quaqui", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['quaquiAmarela'], "quaqui", "solidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['quaquiVerde'], "quaqui", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['quaquiVermelha'], "quaqui", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['quidseisVerde'], "quidseis", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['quidseisAmarela'], "quidseis", "solidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['quidseisVerde'], "quidseis", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['quidseisVermelha'], "quidseis", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dseisdseteVerde'], "dseisdsete", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dseisdseteAmarela'], "dseisdsete", "solidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dseisdseteVerde'], "dseisdsete", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dseisdseteVermelha'], "dseisdsete", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dsetedoitoVerde'], "dsetedoito", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dsetedoitoAmarela'], "dsetedoito", "solidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dsetedoitoVerde'], "dsetedoito", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['dsetedoitoVermelha'], "dsetedoito", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['doitodnoveVerde'], "doitodnove", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['doitodnoveAmarela'], "doitodnove", "solidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['doitodnoveVerde'], "doitodnove", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['doitodnoveVermelha'], "doitodnove", "solidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 			//<---
 			//Semi-Sólidos
 			$listadedados = array("");						
@@ -124,33 +216,34 @@
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_onzedozeVermelha'], "onzedoze", "semisolidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_dozetrezeVerde'], "dozetreze", "semisolidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_dozetrezeVerde'], "dozetreze", "semisolidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_dozetrezeVerde'], "dozetreze", "semisolidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_dozetrezeAmarela'], "dozetreze", "semisolidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_dozetrezeVermelha'], "dozetreze", "semisolidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_trezequaVerde'], "trezequa", "semisolidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_trezequaAmarela'], "trezequa", "semisolidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_trezequaVerde'], "trezequa", "semisolidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_trezequaVermelha'], "trezequa", "semisolidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_quaquiVerde'], "quaqui", "semisolidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_quaquiAmarela'], "quaqui", "semisolidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_quaquiVerde'], "quaqui", "semisolidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_quaquiVermelha'], "quaqui", "semisolidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_quidseisVerde'], "quidseis", "semisolidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_quidseisAmarela'], "quidseis", "semisolidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_quidseisVerde'], "quidseis", "semisolidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_quidseisVermelha'], "quidseis", "semisolidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_dseisdseteVerde'], "dseisdsete", "semisolidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_dseisdseteAmarela'], "dseisdsete", "semisolidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_dseisdseteVerde'], "dseisdsete", "semisolidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_dseisdseteVermelha'], "dseisdsete", "semisolidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_dsetedoitoVerde'], "dsetedoito", "semisolidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_dsetedoitoAmarela'], "dsetedoito", "semisolidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_dsetedoitoVerde'], "dsetedoito", "semisolidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_dsetedoitoVermelha'], "dsetedoito", "semisolidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_doitodnoveVerde'], "doitodnove", "semisolidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_doitodnoveAmarela'], "doitodnove", "semisolidos", "amarela", "opcaoTabelaDeHoje", "Transferindo");
-			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_doitodnoveVerde'], "doitodnove", "semisolidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
+			$editadados->editaQTDformulas($con, $ferramentas, $listandoSemiSolidos['semisolidos_doitodnoveVermelha'], "doitodnove", "semisolidos", "vermelha", "opcaoTabelaDeHoje", "Transferindo");
 
+			$this->zerandoDadosTabelaTranferidaDia($con, $ferramentas, $editadados, $refreshTranferirDadosEntreTabelas);
 			//<--
 		}
 	}
