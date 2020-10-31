@@ -9,9 +9,26 @@ $(document).ready(function(){
 var contaDinamicos=0;
 function excluindoDinamicoMSGpronta(){
 	$(document).on('click', '.btExcluindoDinamicoMSGpronta', function(){
-		var idBtExcluindoDinamicoMSGpronta = $(this).attr('id');
-		var valueBtExcluindoDinamicoMSGpronta = $(this).val();
-		alert(idBtExcluindoDinamicoMSGpronta+"-"+valueBtExcluindoDinamicoMSGpronta);
+		alert("Anda não está funcionando!");
+		// var valueBtExcluindoDinamicoMSGpronta = $(this).val();
+		// var abc = $("#informaQTDdeDinamicos"+valueBtExcluindoDinamicoMSGpronta);
+
+		// var idBtExcluindoDinamicoMSGpronta = $(this).attr('id');		
+		// var informaQTDdeDinamicos = $("#informaQTDdeDinamicos"+valueBtExcluindoDinamicoMSGpronta).val();
+		// var contadorprontas = $("#informaQTDdeDinamicos"+valueBtExcluindoDinamicoMSGpronta).attr('class');
+		// switch(informaQTDdeDinamicos){			
+		// 	case 2:
+		// 		$(".apenasUmBtExcluir1"+contadorprontas).css("display", "none");
+		// 	break;
+		// 	case 3:
+		// 	break;
+		// 	case 4:
+		// 	break;
+		// 	case 5:
+		// 	break;
+		// }	
+		// alert("Quantidade de prontas: apenasUmBtExcluir1"+contadorprontas);	
+		// alert(idBtExcluindoDinamicoMSGpronta+"-"+valueBtExcluindoDinamicoMSGpronta);
 	});
 }
 function excluindoMensagemPronta(){

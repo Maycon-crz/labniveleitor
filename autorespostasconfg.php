@@ -57,39 +57,45 @@
 					$MSGSprontasCorpo .= "<li><textarea rows=5 class='form-control border border-warning' id='textareaMSGSdinamicasDB".$contadorprontas."'>".$corpoMSGS['mensagemparacadastro']."</textarea></li>";
 					
 					//Criar funcao separada para inputs dinamicos
+					$QTDdeDinamicos = 0;
 					if($corpoMSGS['inputitensdinamicos1']){
+						$QTDdeDinamicos++;
 						$MSGSprontasCorpo .= "<li><h3>Dinâmicos: </h3></li>";
 						$MSGSprontasCorpo .= "<li><div class='row'><div class='col-2'>&nbsp;</div><div class='col-8 text-left bg-success'>";
 							$MSGSprontasCorpo .= "<h5 class='mt-2'>
-								<button type='button' value='".$corpoMSGS['id']."' class='btn btn-danger btExcluindoDinamicoMSGpronta' id='inputitensdinamicos1'>X</button>
+								<button type='button' value='".$corpoMSGS['id']."' class='btn btn-danger btExcluindoDinamicoMSGpronta apenasUmBtExcluir1".$contadorprontas."' id='inputitensdinamicos1'>X</button>
 								<input type='text' value='#1' size='2' class='text-center' id='numero1ParametroMSGSdinamicas".$contadorprontas."' disabled /> => 								
 								<input type='text' placeholder='Digite: ".$corpoMSGS['inputitensdinamicos1']."' id='valor1ParametroMSGSdinamicas".$contadorprontas."'/> : ".$corpoMSGS['inputitensdinamicos1']."
 								<input type='hidden' value='".$corpoMSGS['inputitensdinamicos1']."' id='nome1ParametroMSGSdinamicas".$contadorprontas."'/>
-							</h5>";
+							</h5>";							
 							if($corpoMSGS['inputitensdinamicos2'] != ""){
+								$QTDdeDinamicos++;
 								$MSGSprontasCorpo .= "<h5>
-									<button type='button' value='".$corpoMSGS['id']."' class='btn btn-danger btExcluindoDinamicoMSGpronta' id='inputitensdinamicos2'>X</button>
+									<button type='button' value='".$corpoMSGS['id']."' class='btn btn-danger btExcluindoDinamicoMSGpronta apenasUmBtExcluir2_".$contadorprontas."' id='inputitensdinamicos2'>X</button>
 									<input type='text' value='#2' size='2' class='text-center' id='numero2ParametroMSGSdinamicas".$contadorprontas."' disabled /> => 									
 									<input type='text' placeholder='Digite: ".$corpoMSGS['inputitensdinamicos2']."' id='valor2ParametroMSGSdinamicas".$contadorprontas."'/> : ".$corpoMSGS['inputitensdinamicos2']."
 									<input type='hidden' value='".$corpoMSGS['inputitensdinamicos2']."' id='nome2ParametroMSGSdinamicas".$contadorprontas."'/>
 								</h5>";
 								if($corpoMSGS['inputitensdinamicos3'] != ""){
+									$QTDdeDinamicos++;
 									$MSGSprontasCorpo .= "<h5>
-										<button type='button' value='".$corpoMSGS['id']."' class='btn btn-danger btExcluindoDinamicoMSGpronta' id='inputitensdinamicos3'>X</button>
+										<button type='button' value='".$corpoMSGS['id']."' class='btn btn-danger btExcluindoDinamicoMSGpronta apenasUmBtExcluir3_".$contadorprontas."' id='inputitensdinamicos3'>X</button>
 										<input type='text' value='#3' size='2' class='text-center' id='numero3ParametroMSGSdinamicas".$contadorprontas."' disabled /> => 										
 										<input type='text' placeholder='Digite: ".$corpoMSGS['inputitensdinamicos3']."' id='valor3ParametroMSGSdinamicas".$contadorprontas."'/> : ".$corpoMSGS['inputitensdinamicos3']."
 										<input type='hidden' value='".$corpoMSGS['inputitensdinamicos3']."' id='nome3ParametroMSGSdinamicas".$contadorprontas."' />
 									</h5>";
 									if($corpoMSGS['inputitensdinamicos4'] != ""){
+										$QTDdeDinamicos++;
 										$MSGSprontasCorpo .= "<h5>
-											<button type='button' value='".$corpoMSGS['id']."' class='btn btn-danger btExcluindoDinamicoMSGpronta' id='inputitensdinamicos4'>X</button>
+											<button type='button' value='".$corpoMSGS['id']."' class='btn btn-danger btExcluindoDinamicoMSGpronta apenasUmBtExcluir4_".$contadorprontas."' id='inputitensdinamicos4'>X</button>
 											<input type='text' value='#4' size='2' class='text-center' id='numero4ParametroMSGSdinamicas".$contadorprontas."' disabled /> => 											
 											<input type='text' placeholder='Digite: ".$corpoMSGS['inputitensdinamicos4']."' id='valor4ParametroMSGSdinamicas".$contadorprontas."'/> : ".$corpoMSGS['inputitensdinamicos4']."
 											<input type='hidden' value='".$corpoMSGS['inputitensdinamicos4']."' id='nome4ParametroMSGSdinamicas".$contadorprontas."' />
 										</h5>";
 										if($corpoMSGS['inputitensdinamicos5'] != ""){
+											$QTDdeDinamicos++;
 											$MSGSprontasCorpo .= "<h5>
-												<button type='button' value='".$corpoMSGS['id']."' class='btn btn-danger btExcluindoDinamicoMSGpronta' id='inputitensdinamicos5'>X</button>
+												<button type='button' value='".$corpoMSGS['id']."' class='btn btn-danger btExcluindoDinamicoMSGpronta apenasUmBtExcluir5_".$contadorprontas."' id='inputitensdinamicos5'>X</button>
 												<input type='text' value='#5' size='2' class='text-center' id='numero5ParametroMSGSdinamicas".$contadorprontas."' disabled /> => 												
 												<input type='text' placeholder='Digite: ".$corpoMSGS['inputitensdinamicos5']."' id='valor5ParametroMSGSdinamicas".$contadorprontas."'/> : ".$corpoMSGS['inputitensdinamicos5']."
 												<input type='hidden' value='".$corpoMSGS['inputitensdinamicos5']."' id='nome5ParametroMSGSdinamicas".$contadorprontas."' />	
@@ -98,6 +104,7 @@
 									}
 								}
 							}
+						// $MSGSprontasCorpo .= "<input type='text' value='".$QTDdeDinamicos."' id='informaQTDdeDinamicos".$corpoMSGS['id']."' />";	
 						$MSGSprontasCorpo .= "</div class='col-8'><div class='col-2'>&nbsp;</div></div></li>";
 					}
 					$MSGSprontasCorpo .= "<li class='pt-1'>
