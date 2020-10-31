@@ -730,7 +730,7 @@
 			</div>						
 		</div>
 		<div class='row bg-success'>
-			<div class='col-12 m-3'>
+			<div class='col-12 mt-3'>
 				<h5 class='text-center text-warning'>Total de Pastas:
 					<input type='text' size='3' class='bg-warning text-danger' id='totalDePastasNoLab' disabled />
 				</h5>

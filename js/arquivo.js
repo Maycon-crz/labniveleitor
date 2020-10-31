@@ -385,7 +385,7 @@ function atualizatudo(){
 	var atualiza = idTabelaSolidosSemisolidosDia;
 	$(document).on('change', '#SelectTabelaSolidosSemisolidosDia', function(){
 		var atualiza = $(this).val();
-	});
+	});	
 	$.ajax({
 		url: "confg.php",
 		type: "post",
@@ -542,8 +542,14 @@ function atualizatudo(){
 					$('#tbHoraTotal22').val(tbHoraTotal22);
 				//--
 			//---
-			//Total de Pastas no laboratório // Contar para amanha e atrasadas								
-				var totalDePastasNoLab = parseInt(tbHoraTotal1)+parseInt(tbHoraTotal2)+parseInt(tbHoraTotal3)+parseInt(tbHoraTotal4)+parseInt(tbHoraTotal5)+parseInt(tbHoraTotal6)+parseInt(tbHoraTotal7)+parseInt(tbHoraTotal8)+parseInt(tbHoraTotal9)+parseInt(tbHoraTotal10)+parseInt(tbHoraTotal11)+parseInt(tbHoraTotal12)+parseInt(tbHoraTotal13)+parseInt(tbHoraTotal14)+parseInt(tbHoraTotal15)+parseInt(tbHoraTotal16)+parseInt(tbHoraTotal17)+parseInt(tbHoraTotal18)+parseInt(tbHoraTotal19)+parseInt(tbHoraTotal20)+parseInt(tbHoraTotal21)+parseInt(tbHoraTotal22)+parseInt(adiantadas)+parseInt(atrasadas);				$('#totalDePastasNoLab').val(totalDePastasNoLab);
+			//Total de Pastas no laboratório // Contar para amanha e atrasadas												
+				if(atualiza != "opcaoTabelaDeHoje"){
+					$("#totalDePastasNoLab").attr("size", 21);
+					$("#totalDePastasNoLab").val("Apenas na tabela {Hoje}");
+				}else{
+					var totalDePastasNoLab = parseInt(tbHoraTotal1)+parseInt(tbHoraTotal2)+parseInt(tbHoraTotal3)+parseInt(tbHoraTotal4)+parseInt(tbHoraTotal5)+parseInt(tbHoraTotal6)+parseInt(tbHoraTotal7)+parseInt(tbHoraTotal8)+parseInt(tbHoraTotal9)+parseInt(tbHoraTotal10)+parseInt(tbHoraTotal11)+parseInt(tbHoraTotal12)+parseInt(tbHoraTotal13)+parseInt(tbHoraTotal14)+parseInt(tbHoraTotal15)+parseInt(tbHoraTotal16)+parseInt(tbHoraTotal17)+parseInt(tbHoraTotal18)+parseInt(tbHoraTotal19)+parseInt(tbHoraTotal20)+parseInt(tbHoraTotal21)+parseInt(tbHoraTotal22)+parseInt(adiantadas)+parseInt(atrasadas);
+					$('#totalDePastasNoLab').val(totalDePastasNoLab);
+				}				
 			//---
 			//Nivel de Presão
 			switch(retornado.nivel){
