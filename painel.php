@@ -24,11 +24,11 @@
 			<div class='col-6 bg-success'>
 
 				<ul class='m-0 p-0'>
-					<li class='text-center text-warning'>
+					<!-- <li class='text-center text-warning'>
 						<h5 class='mt-2'>Total de Pastas Hoje:	</h5>										
 							<input type='text' size='3' class='text-center text-warning border-danger bg-danger' id='totalDePastasNoLab' disabled />
 						
-					</li>
+					</li> -->
 
 					<li class='text-center text-warning'>
 						<h5 class=''>Pastas Para Amanhã:
@@ -747,13 +747,13 @@
 				</div>				
 			</div>						
 		</div>
-		<!-- <div class='row bg-success'>
+		<div class='row bg-success'>
 			<div class='col-12 mt-3'>
 				<h5 class='text-center text-warning'>Total de Pastas:
 					<input type='text' size='3' class='bg-warning text-danger' id='totalDePastasNoLab' disabled />
 				</h5>
 			</div>
-		</div> -->
+		</div>
 		<div class='row linhaPedidosPomerode' id='pedidos'>
 			<div class='col-12 border border-success mt-5'>
 				<h1>
