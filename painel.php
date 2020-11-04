@@ -24,16 +24,15 @@
 			<div class='col-6 bg-success'>
 
 				<ul class='m-0 p-0'>
-					<!-- <li class='text-center text-warning'>
-						<h5 class='mt-2'>Total de Pastas Hoje:	</h5>										
-							<input type='text' size='3' class='text-center text-warning border-danger bg-danger' id='totalDePastasNoLab' disabled />
-						
-					</li> -->
-
-					<li class='text-center text-warning'>
+					<li class=' text-warning'>
 						<h5 class=''>Pastas Para Amanhã:
 							<input type='text' name='' size='4' class='text-center text-warning border-danger bg-danger inputAtrasadasAdiantadas' id='adiantadas'>
 						</h5>
+					</li>
+					<li class=' text-warning'>
+						<h5 class='mt-2'>Depois de Amanhã:										
+							<input type='text' size='3' class='text-center text-warning border-danger bg-danger' id='' disabled />
+						</h5>	
 					</li>
 				</ul>
 
