@@ -21,27 +21,28 @@
 			</div>
 		</div>
 		<div class='row border border-warning'>			
-			<div class='col-3 bg-success border border-warning'>
+			<div class='col-4 bg-success border border-warning'>
 
 				<ul class='m-0 p-0'>
-					<li class='text-warning text-center'>
+					<li class='text-warning text-center mt-1'>
 						<h5 class=''>Pastas Para Amanhã:</h5>
-							<input type='text' name='' size='4' class='text-center text-warning border-danger bg-danger inputAtrasadasAdiantadas' id='adiantadas'>
-						
+							<input type='text' name='' size='4' class='text-center text-warning border-danger bg-danger inputAtrasadasAdiantadas' id='adiantadasAmanha' disabled>
 					</li>
 					<li class='text-warning text-center'>
-						<h5 class='mt-2'>Depois de Amanhã:										
-							<input type='text' size='3' class='text-center text-warning border-danger bg-danger' id='' disabled />
+						<h5 class='mt-2'>Depois de Amanhã:	</h5>
+						<h5>									
+							<input type='text' size='3' class='text-center text-warning border-danger bg-danger' id='adiantadasDepoisDeAmanha' disabled />
 						</h5>	
 					</li>
 				</ul>
 
 			</div>						
 
-			<div class='col-3 bg-success border border-warning'>
+			<div class='col-4 bg-success border border-warning'>
 				<ul class='m-0 p-0'>
 					<li class='text-center text-warning'>
-						<h5 class='mt-3'>Pastas Para Amanhã em diante:</h5>
+						<!-- <h5 class='mt-3'>Pastas Para Amanhã em diante:</h5> -->
+						<h5 class='mt-3'>Pastas com prazo longo:</h5>
 					</li><li class='text-center text-warning'>						
 						<button type='button' class='tbHoraVerde btMenosAdiantadas bg-warning border-danger text-danger'>-</button>
 						<button type='button' class='tbHoraVerde btMaisAdiantadas bg-warning border-danger text-danger'>+</button>	
@@ -49,10 +50,10 @@
 					</li>
 				</ul>
 			</div>
-			<div class='col-6 bg-success border border-warning'>
+			<div class='col-4 bg-success border border-warning'>
 				<ul class='m-0 p-0'>
 					<li class='text-center text-warning'>
-						<h5 class='mt-3'>Pastas - Atrasadas ou Falta Algo</h5>
+						<h5 class='mt-3'>Pastas Atrasadas ou Falta Algo</h5>
 						<button type='button' class='tbHoraVerde btMenosAtrasadas bg-warning border-danger text-danger'>-</button>
 						<button type='button' class='tbHoraVerde btMaisAtrasadas bg-warning border-danger text-danger'>+</button>	
 						<input type='text' name='' size='4' class='text-center text-warning border-danger bg-danger inputAtrasadasAdiantadas' id='atrasadas'>											 					
