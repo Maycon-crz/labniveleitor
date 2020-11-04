@@ -394,7 +394,8 @@ function atualizatudo(){
 		dataType: "json",
 		success: function(retornado){			
 			//Atrasadas e Adiantadas
-				var adiantadas = retornado.adiantadas;
+				// var adiantadas = retornado.adiantadas;
+				var adiantadas = parseInt(retornado.qtd_pastas_amanha)+parseInt(retornado.qtd_pastas_depois_de_amanha);
 				$('#adiantadas').val(adiantadas);
 				var atrasadas = retornado.atrasadas;		
 				$('#atrasadas').val(atrasadas);				

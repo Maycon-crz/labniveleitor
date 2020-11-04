@@ -144,11 +144,6 @@
 				break; 
 			}
 			$listandoSolidos = $listadados->solidos($con, $ferramentas, $refreshTranferirDadosEntreTabelas, "Transferindo");			
-
-			// $editadados->editaQTDformulas($con, $ferramentas, $valor, $nomehorariodb, $tipoTbHora, $cor, $diaDaTabela){
-
-			// var_dump($listandoSolidos);
-
 			//--->Solidos
 
 			$editadados->editaQTDformulas($con, $ferramentas, $listandoSolidos['oitonoveVerde'], "oitonove", "solidos", "verde", "opcaoTabelaDeHoje", "Transferindo");
@@ -269,45 +264,45 @@
 			$idbtsPreProntos = $ferramentas->filtrando($idbtsPreProntos);
 			$parametroexipientes = $ferramentas->filtrando($parametroexipientes);
 			switch($idbtsPreProntos){
-				// case "Excipiente":
-				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET excipiente=:parametroexipientes WHERE 1=1";
-				// break;
-				// case "CremeNaoIonico":
-				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremenaoionico=:parametroexipientes WHERE 1=1";
-				// break;
-				// case "BaseGelAnastrozol":
-				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET basegelanastrozol=:parametroexipientes WHERE 1=1";
-				// break;
-				// case "Tacrolimus":
-				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET tacrolimus=:parametroexipientes WHERE 1=1";
-				// break;
-				// case "BaseSabonete":
-				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET basesabonete=:parametroexipientes WHERE 1=1";
-				// break;
-				// case "BaseShampooPerolado":
-				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseshampooperolado=:parametroexipientes WHERE 1=1";
-				// break;
-				// case "CremePsoriaseAguda":
-				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremepsoriaseaguda=:parametroexipientes WHERE 1=1";
-				// break;
-				// case "FluoretoDeSodio":
-				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET fluoretodesodio=:parametroexipientes WHERE 1=1";
-				// break;
-				// case "DescongestionanteNasal":
-				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET descongestionantenasal=:parametroexipientes WHERE 1=1";
-				// break;
-				// case "LocaoCapilarMinoxidil":
-				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET locaocapilarminoxidil=:parametroexipientes WHERE 1=1";
-				// break;
-				// case "AnastrozolDiluido":
-				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET anastrozoldiluido=:parametroexipientes WHERE 1=1";
-				// break;
-				// case "MetilcobalaminaDiluida":
-				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilcobalaminadiluida=:parametroexipientes WHERE 1=1";
-				// break;
-				// case "MetilfolatoDiluido":
-				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilfolatodiluido=:parametroexipientes WHERE 1=1";
-				// break;
+				case "Excipiente":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET excipiente=:parametroexipientes WHERE 1=1";
+				break;
+				case "CremeNaoIonico":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremenaoionico=:parametroexipientes WHERE 1=1";
+				break;
+				case "BaseGelAnastrozol":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET basegelanastrozol=:parametroexipientes WHERE 1=1";
+				break;
+				case "Tacrolimus":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET tacrolimus=:parametroexipientes WHERE 1=1";
+				break;
+				case "BaseSabonete":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET basesabonete=:parametroexipientes WHERE 1=1";
+				break;
+				case "BaseShampooPerolado":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseshampooperolado=:parametroexipientes WHERE 1=1";
+				break;
+				case "CremePsoriaseAguda":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremepsoriaseaguda=:parametroexipientes WHERE 1=1";
+				break;
+				case "FluoretoDeSodio":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET fluoretodesodio=:parametroexipientes WHERE 1=1";
+				break;
+				case "DescongestionanteNasal":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET descongestionantenasal=:parametroexipientes WHERE 1=1";
+				break;
+				case "LocaoCapilarMinoxidil":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET locaocapilarminoxidil=:parametroexipientes WHERE 1=1";
+				break;
+				case "AnastrozolDiluido":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET anastrozoldiluido=:parametroexipientes WHERE 1=1";
+				break;
+				case "MetilcobalaminaDiluida":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilcobalaminadiluida=:parametroexipientes WHERE 1=1";
+				break;
+				case "MetilfolatoDiluido":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilfolatodiluido=:parametroexipientes WHERE 1=1";
+				break;
 				// case "MetilTestosterona":
 				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilfolatodiluido=:parametroexipientes WHERE 1=1";
 				// break;
@@ -430,6 +425,25 @@
 		}		
 	}
 	class listadados{
+		function mostarQTDformulasAmanhaEdepoisDeAmanha($con, $ferramentas){
+			$qtdProximasPastas = array("");
+			$listadedados = array("");			
+			$qtdPastasProximosDiasAmanhaSolidos = $this->solidos($con, $ferramentas, "opcaoTabelaDeAmanha", "contaPastasProximosDias");
+			$qtdPastasProximosDiasAmanhaSemiSolidos = $this->semisolidos($con, $listadedados, "opcaoTabelaDeAmanha", "contaPastasProximosDias");					
+			
+			$qtdProximasPastas['amanha'] = (
+				$qtdPastasProximosDiasAmanhaSolidos["oitonoveVerde"]+$qtdPastasProximosDiasAmanhaSolidos["oitonoveAmarela"]+$qtdPastasProximosDiasAmanhaSolidos["oitonoveVermelha"]+$qtdPastasProximosDiasAmanhaSolidos["novedezVerde"]+$qtdPastasProximosDiasAmanhaSolidos["novedezAmarela"]+$qtdPastasProximosDiasAmanhaSolidos["novedezVermelha"]+$qtdPastasProximosDiasAmanhaSolidos["dezonzeVerde"]+$qtdPastasProximosDiasAmanhaSolidos["dezonzeAmarela"]+$qtdPastasProximosDiasAmanhaSolidos["dezonzeVermelha"]+$qtdPastasProximosDiasAmanhaSolidos["onzedozeVerde"]+$qtdPastasProximosDiasAmanhaSolidos["onzedozeAmarela"]+$qtdPastasProximosDiasAmanhaSolidos["onzedozeVermelha"]+$qtdPastasProximosDiasAmanhaSolidos["dozetrezeVerde"]+$qtdPastasProximosDiasAmanhaSolidos["dozetrezeAmarela"]+$qtdPastasProximosDiasAmanhaSolidos["dozetrezeVermelha"]+$qtdPastasProximosDiasAmanhaSolidos["trezequaVerde"]+$qtdPastasProximosDiasAmanhaSolidos["trezequaAmarela"]+$qtdPastasProximosDiasAmanhaSolidos["trezequaVermelha"]+$qtdPastasProximosDiasAmanhaSolidos["quaquiVerde"]+$qtdPastasProximosDiasAmanhaSolidos["quaquiAmarela"]+$qtdPastasProximosDiasAmanhaSolidos["quaquiVermelha"]+$qtdPastasProximosDiasAmanhaSolidos["quidseisVerde"]+$qtdPastasProximosDiasAmanhaSolidos["quidseisAmarela"]+$qtdPastasProximosDiasAmanhaSolidos["quidseisVermelha"]+$qtdPastasProximosDiasAmanhaSolidos["dseisdseteVerde"]+$qtdPastasProximosDiasAmanhaSolidos["dseisdseteAmarela"]+$qtdPastasProximosDiasAmanhaSolidos["dseisdseteVermelha"]+$qtdPastasProximosDiasAmanhaSolidos["dsetedoitoVerde"]+$qtdPastasProximosDiasAmanhaSolidos["dsetedoitoAmarela"]+$qtdPastasProximosDiasAmanhaSolidos["dsetedoitoVermelha"]+$qtdPastasProximosDiasAmanhaSolidos["doitodnoveVerde"]+$qtdPastasProximosDiasAmanhaSolidos["doitodnoveAmarela"]+$qtdPastasProximosDiasAmanhaSolidos["doitodnoveVermelha"]+
+				$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_oitonoveVerde"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_oitonoveAmarela"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_oitonoveVermelha"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_novedezVerde"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_novedezAmarela"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_novedezVermelha"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_dezonzeVerde"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_dezonzeAmarela"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_dezonzeVermelha"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_onzedozeVerde"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_onzedozeAmarela"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_onzedozeVermelha"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_dozetrezeVerde"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_dozetrezeAmarela"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_dozetrezeVermelha"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_trezequaVerde"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_trezequaAmarela"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_trezequaVermelha"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_quaquiVerde"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_quaquiAmarela"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_quaquiVermelha"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_quidseisVerde"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_quidseisAmarela"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_quidseisVermelha"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_dseisdseteVerde"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_dseisdseteAmarela"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_dseisdseteVermelha"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_dsetedoitoVerde"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_dsetedoitoAmarela"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_dsetedoitoVermelha"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_doitodnoveVerde"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_doitodnoveAmarela"]+$qtdPastasProximosDiasAmanhaSemiSolidos["semisolidos_doitodnoveVermelha"]
+			);						
+
+			$qtdPastasProximosDiasDepoisSolidos = $this->solidos($con, $ferramentas, "opcaoTabelaDepoisDeAmanha", "contaPastasProximosDias");			
+			$qtdPastasProximosDiasDepoisSemiSolidos = $this->semisolidos($con, $listadedados, "opcaoTabelaDepoisDeAmanha", "contaPastasProximosDias");
+			$qtdProximasPastas['depoisDeAmanha'] = (
+				$qtdPastasProximosDiasDepoisSolidos["oitonoveVerde"]+$qtdPastasProximosDiasDepoisSolidos["oitonoveAmarela"]+$qtdPastasProximosDiasDepoisSolidos["oitonoveVermelha"]+$qtdPastasProximosDiasDepoisSolidos["novedezVerde"]+$qtdPastasProximosDiasDepoisSolidos["novedezAmarela"]+$qtdPastasProximosDiasDepoisSolidos["novedezVermelha"]+$qtdPastasProximosDiasDepoisSolidos["dezonzeVerde"]+$qtdPastasProximosDiasDepoisSolidos["dezonzeAmarela"]+$qtdPastasProximosDiasDepoisSolidos["dezonzeVermelha"]+$qtdPastasProximosDiasDepoisSolidos["onzedozeVerde"]+$qtdPastasProximosDiasDepoisSolidos["onzedozeAmarela"]+$qtdPastasProximosDiasDepoisSolidos["onzedozeVermelha"]+$qtdPastasProximosDiasDepoisSolidos["dozetrezeVerde"]+$qtdPastasProximosDiasDepoisSolidos["dozetrezeAmarela"]+$qtdPastasProximosDiasDepoisSolidos["dozetrezeVermelha"]+$qtdPastasProximosDiasDepoisSolidos["trezequaVerde"]+$qtdPastasProximosDiasDepoisSolidos["trezequaAmarela"]+$qtdPastasProximosDiasDepoisSolidos["trezequaVermelha"]+$qtdPastasProximosDiasDepoisSolidos["quaquiVerde"]+$qtdPastasProximosDiasDepoisSolidos["quaquiAmarela"]+$qtdPastasProximosDiasDepoisSolidos["quaquiVermelha"]+$qtdPastasProximosDiasDepoisSolidos["quidseisVerde"]+$qtdPastasProximosDiasDepoisSolidos["quidseisAmarela"]+$qtdPastasProximosDiasDepoisSolidos["quidseisVermelha"]+$qtdPastasProximosDiasDepoisSolidos["dseisdseteVerde"]+$qtdPastasProximosDiasDepoisSolidos["dseisdseteAmarela"]+$qtdPastasProximosDiasDepoisSolidos["dseisdseteVermelha"]+$qtdPastasProximosDiasDepoisSolidos["dsetedoitoVerde"]+$qtdPastasProximosDiasDepoisSolidos["dsetedoitoAmarela"]+$qtdPastasProximosDiasDepoisSolidos["dsetedoitoVermelha"]+$qtdPastasProximosDiasDepoisSolidos["doitodnoveVerde"]+$qtdPastasProximosDiasDepoisSolidos["doitodnoveAmarela"]+$qtdPastasProximosDiasDepoisSolidos["doitodnoveVermelha"]+
+				$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_oitonoveVerde"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_oitonoveAmarela"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_oitonoveVermelha"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_novedezVerde"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_novedezAmarela"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_novedezVermelha"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_dezonzeVerde"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_dezonzeAmarela"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_dezonzeVermelha"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_onzedozeVerde"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_onzedozeAmarela"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_onzedozeVermelha"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_dozetrezeVerde"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_dozetrezeAmarela"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_dozetrezeVermelha"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_trezequaVerde"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_trezequaAmarela"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_trezequaVermelha"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_quaquiVerde"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_quaquiAmarela"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_quaquiVermelha"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_quidseisVerde"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_quidseisAmarela"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_quidseisVermelha"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_dseisdseteVerde"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_dseisdseteAmarela"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_dseisdseteVermelha"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_dsetedoitoVerde"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_dsetedoitoAmarela"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_dsetedoitoVermelha"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_doitodnoveVerde"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_doitodnoveAmarela"]+$qtdPastasProximosDiasDepoisSemiSolidos["semisolidos_doitodnoveVermelha"]
+			);	
+			return $qtdProximasPastas;
+		}
 		function solidos($con, $ferramentas, $atualiza, $parametroTabelas){
 			$listadedados = array("");
 			switch($atualiza){
@@ -489,7 +503,10 @@
 				$listadedados['doitodnoveVerde'] 	= $resultadosSolidos[10]["verde"];
 				$listadedados['doitodnoveAmarela'] = $resultadosSolidos[10]["amarela"];
 				$listadedados['doitodnoveVermelha'] = $resultadosSolidos[10]["vermelha"];						
-				if($parametroTabelas == "Atualizando"){			
+				if($parametroTabelas == "Atualizando"){
+					$qtdPastasProximosDias = $this->mostarQTDformulasAmanhaEdepoisDeAmanha($con, $ferramentas);
+					$listadedados['qtd_pastas_amanha'] = $qtdPastasProximosDias['amanha'];
+					$listadedados['qtd_pastas_depois_de_amanha'] = $qtdPastasProximosDias['depoisDeAmanha'];			
 					$this->semisolidos($con, $listadedados, $atualiza, $parametroTabelas);
 				}else{return $listadedados;}				
 			}else{
@@ -558,7 +575,7 @@
 				$listadedados['semisolidos_doitodnoveVerde'] 	= $resultadosSemiSolidos[10]["verde"];
 				$listadedados['semisolidos_doitodnoveAmarela'] = $resultadosSemiSolidos[10]["amarela"];
 				$listadedados['semisolidos_doitodnoveVermelha'] = $resultadosSemiSolidos[10]["vermelha"];
-				if($parametroTabelas == "Atualizando"){			
+				if($parametroTabelas == "Atualizando"){					
 					$this->nivelDePressaoEpedidos($con, $listadedados);
 				}else{return $listadedados;}											
 			}else{
@@ -733,6 +750,8 @@
 			$login = new login;
 			$ferramentas = new ferramentas;
 
+			// $listadados->mostarQTDformulasAmanhaEdepoisDeAmanha($con, $ferramentas);
+
 			// $tranferenciaEntreTabelasParaHoje->tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, $editadados, "opcaoTabelaDeAmanha");
 			if(isset($_POST['refreshTranferirDadosEntreTabelas'])){
 				$tranferenciaEntreTabelasParaHoje->tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, $editadados, $_POST['refreshTranferirDadosEntreTabelas']);
@@ -778,8 +797,8 @@
 				if($_SESSION['nivel'] === "1"){
 					$editadados->editaNivelDePressao($con, $ferramentas, $_POST['nvPressao']);
 				}else{echo json_encode("Função restrita ao laboratório!");}								
-			}
-			// $listadados->solidos($con);
+			}			
+			// $listadados->solidos($con, $ferramentas, 'opcaoTabelaDeAmanha', "Atualizando");
 			if(isset($_POST['atualiza'])){				
 				$listadados->solidos($con, $ferramentas, $_POST['atualiza'], "Atualizando");
 			}	
