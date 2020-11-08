@@ -13,6 +13,7 @@ verificar por javascript se eestá logado para nao acesar painel nao logado -->
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/arquivo.js"></script>
 		<script type="text/javascript" src="js/autorespostas.js"></script>
+		<script type="text/javascript" src="js/luana.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light pt-3 pb-3" id='cabecalho'>

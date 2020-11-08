@@ -1070,6 +1070,9 @@
 						<button type='button' class='btsFaltaProducao form-control btn btn-secondary' id='acabou'>Sólidos</button>
 						<button type='button' class='btsFaltaProducao form-control btn btn-primary' id='producao'>Semi-sólidos</button>
 					</div>
+				</li><li>
+					<button type='button' id='play'>Play</button>
+					<button type='button' id='stop'>Stop</button>
 				</li>
 			</div>
 		</ul>	

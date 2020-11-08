@@ -1,6 +1,13 @@
 <?php include('include/conn.php');?>
 <?php
-    $_SESSION['logado'] = "nao";    
+    $_SESSION['logado'] = "nao";   
+    class luana{
+    	function transformaTextoRetornadoDaVozEmArray($ferramentas, $vozTexto){    		
+			$voz = strtolower($vozTexto);
+			$vozarray = explode(" ", $voz);		
+			echo json_encode($vozarray);
+    	}
+    } 
 	class avisos{
 		function excluiAviso($con, $ferramentas, $idlixeira){
 			$idlixeira = $ferramentas->filtrando($idlixeira);
@@ -742,6 +749,7 @@
 			$banco = new banco;
 			$con = $banco->conexao();
 						
+			$luana = new luana;
 			$avisos = new avisos;
 			$tranferenciaEntreTabelasParaHoje = new tranferenciaEntreTabelasParaHoje;
 			$editadados = new editadados;			
@@ -750,7 +758,9 @@
 			$login = new login;
 			$ferramentas = new ferramentas;
 
-			// $listadados->mostarQTDformulasAmanhaEdepoisDeAmanha($con, $ferramentas);
+			if(isset($_POST['voz'])){
+				$luana->transformaTextoRetornadoDaVozEmArray($ferramentas, $_POST['voz']);				
+			}
 
 			// $tranferenciaEntreTabelasParaHoje->tranferenciaDeDadosEntreTabelasParaHoje($con, $ferramentas, $listadados, $editadados, "opcaoTabelaDeAmanha");
 			if(isset($_POST['refreshTranferirDadosEntreTabelas'])){
