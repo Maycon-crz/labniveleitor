@@ -9,7 +9,7 @@
 --->Tarefas 
 	--->Mais urgentes		
 
-			
+		-> Terminar pre prontos adicionais digitados no input e novas funcoes para mensagens automaticas
 
 		-> (Talvez não precise com a nova Dinamica)Criei botões: Metil testosterona(Para peixe), Base Efervescente Abacaxi, limão e laranja, Vitamina B12 diluida, T3 diluido, T4 Diluido, Vitamina D3 Diluida Porém não implementei eles no
 		Javascript nem na tabela do Banco de Dados!;
