@@ -164,7 +164,7 @@ function exipientes(){
 	//Menu pocao
 	$(document).on('click', '.btsPreProntos', function(){
 		idbtsPreProntos = $(this).attr('id');	
-		$("#linha"+idbtsPreProntos).toggle();				
+		$("#linha"+idbtsPreProntos).toggle();		
 	});
 	$(document).on('click', '.btsFaltaProducao', function(){
 		var idbtsFaltaProducao = $(this).attr('id');
@@ -172,12 +172,8 @@ function exipientes(){
 		$("#linhaOpcoesLaboratorio").toggle();
 		var parametroexipientes = 0;
 		switch(idbtsFaltaProducao){
-			case 'acabou':
-				parametroexipientes=1;
-			break;
-			case 'producao':
-				parametroexipientes=2;
-			break;			
+			case 'acabou'   : parametroexipientes=1; break;
+			case 'producao' : parametroexipientes=2; break;
 		}		
 		$.ajax({
 			url: 'confg.php',
@@ -829,6 +825,37 @@ function atualizatudo(){
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Metilfolato Diluído</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='MetilfolatoDiluido' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break;
+			}switch(retornado.metiltestosterona){
+				case "2":
+					qtdExps++;
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
+						"<p class='m-0 p-0'>Metil Testosterona</p><p class='m-0 p-0'>Em Produção</p>"+
+					"</button><button type='button' id='MetilfolatoDiluido' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break;
+			}switch(retornado.baseefervescenteabacaxi){
+				case "1":					
+					qtdExps++;
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
+						"<p class='m-0 p-0'>Base Efervescente Abacaxi</p><p class='m-0 p-0'>Acabando</p>"+
+					"</button><button type='button' id='BaseEfervescenteAbacaxi' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break; case "2":
+					qtdExps++;
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
+						"<p class='m-0 p-0'>Base Efervescente Abacaxi</p><p class='m-0 p-0'>Em Produção</p>"+
+					"</button><button type='button' id='BaseEfervescenteAbacaxi' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break;
+			}switch(retornado.baseefervescentelimao){
+				case "1":					
+					qtdExps++;
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
+						"<p class='m-0 p-0'>Base Efervescente Limao</p><p class='m-0 p-0'>Acabando</p>"+
+					"</button><button type='button' id='BaseEfervescenteAbacaxi' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break; case "2":
+					qtdExps++;
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
+						"<p class='m-0 p-0'>Base Efervescente Limao</p><p class='m-0 p-0'>Em Produção</p>"+
+					"</button><button type='button' id='BaseEfervescenteAbacaxi' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.almoco){
 				case "1":

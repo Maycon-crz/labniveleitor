@@ -201,8 +201,7 @@
 				</li><li>
 					<button type='button' class='btsPreProntos mt-2' id='MetilTestosterona'>Metil<br/>Testosterona</button>
 				</li><li>
-					<div class='linhaPreProntos' id='linhaMetilTestosterona'>
-						<button type='button' class='btsFaltaProducao form-control btn btn-danger' id='acabou'>Acabando</button>
+					<div class='linhaPreProntos' id='linhaMetilTestosterona'>						
 						<button type='button' class='btsFaltaProducao form-control btn btn-warning' id='producao'>Produção</button>
 					</div>
 				</li><li>
