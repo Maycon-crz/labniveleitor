@@ -831,7 +831,7 @@ function atualizatudo(){
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Metil Testosterona</p><p class='m-0 p-0'>Em Produção</p>"+
-					"</button><button type='button' id='MetilfolatoDiluido' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='MetilTestosterona' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.baseefervescenteabacaxi){
 				case "1":					
@@ -850,12 +850,24 @@ function atualizatudo(){
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Base Efervescente Limao</p><p class='m-0 p-0'>Acabando</p>"+
-					"</button><button type='button' id='BaseEfervescenteAbacaxi' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='BaseEfervescenteLimao' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break; case "2":
 					qtdExps++;
 					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
 						"<p class='m-0 p-0'>Base Efervescente Limao</p><p class='m-0 p-0'>Em Produção</p>"+
-					"</button><button type='button' id='BaseEfervescenteAbacaxi' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+					"</button><button type='button' id='BaseEfervescenteLimao' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break;
+			}switch(retornado.baseefervescentelaranja){
+				case "1":					
+					qtdExps++;
+					dadosLinhaExipiente += "<button type='button' class='btn btn-danger border rounded-pill m-0 p-2'>"+
+						"<p class='m-0 p-0'>Base Efervescente Laranja</p><p class='m-0 p-0'>Acabando</p>"+
+					"</button><button type='button' id='BaseEfervescenteLaranja' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
+				break; case "2":
+					qtdExps++;
+					dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
+						"<p class='m-0 p-0'>Base Efervescente Laranja</p><p class='m-0 p-0'>Em Produção</p>"+
+					"</button><button type='button' id='BaseEfervescenteLaranja' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
 			}switch(retornado.almoco){
 				case "1":

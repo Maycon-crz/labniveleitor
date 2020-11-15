@@ -288,9 +288,9 @@
 				case "BaseEfervescenteLimao":
 					$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseefervescentelimao=:parametroexipientes WHERE 1=1";
 				break;
-				// case "BaseEfervescenteLaranja":
-				// 	$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilfolatodiluido=:parametroexipientes WHERE 1=1";
-				// break;
+				case "BaseEfervescenteLaranja":
+					$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseefervescentelaranja=:parametroexipientes WHERE 1=1";
+				break;
 				case "Almoco":
 					$sqlEditaPreProntos = "UPDATE pressaopedidos SET almoco=:parametroexipientes WHERE 1=1";
 				break;
@@ -586,7 +586,7 @@
 				$listadedados['metiltestosterona'] 		= $resultadosPressaoPedidos[0]["metiltestosterona"];
 				$listadedados['baseefervescenteabacaxi']= $resultadosPressaoPedidos[0]["baseefervescenteabacaxi"];
 				$listadedados['baseefervescentelimao'] 	= $resultadosPressaoPedidos[0]["baseefervescentelimao"];
-				// $listadedados['baseefervescentelaranja']= $resultadosPressaoPedidos[0]["baseefervescentelaranja"];
+				$listadedados['baseefervescentelaranja']= $resultadosPressaoPedidos[0]["baseefervescentelaranja"];
 				$listadedados['almoco'] 				= $resultadosPressaoPedidos[0]["almoco"];
 				$this->mostraAvisos($con, $listadedados);
 			}else{
