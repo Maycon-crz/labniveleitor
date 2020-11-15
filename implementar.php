@@ -20,9 +20,7 @@
 		-> Restringir a ter no minimo nivel 1 
 		para alterar qualquer parametro no banco e 
 		nivel 2 para coisas do laboratorio;
-
-		-> Verificar um BUG de sessao que dura apenas 180 minutos perdendo os dados de $_SESSION['nivel'] ai mesmo estando logado no nivel 1 depois de um tempo não
-		permite fazer algumas modificacoes!!!(Tempo de sessão está com apenas 180 minutos procurar uma forma de aumentar)
+		
 
 	<---
 	--->Menos urgentes
@@ -32,6 +30,10 @@
 -----------------------Concluidos(Organizar por DATA!!!)-----------------------
 	
 	--->Homologação
+		-->(14/11/2020)
+			-> Verificar um BUG de sessao que dura apenas 180 minutos perdendo os dados de $_SESSION['nivel'] ai mesmo estando logado no nivel 1 depois de um tempo não
+			permite fazer algumas modificacoes!!!(Tempo de sessão está com apenas 180 minutos procurar uma forma de aumentar)(Não testei, testar no laboratorio para ver se funciona...);
+		<--
 		-->(27/10/2020)
 			-> Na hora de Editar a Quantidade de pastas editar a tabela do dia especificado no select!
 		<--
