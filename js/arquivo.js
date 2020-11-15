@@ -163,8 +163,9 @@ function exipientes(){
 	});
 	//Menu pocao
 	$(document).on('click', '.btsPreProntos', function(){
-		idbtsPreProntos = $(this).attr('id');	
-		$("#linha"+idbtsPreProntos).toggle();		
+		idbtsPreProntos = $(this).attr('id');
+		$("#linha"+idbtsPreProntos).toggle();
+		
 	});
 	$(document).on('click', '.btsFaltaProducao', function(){
 		var idbtsFaltaProducao = $(this).attr('id');
@@ -174,18 +175,25 @@ function exipientes(){
 		switch(idbtsFaltaProducao){
 			case 'acabou'   : parametroexipientes=1; break;
 			case 'producao' : parametroexipientes=2; break;
-		}		
+		}
+		//Se nao for botao, for escrito pega o valor do input
+		
+		if(idbtsPreProntos == 'DigitarPrePronto'){ 
+			idbtsPreProntos = "PreProntoDigitado";
+			parametroexipientes = $('#DigitarPreProntoValor').val();				
+			if(parametroexipientes == ""){
+				alert("Digite o nome do Pré-pronto!");
+			}
+		}
 		$.ajax({
 			url: 'confg.php',
 			type: 'post',
 			data: {
 				'idbtsPreProntos': idbtsPreProntos,
-				'parametroexipientes': parametroexipientes
+				'parametroexipientes': parametroexipientes,				
 			},
 			dataType: 'json',
-			success: function(retorno){
-				alert(retorno);				
-			}
+			success: function(retorno){ alert(retorno);	}
 		});
 	});
 }
@@ -667,8 +675,7 @@ function atualizatudo(){
 			$('#brusque').val(retornado.brusque);
 
 			//Exipientes|Pré-Prontos
-			var dadosLinhaExipiente = "";
-			var qtdExps=0;
+			var dadosLinhaExipiente = ""; var qtdExps=0;
 			switch(retornado.excipiente){
 				case "1":					
 					qtdExps++;
@@ -869,6 +876,11 @@ function atualizatudo(){
 						"<p class='m-0 p-0'>Base Efervescente Laranja</p><p class='m-0 p-0'>Em Produção</p>"+
 					"</button><button type='button' id='BaseEfervescenteLaranja' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";
 				break;
+			}if(retornado.preprontodigitado != "0"){
+				qtdExps++;
+				dadosLinhaExipiente += "<button type='button' class='btn btn-warning border rounded-pill m-0 p-2'>"+
+					"<p class='m-0 p-0'>Atenção "+retornado.preprontodigitado+" <p class='m-0 p-0'>Acabando ou Em Produção</p>"+
+				"</button><button type='button' id='PreProntoDigitado' class='btn btn-success rounded-circle finalizaExcipiente'>X</button>";				
 			}switch(retornado.almoco){
 				case "1":
 					qtdExps++;

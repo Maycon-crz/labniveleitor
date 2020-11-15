@@ -264,7 +264,7 @@
 		}
 		function editaPreProntos($con, $ferramentas, $idbtsPreProntos, $parametroexipientes){			
 			$idbtsPreProntos = $ferramentas->filtrando($idbtsPreProntos);
-			$parametroexipientes = $ferramentas->filtrando($parametroexipientes);
+			$parametroexipientes = $ferramentas->filtrando($parametroexipientes);	
 			switch($idbtsPreProntos){
 				case "Excipiente"		  :$sqlEditaPreProntos = "UPDATE pressaopedidos SET excipiente=:parametroexipientes WHERE 1=1"; 		      break;
 				case "CremeNaoIonico"	  :$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremenaoionico=:parametroexipientes WHERE 1=1";	          break;
@@ -274,26 +274,17 @@
 				case "BaseShampooPerolado":$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseshampooperolado=:parametroexipientes WHERE 1=1";      break;
 				case "CremePsoriaseAguda" :$sqlEditaPreProntos = "UPDATE pressaopedidos SET cremepsoriaseaguda=:parametroexipientes WHERE 1=1";       break;
 				case "FluoretoDeSodio"	  :$sqlEditaPreProntos = "UPDATE pressaopedidos SET fluoretodesodio=:parametroexipientes WHERE 1=1";		  break;
-				case "DescongestionanteNasal":$sqlEditaPreProntos = "UPDATE pressaopedidos SET descongestionantenasal=:parametroexipientes WHERE 1=1";break;
-				case "LocaoCapilarMinoxidil" :$sqlEditaPreProntos = "UPDATE pressaopedidos SET locaocapilarminoxidil=:parametroexipientes WHERE 1=1"; break;
-				case "AnastrozolDiluido"	 :$sqlEditaPreProntos = "UPDATE pressaopedidos SET anastrozoldiluido=:parametroexipientes WHERE 1=1";	  break;
-				case "MetilcobalaminaDiluida":$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilcobalaminadiluida=:parametroexipientes WHERE 1=1";break;
-				case "MetilfolatoDiluido"	 :$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilfolatodiluido=:parametroexipientes WHERE 1=1";	  break;
-				case "MetilTestosterona":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET metiltestosterona=:parametroexipientes WHERE 1=1";
-				break;
-				case "BaseEfervescenteAbacaxi":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseefervescenteabacaxi=:parametroexipientes WHERE 1=1";
-				break;
-				case "BaseEfervescenteLimao":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseefervescentelimao=:parametroexipientes WHERE 1=1";
-				break;
-				case "BaseEfervescenteLaranja":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseefervescentelaranja=:parametroexipientes WHERE 1=1";
-				break;
-				case "Almoco":
-					$sqlEditaPreProntos = "UPDATE pressaopedidos SET almoco=:parametroexipientes WHERE 1=1";
-				break;
+				case "DescongestionanteNasal" :$sqlEditaPreProntos = "UPDATE pressaopedidos SET descongestionantenasal=:parametroexipientes WHERE 1=1"; break;
+				case "LocaoCapilarMinoxidil"  :$sqlEditaPreProntos = "UPDATE pressaopedidos SET locaocapilarminoxidil=:parametroexipientes WHERE 1=1";  break;
+				case "AnastrozolDiluido"	  :$sqlEditaPreProntos = "UPDATE pressaopedidos SET anastrozoldiluido=:parametroexipientes WHERE 1=1";	    break;
+				case "MetilcobalaminaDiluida" :$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilcobalaminadiluida=:parametroexipientes WHERE 1=1"; break;
+				case "MetilfolatoDiluido"	  :$sqlEditaPreProntos = "UPDATE pressaopedidos SET metilfolatodiluido=:parametroexipientes WHERE 1=1";	    break;
+				case "MetilTestosterona"	  :$sqlEditaPreProntos = "UPDATE pressaopedidos SET metiltestosterona=:parametroexipientes WHERE 1=1";	    break;
+				case "BaseEfervescenteAbacaxi":$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseefervescenteabacaxi=:parametroexipientes WHERE 1=1";break;
+				case "BaseEfervescenteLimao"  :$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseefervescentelimao=:parametroexipientes WHERE 1=1";  break;
+				case "BaseEfervescenteLaranja":$sqlEditaPreProntos = "UPDATE pressaopedidos SET baseefervescentelaranja=:parametroexipientes WHERE 1=1";break;
+				case "PreProntoDigitado"      :$sqlEditaPreProntos = "UPDATE pressaopedidos SET preprontodigitado=:parametroexipientes WHERE 1=1";      break;
+				case "Almoco"				  :$sqlEditaPreProntos = "UPDATE pressaopedidos SET almoco=:parametroexipientes WHERE 1=1";					break;
 			}			
 			$editaPreProntos = $con->prepare($sqlEditaPreProntos);
 			$editaPreProntos->bindParam(':parametroexipientes', $parametroexipientes);
@@ -559,7 +550,7 @@
 			}
 		}
 		function nivelDePressaoEpedidos($con, $listadedados){
-			$sqlBuscaPressaoPedidos = "SELECT nivel, pastaazul, atrasadas, adiantadas, pomerode, brusque, excipiente, cremenaoionico, basegelanastrozol, tacrolimus, basesabonete, baseshampooperolado, cremepsoriaseaguda, fluoretodesodio, descongestionantenasal, locaocapilarminoxidil, anastrozoldiluido, metilcobalaminadiluida, metilfolatodiluido, metiltestosterona, baseefervescenteabacaxi, baseefervescentelimao, baseefervescentelaranja, almoco FROM pressaopedidos WHERE 1=1";
+			$sqlBuscaPressaoPedidos = "SELECT nivel, pastaazul, atrasadas, adiantadas, pomerode, brusque, excipiente, cremenaoionico, basegelanastrozol, tacrolimus, basesabonete, baseshampooperolado, cremepsoriaseaguda, fluoretodesodio, descongestionantenasal, locaocapilarminoxidil, anastrozoldiluido, metilcobalaminadiluida, metilfolatodiluido, metiltestosterona, baseefervescenteabacaxi, baseefervescentelimao, baseefervescentelaranja, preprontodigitado, almoco FROM pressaopedidos WHERE 1=1";
 			$buscaPressaoPedidos = $con->prepare($sqlBuscaPressaoPedidos);
 			if($buscaPressaoPedidos->execute()){
 				$resultadosPressaoPedidos 		= $buscaPressaoPedidos->fetchAll(PDO::FETCH_ASSOC);
@@ -587,6 +578,7 @@
 				$listadedados['baseefervescenteabacaxi']= $resultadosPressaoPedidos[0]["baseefervescenteabacaxi"];
 				$listadedados['baseefervescentelimao'] 	= $resultadosPressaoPedidos[0]["baseefervescentelimao"];
 				$listadedados['baseefervescentelaranja']= $resultadosPressaoPedidos[0]["baseefervescentelaranja"];
+				$listadedados['preprontodigitado']		= $resultadosPressaoPedidos[0]["preprontodigitado"];				
 				$listadedados['almoco'] 				= $resultadosPressaoPedidos[0]["almoco"];
 				$this->mostraAvisos($con, $listadedados);
 			}else{
