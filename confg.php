@@ -1,6 +1,6 @@
 <?php include('include/conn.php');?>
-<?php
-    $_SESSION['logado'] = "nao";   
+<?php session_start(['cookie_lifetime' => 43200,]);?>
+<?php     
     class luana{
     	function transformaTextoRetornadoDaVozEmArray($ferramentas, $vozTexto){    		
 			$voz = strtolower($vozTexto);
@@ -259,6 +259,7 @@
 					$sqlEditaAtrasadasAdiantadas = "UPDATE pressaopedidos SET atrasadas=:inputAtrasadasAdiantadas WHERE 1=1";
 				break;
 			}
+			$inputAtrasadasAdiantadas = $ferramentas->filtrando($inputAtrasadasAdiantadas);
 			$editaAtrasadasAdiantadas = $con->prepare($sqlEditaAtrasadasAdiantadas);			
 			$editaAtrasadasAdiantadas->bindParam(':inputAtrasadasAdiantadas', $inputAtrasadasAdiantadas);				
 			if($editaAtrasadasAdiantadas->execute()){
@@ -706,7 +707,7 @@
 					if(!empty($retornado['nome']) AND $retornado['nome'] == $nome){
 						if(!empty($senha)){							
 							if(password_verify($senha, $retornado['senha'])){	
-								session_start();
+								// session_start();
 								$_SESSION['logado'] = "sim";
 								$_SESSION['nome'] = "{---".$retornado['nome']."---}";
 								$_SESSION['nivel'] = $retornado['nivel'];
@@ -729,11 +730,10 @@
 		}
 	}
 	class ferramentas{
-		function sair(){
-			session_start();
+		function sair(){			
 			session_unset();
 			session_destroy();
-			session_start();
+			session_start(['cookie_lifetime' => 43200,]);
 			$_SESSION['logado'] = "nao";		
 			echo json_encode("saiu");
 		}
@@ -770,13 +770,13 @@
 				$editadados->updateAtrasadasAdiantadas($con, $ferramentas, $_POST['inputAtrasadasAdiantadas'], $_POST['parametroAtrasadasAdiantadas']);
 			}
 			if(isset($_POST['idfinalizaexcipiente'])){
-				session_start(); 
+				// session_start();
 				if($_SESSION['nivel'] === "1"){
 					$editadados->editaPreProntos($con, $ferramentas, $_POST['idfinalizaexcipiente'], 0);
 				}else{echo json_encode("Função restrita ao laboratório!");}		
 			}
 			if(isset($_POST['idbtsPreProntos']) || isset($_POST['parametroexipientes'])){
-				session_start(); 
+				// session_start();
 				if($_SESSION['nivel'] === "1"){
 					$editadados->editaPreProntos($con, $ferramentas, $_POST['idbtsPreProntos'], $_POST['parametroexipientes']);
 				}else{echo json_encode("Função restrita ao laboratório!");}
@@ -791,19 +791,19 @@
 				$editadados->editaValorPastaAzul($con, $ferramentas, $_POST['valorPastaAzul']);
 			}
 			if(isset($_POST['editapedidosnomefilial'])){
-				session_start(); 
+				// session_start();
 				if($_SESSION['nivel'] === "1"){				
 					$editadados->editapedidos($con, $ferramentas, $_POST['editapedidosnomefilial'], $_POST['editapedidosqtdpedidos']);
 				}else{echo json_encode("Função restrita ao laboratório!");}
 			}
 			if(isset($_POST['valor'])){
-				session_start(); 
+				// session_start();
 				if($_SESSION['nivel'] === "1"){	
 					$editadados->editaQTDformulas($con, $ferramentas, $_POST['valor'], $_POST['nomehorariodb'], $_POST['tipoTbHora'], $_POST['cor'], $_POST['diaDaTabela'], "controlador");
 				}else{echo json_encode("Função restrita ao laboratório!");}
 			}
 			if(isset($_POST['nvPressao'])){
-				session_start(); 
+				// session_start();
 				if($_SESSION['nivel'] === "1"){
 					$editadados->editaNivelDePressao($con, $ferramentas, $_POST['nvPressao']);
 				}else{echo json_encode("Função restrita ao laboratório!");}								

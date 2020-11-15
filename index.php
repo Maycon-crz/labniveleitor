@@ -4,7 +4,10 @@
 		//header("location:labniveleitor/painel.php");
 	//}
 ?> -->
-<?php $_SESSION['nome'] = "";?>
+
+
+<?php session_start(['cookie_lifetime' => 43200,]);?>
+
 <?php include("include/cabecalho.php");?>
 	<ul class='text-center border border-success mb-5 p-5'>
 		<form class='mb-5 mt-5' id='formLogin'>		

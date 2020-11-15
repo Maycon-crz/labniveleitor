@@ -1,3 +1,4 @@
+<?php session_start(['cookie_lifetime' => 43200,]);?>
 <?php include("include/cabecalho.php")?>
 	<div class='container'>
 		<div class='row bg-info border rounded-pill'>
