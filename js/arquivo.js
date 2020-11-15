@@ -127,9 +127,17 @@ function pastasAtrasadasAdiantadas(){
 		updateAtrasadasAdiantadas(inputAtrasadasAdiantadas, parametroAtrasadasAdiantadas);		
 	});	
 }
+var btlaboratorioposisionando = 0;
 function opcoesLaboratorios(){
 	//Abre/Fecha Botões do laboratório menu poções
 	$(document).on('click', '#btOpcoesLaboratorio', function(){
+		switch(btlaboratorioposisionando){
+			case 0:
+				$("#menuFixo").css('left', '80%'); btlaboratorioposisionando = 1;			
+			break;case 1:
+				$("#menuFixo").css('left', '85%'); btlaboratorioposisionando = 0;
+			break;
+		}
 		$("#linhaOpcoesLaboratorio").toggle();
 	});
 }
