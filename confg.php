@@ -585,7 +585,7 @@
 
 				$listadedados['metiltestosterona'] 		= $resultadosPressaoPedidos[0]["metiltestosterona"];
 				$listadedados['baseefervescenteabacaxi']= $resultadosPressaoPedidos[0]["baseefervescenteabacaxi"];
-				// $listadedados['baseefervescentelimao'] 	= $resultadosPressaoPedidos[0]["baseefervescentelimao"];
+				$listadedados['baseefervescentelimao'] 	= $resultadosPressaoPedidos[0]["baseefervescentelimao"];
 				// $listadedados['baseefervescentelaranja']= $resultadosPressaoPedidos[0]["baseefervescentelaranja"];
 				$listadedados['almoco'] 				= $resultadosPressaoPedidos[0]["almoco"];
 				$this->mostraAvisos($con, $listadedados);
