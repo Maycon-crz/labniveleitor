@@ -1,6 +1,5 @@
 $(document).ready(function(){		
-	reconhecendoComandoDeVoz();
-	document.getElementById("stop").style.display = "none";
+	reconhecendoComandoDeVoz();		
 	// tranformaTextoEmArray("Luana inclua cinco pastas verdes entre 18 a 19 horas na tabela semi-sólidos");
 });
 function enviaEdicaoQTDTbHoraLuana(valor, nomehorariodb, tipoTbHora, cor, diaDaTabela){		
@@ -396,10 +395,11 @@ function tranformaTextoEmArray(voz){
 	});
 }
 function reconhecendoComandoDeVoz(){	
-	var btn_play = document.querySelector('#play');
-	var btn_stop = document.querySelector('#stop');
-	var resultado = "";
+	$("#stop").css("display", "none");
 	if(window.SpeechRecognition || window.webkitSpeechRecognition){
+		var btn_play = document.querySelector('#play');
+		var btn_stop = document.querySelector('#stop');
+		var resultado = "";
 		var API = window.SpeechRecognition || window.webkitSpeechRecognition;
 
 		var recognition = new API();
@@ -426,19 +426,19 @@ function reconhecendoComandoDeVoz(){
 			console.log('Botao stop');			
 			tranformaTextoEmArray(resultado);
 		}
-
-		btn_play.addEventListener('click', function(){
-			recognition.start();
-			document.getElementById('stop').style.display="inline";
-			document.getElementById('play').style.display="none";
-		},false);
-
-		btn_stop.addEventListener('click', function(){
-			recognition.stop();
-			document.getElementById('play').style.display="inline";
-			document.getElementById('stop').style.display="none";
-		},false);
-
+		if(btn_play){
+			btn_play.addEventListener('click', function(){
+				recognition.start();
+				document.getElementById('stop').style.display="inline";
+				document.getElementById('play').style.display="none";
+			},false);
+		}if(btn_stop){
+			btn_stop.addEventListener('click', function(){
+				recognition.stop();
+				document.getElementById('play').style.display="inline";
+				document.getElementById('stop').style.display="none";
+			},false);
+		}
 	}else{
 		console.log('Error');
 	}

@@ -2,8 +2,7 @@
 
 
 --------->Modificações site online:	
-	
-	-> Sem session['nivel'] bugando
+		
 
 <---------
 --->Tarefas 
@@ -21,6 +20,9 @@
 -----------------------Concluidos(Organizar por DATA!!!)-----------------------
 	
 	--->Homologação
+		-->(17/11/2020)
+			-> Convertido o retante dos perifericos inputs de entrada, manual, menu_fixo, pastas_azuis_layout_fixo, mostra_excipientes_pre_prontos_fixo, mostra_avisos_fixo para sessoes
+		<--
 		-->(15/11/2020)
 			-> Terminar pre prontos adicionais digitados no input e novas funcoes para mensagens automaticas
 			-> (Talvez não precise com a nova Dinamica)Criei botões: Metil testosterona(Para peixe), Base Efervescente Abacaxi, limão e laranja;

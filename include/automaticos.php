@@ -75,6 +75,7 @@
 					<option value=''>--- Transferência de dados ---</option>
 					<option value='RefreshAmanha'>Transferir dados da tabela de ( Amanhã ) para Tabela de hoje</option>
 					<option value='RefreshDepoisDeAmanha'>Transferir dados da tabela ( Depois de amanhã ) para Tabela de Hoje</option>
+					<option value='RefreshDepoisDeAmanhaParaAmanha'>Transferir dados da tabela ( Depois de amanhã ) para Tabela de Amanhã</option>
 				</select>
 			</div>
 		</div>

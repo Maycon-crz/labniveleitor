@@ -18,6 +18,10 @@ body{
 #linhaDeCadFunc, .linhaPreProntos, #mostraDadosExipientes, #linhaOpcoesLaboratorio, #linhaProntas, #linhaCadastromsgsprontas{
 	display: none;
 }
+#stop{
+	display: block;
+}
+}
 #linhaMostraExp{
 	position: fixed;	
 	top:13%;

@@ -19,34 +19,37 @@ $(document).ready(function(){
 	login();
 });
 function posicionamentoDoSelectNomeDaTabelaFixo(){
-	$(window).on("scroll", function(){ // dispara o evento scroll da janela		
-		var div_heigh = $("#tbHorariosLinhaDois").height(); // pega a altura da div
-		var win_heigh = window.innerHeight; // pega a altura da janela
-		var win_scrol = $(this).scrollTop(); // pega o valor da rolagem da janela
-		var div_topo  = $("#tbHorariosLinhaDois").offset().top; // distância da div até o início do documento
-		var distancia = div_topo - win_scrol - win_heigh; // distância da div até a borda inferior da janela
+	var url_atual = window.location.href;
+	if(url_atual == "index.php"){
+		$(window).on("scroll", function(){ // dispara o evento scroll da janela		
+			var div_heigh = $("#tbHorariosLinhaDois").height(); // pega a altura da div
+			var win_heigh = window.innerHeight; // pega a altura da janela
+			var win_scrol = $(this).scrollTop(); // pega o valor da rolagem da janela
+			var div_topo  = $("#tbHorariosLinhaDois").offset().top; // distância da div até o início do documento
+			var distancia = div_topo - win_scrol - win_heigh; // distância da div até a borda inferior da janela
 
-		var finalDaTabela = $(".linhaPedidosPomerode").height();
-		var div_topoDois = $(".linhaPedidosPomerode").offset().top;
-		var distanciaDois = div_topoDois - win_scrol - win_heigh;
+			var finalDaTabela = $(".linhaPedidosPomerode").height();
+			var div_topoDois = $(".linhaPedidosPomerode").offset().top;
+			var distanciaDois = div_topoDois - win_scrol - win_heigh;
 
-		// se a distância da altura da div à borda inferior da janela for menor ou igual a 0
-		if(distancia <= -div_heigh){		
-			$("#SelectTabelaSolidosSemisolidosDia").css("position", "fixed");
-			$("#SelectTabelaSolidosSemisolidosDia").css("top", "92%");
-			$("#SelectTabelaSolidosSemisolidosDia").css("z-index", "5");
-			$("#SelectTabelaSolidosSemisolidosDia").css("width", "280px");
-			$("#SelectTabelaSolidosSemisolidosDia").css("left", "26%");
-			$("#SelectTabelaSolidosSemisolidosDia").css("font-size", "15px");
-			if(distanciaDois <= -finalDaTabela){
+			// se a distância da altura da div à borda inferior da janela for menor ou igual a 0
+			if(distancia <= -div_heigh){		
+				$("#SelectTabelaSolidosSemisolidosDia").css("position", "fixed");
+				$("#SelectTabelaSolidosSemisolidosDia").css("top", "92%");
+				$("#SelectTabelaSolidosSemisolidosDia").css("z-index", "5");
+				$("#SelectTabelaSolidosSemisolidosDia").css("width", "280px");
+				$("#SelectTabelaSolidosSemisolidosDia").css("left", "26%");
+				$("#SelectTabelaSolidosSemisolidosDia").css("font-size", "15px");
+				if(distanciaDois <= -finalDaTabela){
+					$("#SelectTabelaSolidosSemisolidosDia").css("position", "");
+					$("#SelectTabelaSolidosSemisolidosDia").css("width", "100%");
+				}
+			}else{
 				$("#SelectTabelaSolidosSemisolidosDia").css("position", "");
 				$("#SelectTabelaSolidosSemisolidosDia").css("width", "100%");
-			}
-		}else{
-			$("#SelectTabelaSolidosSemisolidosDia").css("position", "");
-			$("#SelectTabelaSolidosSemisolidosDia").css("width", "100%");
-		}		
-	});
+			}		
+		});
+	}
 }
 var idTabelaSolidosSemisolidosDia = "opcaoTabelaDeHoje";
 function refresh(refreshTranferirDadosEntreTabelas){
@@ -66,18 +69,19 @@ function tranferirDadosTabelaSolidosSemisolidos(){
 		var refreshTranferirDadosEntreTabelas = $(this).val();
 		switch(refreshTranferirDadosEntreTabelas){
 			case 'RefreshAmanha':
-				if(confirm("Deseja Transferir dados das tabelas sólidos e semi-sólidos de Amanhã para Tabela de Hoje?")){
-					// alert("Bora la Amanha");
+				if(confirm("Deseja Transferir dados das tabelas sólidos e semi-sólidos de Amanhã para Tabelas de Hoje?")){					
 					refresh(refreshTranferirDadosEntreTabelas);
 				}
 			break; case 'RefreshDepoisDeAmanha':
-				if(confirm("Deseja Transferir dados das tabelas sólidos e semi-sólidos Depois de Amanhã para Tabela de Hoje?")){
-					// alert("Bora la Depois de Amanha");
+				if(confirm("Deseja Transferir dados das tabelas sólidos e semi-sólidos Depois de Amanhã para Tabelas de Hoje?")){					
+					refresh(refreshTranferirDadosEntreTabelas);
+				}
+			break; case 'RefreshDepoisDeAmanhaParaAmanha':
+				if(confirm("Deseja Transferir dados das tabelas sólidos e semi-sólidos Depois de Amanhã para Tabelas de Amanhã?")){
 					refresh(refreshTranferirDadosEntreTabelas);
 				}
 			break;
-		}
-		// atualizatudo();
+		}		
 	});
 }
 function selectDiaTabelaSolidosSemiSolidos(){
