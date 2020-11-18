@@ -14,7 +14,9 @@
 
 	<---
 	--->Menos urgentes
-		-> No menu poção fazer classificação botao diluídos para os diluídos ou botao Pré Sólidos e Pré Semi-sólidos	
+		-> No menu poção fazer classificação botao diluídos para os diluídos ou botao Pré Sólidos e Pré Semi-sólidos
+
+		-> Criar Espaco para expor os itens que estão em falta
 	<---		
 <---
 -----------------------Concluidos(Organizar por DATA!!!)-----------------------
