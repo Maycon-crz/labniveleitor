@@ -22,6 +22,10 @@
 -----------------------Concluidos(Organizar por DATA!!!)-----------------------
 	
 	--->Homologação
+		
+	<---
+
+	--->online
 		-->(17/11/2020)
 			-> Convertido o retante dos perifericos inputs de entrada, manual, menu_fixo, pastas_azuis_layout_fixo, mostra_excipientes_pre_prontos_fixo, mostra_avisos_fixo para sessoes
 		<--
@@ -45,9 +49,6 @@
 
 			-> Criei input para subistituir botões de pré-prontos(Acabando e Acabou) e tabela uma nova para armazenar os parametros;
 		<--
-	<---
-
-	--->online
 		-->(12/10/2020)
 			-> Ver código do farm de respostas prontas e tentar embutir no labniveleitor
 		<--

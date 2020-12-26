@@ -444,7 +444,7 @@
 				$listadedados['dezonzeAmarela'] 	= $resultadosSolidos[2]["amarela"];
 				$listadedados['dezonzeVermelha'] 	= $resultadosSolidos[2]["vermelha"];
 
-				$listadedados['onzedozeVerde'] 	= $resultadosSolidos[3]["verde"];
+				$listadedados['onzedozeVerde'] 		= $resultadosSolidos[3]["verde"];
 				$listadedados['onzedozeAmarela'] 	= $resultadosSolidos[3]["amarela"];
 				$listadedados['onzedozeVermelha'] 	= $resultadosSolidos[3]["vermelha"];
 
@@ -452,28 +452,28 @@
 				$listadedados['dozetrezeAmarela'] 	= $resultadosSolidos[4]["amarela"];
 				$listadedados['dozetrezeVermelha'] 	= $resultadosSolidos[4]["vermelha"];
 
-				$listadedados['trezequaVerde'] 	= $resultadosSolidos[5]["verde"];
+				$listadedados['trezequaVerde'] 		= $resultadosSolidos[5]["verde"];
 				$listadedados['trezequaAmarela'] 	= $resultadosSolidos[5]["amarela"];
 				$listadedados['trezequaVermelha'] 	= $resultadosSolidos[5]["vermelha"];
 
 				$listadedados['quaquiVerde'] 		= $resultadosSolidos[6]["verde"];
-				$listadedados['quaquiAmarela'] 	= $resultadosSolidos[6]["amarela"];
+				$listadedados['quaquiAmarela'] 		= $resultadosSolidos[6]["amarela"];
 				$listadedados['quaquiVermelha'] 	= $resultadosSolidos[6]["vermelha"];
 
-				$listadedados['quidseisVerde'] 	= $resultadosSolidos[7]["verde"];
+				$listadedados['quidseisVerde'] 		= $resultadosSolidos[7]["verde"];
 				$listadedados['quidseisAmarela'] 	= $resultadosSolidos[7]["amarela"];
 				$listadedados['quidseisVermelha'] 	= $resultadosSolidos[7]["vermelha"];
 
 				$listadedados['dseisdseteVerde'] 	= $resultadosSolidos[8]["verde"];
-				$listadedados['dseisdseteAmarela'] = $resultadosSolidos[8]["amarela"];
+				$listadedados['dseisdseteAmarela'] 	= $resultadosSolidos[8]["amarela"];
 				$listadedados['dseisdseteVermelha'] = $resultadosSolidos[8]["vermelha"];
 
 				$listadedados['dsetedoitoVerde'] 	= $resultadosSolidos[9]["verde"];
-				$listadedados['dsetedoitoAmarela'] = $resultadosSolidos[9]["amarela"];
+				$listadedados['dsetedoitoAmarela'] 	= $resultadosSolidos[9]["amarela"];
 				$listadedados['dsetedoitoVermelha'] = $resultadosSolidos[9]["vermelha"];	
 
 				$listadedados['doitodnoveVerde'] 	= $resultadosSolidos[10]["verde"];
-				$listadedados['doitodnoveAmarela'] = $resultadosSolidos[10]["amarela"];
+				$listadedados['doitodnoveAmarela'] 	= $resultadosSolidos[10]["amarela"];
 				$listadedados['doitodnoveVermelha'] = $resultadosSolidos[10]["vermelha"];						
 				if($parametroTabelas == "Atualizando"){
 					$qtdPastasProximosDias = $this->mostarQTDformulasAmanhaEdepoisDeAmanha($con, $ferramentas);
