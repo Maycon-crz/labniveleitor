@@ -901,7 +901,10 @@ function atualizatudo(){
 			if(dadosLinhaExipiente != ""){	
 				$("#qtdExipientes").html(qtdExps);
 				$("#mostraDadosExipientes").html(dadosLinhaExipiente);
-				$("#linhaMostraExp").css("display", "block");							
+				$("#linhaMostraExp").css("display", "block");
+
+				$("#linhaMostraExp").css("position", "fixed");
+				$("#linhaMostraExp").css("top", "13%");
 			}else{								
 				$("#linhaMostraExp").css("display", "none");
 			}					

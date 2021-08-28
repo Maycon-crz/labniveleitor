@@ -1,6 +1,10 @@
 <!-- Sistema online foi modificado criei input hidden que tem valor de sessão para 
 verificar por javascript se eestá logado para nao acesar painel nao logado -->
-<?php if(!$_SESSION['logado']){$_SESSION['logado']='nao';}?>
+<?php 
+	if(!isset($_SESSION['logado'])){
+		$_SESSION['logado']='nao';
+	} 
+?>
 <html>
 	<head>
 		<meta charset="utf-8">

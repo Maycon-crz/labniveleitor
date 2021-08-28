@@ -431,7 +431,7 @@
 				break;
 			}
 			if($buscasolidos->execute()){
-				$resultadosSolidos = $buscasolidos->fetchAll(PDO::FETCH_ASSOC);					
+				$resultadosSolidos = $buscasolidos->fetchAll(PDO::FETCH_ASSOC);			
 				$listadedados['oitonoveVerde'] 	= $resultadosSolidos[0]["verde"];
 				$listadedados['oitonoveAmarela'] 	= $resultadosSolidos[0]["amarela"];
 				$listadedados['oitonoveVermelha'] 	= $resultadosSolidos[0]["vermelha"];
@@ -563,8 +563,10 @@
 				$listadedados['pastaazul'] 		= $resultadosPressaoPedidos[0]["pastaazul"];
 				$listadedados['atrasadas'] 		= $resultadosPressaoPedidos[0]["atrasadas"];
 				$listadedados['adiantadas'] 	= $resultadosPressaoPedidos[0]["adiantadas"];
+				//Pedidos de Filiais
 				$listadedados['pomerode'] 		= $resultadosPressaoPedidos[0]["pomerode"];
 				$listadedados['brusque'] 		= $resultadosPressaoPedidos[0]["brusque"];
+				//----
 				$listadedados['excipiente'] 	= $resultadosPressaoPedidos[0]["excipiente"];
 				$listadedados['cremenaoionico'] = $resultadosPressaoPedidos[0]["cremenaoionico"];
 				$listadedados['basegelanastrozol'] 		= $resultadosPressaoPedidos[0]["basegelanastrozol"];
