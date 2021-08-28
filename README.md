@@ -30,7 +30,11 @@
  <h2>Cadastro de funcionários</h2>
  <img src='img/Apresentando/MensagensDinamicasCadastroDeFuncionarios.PNG'>
  <h2>Menu Poção Fixo com varias opções e { inclussão de fórmulas por comando de voz js }</h2>
- <h2>Menu em Produção fixo: com as fórmulas pré prontas iniciadas pelos botões do menu poção</h2>
  <img src='img/Apresentando/Menu_fixo.PNG'>
+ <h2>Menu em Produção fixo: com as fórmulas pré prontas iniciadas pelos botões do menu poção</h2>
+ <img src='img/Apresentando/manualproducao.PNG'> 
  <h2>Por último Manual descrevendo como o sistema funciona</h2>
-<!--  <img src='img/Apresentando/Menu_fixo.PNG'> -->
+  <h2>P1</h2>
+ <img src='img/Apresentando/manual1.PNG'>
+ <h2>P2</h2>
+ <img src='img/Apresentando/manual2.PNG'>
