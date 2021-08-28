@@ -23,7 +23,7 @@
  <h2>Inserção De Fórmulas por Nível de Dificuldade e agilidade;</h2>
  <img src='img/Apresentando/homeLab2.PNG'>
  <h2>Pedidos de Filiais</h2>
- <h2>Quadro de Aviços</h2>
+ <h2>Quadro de Avisos</h2>
  <img src='img/Apresentando/PedidosQuadroDeAvisos.PNG'>
  <h2>
   Cadastro e Dinâmica Completa de Mensagens Prontas, OBS: Tenho um repositório específico para esta opção <a href='https://github.com/Maycon-crz/AutoRespostas'>AutoRespostas</a>  </h2>
